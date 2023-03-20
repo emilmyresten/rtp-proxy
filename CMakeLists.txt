@@ -14,4 +14,7 @@ add_executable(
 
 # include header files (.h):
 target_include_directories(main PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+
+include_directories(BEFORE SYSTEM "/usr/local/include")
  
