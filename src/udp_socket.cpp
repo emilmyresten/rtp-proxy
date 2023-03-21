@@ -31,7 +31,7 @@ void UdpSocket::setDestination()
   memset(&destaddr, 0, sizeof(destaddr));
   destaddr.sin_family = AF_INET;
   destaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
-  destaddr.sin_port = htons(8080);
+  destaddr.sin_port = htons(this->destination_port);
 
   memcpy(this->destination_meta, &destaddr, sizeof(destaddr));
 }
