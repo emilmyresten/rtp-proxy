@@ -11,13 +11,33 @@
 
 UdpSocket::UdpSocket() 
 {
-  this->setSocketMetadata();
-  Socket s = this->create();
-  this->sock_fd = s;
+  this->setSocketMetadata(RECEIVE);
+  this->setSocketMetadata(SEND);
+  this->setDestination();
+  Socket receive_socket = this->createSocket(RECEIVE);
+  Socket send_socket = this->createSocket(SEND);
+  this->receive_sock_fd = receive_socket;
+  this->send_sock_fd = send_socket;
+
+}
+
+void UdpSocket::setDestination()
+{
+  // Allocate memory for destination_meta
+  this->destination_meta = (struct sockaddr_in*)malloc(sizeof(struct sockaddr_in*));
+
+  struct sockaddr_in destaddr;
+
+  memset(&destaddr, 0, sizeof(destaddr));
+  destaddr.sin_family = AF_INET;
+  destaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+  destaddr.sin_port = htons(8080);
+
+  memcpy(this->destination_meta, &destaddr, sizeof(destaddr));
 }
 
 
-void UdpSocket::setSocketMetadata() 
+void UdpSocket::setSocketMetadata(SocketType socket_type) 
 {
     struct addrinfo hints;
 
@@ -25,8 +45,17 @@ void UdpSocket::setSocketMetadata()
     hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_DGRAM; // specifies udp
     hints.ai_flags = AI_PASSIVE;
-
-    int status = getaddrinfo(NULL, this->receive_port, &hints, &this->sock_meta);
+    
+    int status;
+    switch (socket_type)
+    {
+      case RECEIVE:
+        status = getaddrinfo(NULL, this->receive_port, &hints, &this->receive_sock_meta);
+        break;
+      case SEND:
+        status = getaddrinfo(NULL, this->send_port, &hints, &this->send_sock_meta);
+        break;
+    }
 
     if (status != 0)
     {
@@ -36,20 +65,31 @@ void UdpSocket::setSocketMetadata()
 }
 
 
-Socket UdpSocket::create()
+Socket UdpSocket::createSocket(SocketType socket_type)
 {
   int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
   if (sockfd < 0) {
     perror("Failed to create socket");
     exit(1);
   }
-
-  int bound = bind(sockfd, this->sock_meta->ai_addr, this->sock_meta->ai_addrlen);
-  if (bound < 0) {
-    perror("Failed to bind socket");
-    close(sockfd);
-    exit(1);
-  } 
+  
+  switch (socket_type)
+  {
+    case RECEIVE:
+      if ((bind(sockfd, this->receive_sock_meta->ai_addr, this->receive_sock_meta->ai_addrlen)) < 0) {
+        perror("Failed to bind socket");
+        close(sockfd);
+        exit(1);
+      }
+      break;
+    case SEND:
+      if ((bind(sockfd, this->send_sock_meta->ai_addr, this->send_sock_meta->ai_addrlen)) < 0) {
+        perror("Failed to bind socket");
+        close(sockfd);
+        exit(1);
+      }
+      break;
+  }
 
   return sockfd;
 }
