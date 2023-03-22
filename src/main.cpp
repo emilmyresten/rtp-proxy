@@ -20,18 +20,18 @@ int main() {
     struct sockaddr_in cliaddr;
     memset(&cliaddr, 0, sizeof(cliaddr));
     socklen_t len = sizeof(cliaddr);
-    int n = recvfrom(s.receive_sock_fd, buffer, MAXBUFLEN-1, MSG_WAITALL, (struct sockaddr *)&cliaddr, &len);
-    if (n < 0) 
+    int received_bytes = recvfrom(s.receive_sock_fd, buffer, MAXBUFLEN-1, MSG_WAITALL, (struct sockaddr *)&cliaddr, &len);
+    if (received_bytes < 0) 
     {
       perror("Failed to receive datagram\n");
       continue;
     }
-    buffer[n] = '\0';
+    buffer[received_bytes] = '\0';
 
     std::cout << "Received datagram from " << inet_ntoa(cliaddr.sin_addr) << ":" << ntohs(cliaddr.sin_port) << ": " << buffer << "\n";
 
-    int sent = sendto(s.send_sock_fd, buffer, n, 0, (struct sockaddr*) s.destination_meta, sizeof(*s.destination_meta));
-    if (sent < 0)
+    int sent_bytes = sendto(s.send_sock_fd, buffer, received_bytes, 0, (struct sockaddr*) s.destination_meta, sizeof(*s.destination_meta));
+    if (sent_bytes < 0 || sent_bytes != received_bytes) // we should proxy the examt same message.
     {
       perror("Failed to send datagram\n");
       continue;
