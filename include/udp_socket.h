@@ -22,8 +22,8 @@ class UdpSocket
     const char* send_port { "8004" };
 
 
-    struct sockaddr_in* destination_meta;
-    const int destination_port { 8002 };
+    struct addrinfo* destination_meta;
+    const char* destination_port { "8002" };
     
     void setSocketMetadata(SocketType);
     void setDestination();

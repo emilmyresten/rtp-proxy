@@ -27,14 +27,15 @@ int main() {
 
     std::cout << "Received datagram: " << buffer << "\n";
 
-    int sent_bytes = sendto(s.send_sock_fd, buffer, received_bytes, 0, (struct sockaddr*) s.destination_meta, sizeof(*s.destination_meta));
+    int sent_bytes = sendto(s.send_sock_fd, buffer, received_bytes, 0, s.destination_meta->ai_addr, s.destination_meta->ai_addrlen);
     if (sent_bytes < 0 || sent_bytes != received_bytes) // we should proxy the examt same message.
     {
       perror("Failed to send datagram\n");
       continue;
     }
+    char ipstr[INET6_ADDRSTRLEN];
 
-    std::cout << "Proxied datagram to " << inet_ntoa(s.destination_meta->sin_addr) << ":" << ntohs(s.destination_meta->sin_port) << ": " << buffer <<  "\n";
+    std::cout << "Proxied datagram to " << inet_ntop(AF_INET, &((struct sockaddr_in6 *) s.destination_meta->ai_addr)->sin6_addr, ipstr, sizeof(ipstr)) << ": " << buffer <<  "\n";
 
     
   }

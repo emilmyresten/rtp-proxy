@@ -23,17 +23,20 @@ UdpSocket::UdpSocket()
 
 void UdpSocket::setDestination()
 {
-  // Allocate memory for destination_meta
-  this->destination_meta = (struct sockaddr_in*)malloc(sizeof(struct sockaddr_in*));
+  struct addrinfo hints, *destaddr ;
 
-  struct sockaddr_in destaddr;
+  memset(&hints, 0, sizeof(hints));
+  hints.ai_family = AF_INET6;
+  hints.ai_socktype = SOCK_DGRAM;
+  // hints.ai_flags = AI_PASSIVE;
 
-  memset(&destaddr, 0, sizeof(destaddr));
-  destaddr.sin_family = AF_INET;
-  destaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
-  destaddr.sin_port = htons(this->destination_port);
+  int status = getaddrinfo(nullptr, this->destination_port, &hints, &this->destination_meta);
+  if (status < 0)
+  {
+    std::cerr << "getaddrinfo destination error: " << gai_strerror(status) << "\n";
+    exit(1);
+  }
 
-  memcpy(this->destination_meta, &destaddr, sizeof(destaddr));
 }
 
 
@@ -42,7 +45,7 @@ void UdpSocket::setSocketMetadata(SocketType socket_type)
     struct addrinfo hints;
 
     memset(&hints, 0, sizeof(hints));
-    hints.ai_family = AF_INET;
+    hints.ai_family = AF_INET6;
     hints.ai_socktype = SOCK_DGRAM; // specifies udp
     hints.ai_flags = AI_PASSIVE;
     
@@ -67,7 +70,7 @@ void UdpSocket::setSocketMetadata(SocketType socket_type)
 
 Socket UdpSocket::createSocket(SocketType socket_type)
 {
-  int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+  int sockfd = socket(AF_INET6, SOCK_DGRAM, 0);
   if (sockfd < 0) {
     perror("Failed to create socket");
     exit(1);
