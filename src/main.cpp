@@ -29,11 +29,13 @@ int main() {
 
     rtp_header header {
       /* 
+      All integer fields are carried in network byte order, that is, most
+      significant byte (octet) first (RFC 3550)
       the bit-wise OR | and the left-shift will make the byte at buffer 2 and buffer 3 offset from eachother, 
-      saving each. b2 = 11010110 b3 = 10010101'00000000 => b3 | b2 = 10010101'11010110
+      saving each. b2 = 10010101'00000000, b3 = 11010110 => b2 | b3 = 10010101'11010110
       */
-      static_cast<uint16_t>((buffer[3] << 8) | buffer[2]), // ssqno 16-bits
-      static_cast<uint32_t>((buffer[7] << 24) | (buffer[6] << 16) | (buffer[5] << 8) | buffer[4]), // timestamp 32-bits
+      static_cast<uint16_t>((buffer[2]) << 8 | buffer[3]), // ssqno 16-bits
+      static_cast<uint32_t>(buffer[4] << 24 | (buffer[5] << 16) | (buffer[6]) << 8 | (buffer[7])), // timestamp 32-bits
     };
 
     std::cout << header.sequence_number << "\n";
