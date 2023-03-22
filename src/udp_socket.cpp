@@ -8,7 +8,9 @@
 
 #include "udp_socket.h"
 
-
+const int IPVERSION = AF_INET6;
+const int SOCKETTYPE = SOCK_DGRAM;
+ 
 UdpSocket::UdpSocket() 
 {
   this->setSocketMetadata(RECEIVE);
@@ -26,8 +28,8 @@ void UdpSocket::setDestination()
   struct addrinfo hints, *destaddr ;
 
   memset(&hints, 0, sizeof(hints));
-  hints.ai_family = AF_INET6;
-  hints.ai_socktype = SOCK_DGRAM;
+  hints.ai_family = IPVERSION;
+  hints.ai_socktype = SOCKETTYPE;
   // hints.ai_flags = AI_PASSIVE;
 
   int status = getaddrinfo(nullptr, this->destination_port, &hints, &this->destination_meta);
@@ -45,8 +47,8 @@ void UdpSocket::setSocketMetadata(SocketType socket_type)
     struct addrinfo hints;
 
     memset(&hints, 0, sizeof(hints));
-    hints.ai_family = AF_INET6;
-    hints.ai_socktype = SOCK_DGRAM; // specifies udp
+    hints.ai_family = IPVERSION;
+    hints.ai_socktype = SOCKETTYPE;
     hints.ai_flags = AI_PASSIVE;
     
     int status;
@@ -70,7 +72,7 @@ void UdpSocket::setSocketMetadata(SocketType socket_type)
 
 Socket UdpSocket::createSocket(SocketType socket_type)
 {
-  int sockfd = socket(AF_INET6, SOCK_DGRAM, 0);
+  int sockfd = socket(IPVERSION, SOCKETTYPE, 0);
   if (sockfd < 0) {
     perror("Failed to create socket");
     exit(1);
