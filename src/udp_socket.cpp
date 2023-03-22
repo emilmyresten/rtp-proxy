@@ -50,10 +50,10 @@ void UdpSocket::setSocketMetadata(SocketType socket_type)
     switch (socket_type)
     {
       case RECEIVE:
-        status = getaddrinfo(NULL, this->receive_port, &hints, &this->receive_sock_meta);
+        status = getaddrinfo(nullptr, this->receive_port, &hints, &this->receive_sock_meta);
         break;
       case SEND:
-        status = getaddrinfo(NULL, this->send_port, &hints, &this->send_sock_meta);
+        status = getaddrinfo(nullptr, this->send_port, &hints, &this->send_sock_meta);
         break;
     }
 
@@ -81,6 +81,7 @@ Socket UdpSocket::createSocket(SocketType socket_type)
         close(sockfd);
         exit(1);
       }
+      freeaddrinfo(this->receive_sock_meta);
       break;
     case SEND:
       if ((bind(sockfd, this->send_sock_meta->ai_addr, this->send_sock_meta->ai_addrlen)) < 0) {
@@ -88,6 +89,7 @@ Socket UdpSocket::createSocket(SocketType socket_type)
         close(sockfd);
         exit(1);
       }
+      freeaddrinfo(this->send_sock_meta);
       break;
   }
 
