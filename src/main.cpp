@@ -11,7 +11,7 @@
 #include "udp_socket.h"
 
 int main() {
-  UdpSocket proxy_socket { 9004, "9002" };
+  UdpSocket proxy_socket { "9304", "9002" };
 
   const int MAXBUFLEN = 1024*2;
 

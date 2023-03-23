@@ -11,16 +11,14 @@
 const int IPVERSION = AF_INET;
 const int SOCKETTYPE = SOCK_DGRAM;
  
-UdpSocket::UdpSocket(short recv_port, const char* dest_port) 
+UdpSocket::UdpSocket(char* recv_port, char* dest_port) 
 {
-  this->dest_port = dest_port;
-  this->setDestination();
-
+  this->setDestination(dest_port);
   this->socket_fd = createSocket(recv_port);  
-  std::cout << "Created socket on port: " << recv_port << "\n";
+  std::cout << "Created proxy: port " << recv_port << "->" << dest_port << "\n";
 }
 
-void UdpSocket::setDestination()
+void UdpSocket::setDestination(char* port)
 {
   struct addrinfo hints;
 
@@ -29,7 +27,7 @@ void UdpSocket::setDestination()
   hints.ai_socktype = SOCKETTYPE;
   // hints.ai_flags = AI_PASSIVE;
 
-  int status = getaddrinfo(nullptr, this->dest_port, &hints, &this->destaddr);
+  int status = getaddrinfo(nullptr, port, &hints, &this->destaddr);
   if (status < 0)
   {
     std::cerr << "getaddrinfo destination error: " << gai_strerror(status) << "\n";
@@ -38,14 +36,23 @@ void UdpSocket::setDestination()
 
 }
 
-int UdpSocket::createSocket(short port)
+int UdpSocket::createSocket(char* port)
 {
 
-  sockaddr_in servaddr;
-  memset(&servaddr, 0, sizeof(servaddr));
-  servaddr.sin_family = IPVERSION;
-  servaddr.sin_port = htons(port);
-  servaddr.sin_addr.s_addr = inet_addr("192.168.0.9");
+  struct addrinfo hints, *servaddr;
+
+  memset(&hints, 0, sizeof(hints));
+  hints.ai_family = IPVERSION;
+  hints.ai_socktype = SOCKETTYPE;
+  hints.ai_flags = AI_PASSIVE;
+
+  int status = getaddrinfo(nullptr, port, &hints, &servaddr);
+  if (status < 0)
+  {
+    std::cerr << "getaddrinfo receiving socket error: " << gai_strerror(status) << "\n";
+    exit(1);
+  }
+
 
   int sockfd = socket(IPVERSION, SOCKETTYPE, 0);
   if (sockfd < 0) {
@@ -53,7 +60,7 @@ int UdpSocket::createSocket(short port)
     exit(1);
   }
   
-  if ((bind(sockfd, (struct sockaddr*) &servaddr, sizeof(servaddr))) < 0) {
+  if ((bind(sockfd, servaddr->ai_addr, servaddr->ai_addrlen)) < 0) {
         perror("Failed to bind socket");
         close(sockfd);
         exit(1);

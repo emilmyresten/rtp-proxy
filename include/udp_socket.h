@@ -4,17 +4,13 @@
 class UdpSocket 
 {
   public:
-    UdpSocket(short, const char*);
+    UdpSocket(char*, char*);
     int socket_fd;
-    // struct addrinfo* sockaddr;
-    
-
     struct addrinfo* destaddr;
-    const char* dest_port;
     
     // void setSocketAddress(short);
-    void setDestination();
-    int createSocket(short);
+    void setDestination(char*);
+    int createSocket(char*);
 
 
     ~UdpSocket()
