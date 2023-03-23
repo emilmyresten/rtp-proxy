@@ -8,25 +8,16 @@
 
 #include "udp_socket.h"
 
-const int IPVERSION = AF_INET6;
+const int IPVERSION = AF_INET;
 const int SOCKETTYPE = SOCK_DGRAM;
  
-UdpSocket::UdpSocket(const char* port, SocketType tpe, const char* dest_port) 
+UdpSocket::UdpSocket(short recv_port, const char* dest_port) 
 {
-  this->port = port;
   this->dest_port = dest_port;
-  this->socktype = tpe;
-  this->setSocketAddress();
-  if (this->socktype == SEND) {
-    if (std::strcmp(dest_port, "-1") == 0) { // this value is default, set in udp_socket.h
-      std::cerr << "must set destination port on sending socket.";
-      exit(1);
-    }
-    this->setDestination();
-  }
+  this->setDestination();
 
-  this->_fd = createSocket();  
-  std::cout << "Created " << (this->socktype == RECEIVE ? "receiving" : "sending") << " socket on port: " << this->port << "\n";
+  this->socket_fd = createSocket(recv_port);  
+  std::cout << "Created socket on port: " << recv_port << "\n";
 }
 
 void UdpSocket::setDestination()
@@ -47,40 +38,26 @@ void UdpSocket::setDestination()
 
 }
 
-
-void UdpSocket::setSocketAddress() 
+int UdpSocket::createSocket(short port)
 {
-    struct addrinfo hints;
 
-    memset(&hints, 0, sizeof(hints));
-    hints.ai_family = IPVERSION;
-    hints.ai_socktype = SOCKETTYPE;
-    hints.ai_flags = AI_PASSIVE; // same as INETADDR_ANY
-    
-    int status = getaddrinfo(nullptr, this->port, &hints, &this->sockaddr);
+  sockaddr_in servaddr;
+  memset(&servaddr, 0, sizeof(servaddr));
+  servaddr.sin_family = IPVERSION;
+  servaddr.sin_port = htons(port);
+  servaddr.sin_addr.s_addr = inet_addr("192.168.0.9");
 
-    if (status != 0)
-    {
-      std::cerr << "getaddrinfo error: " << gai_strerror(status) << "\n";
-      exit(1);
-    }
-}
-
-
-int UdpSocket::createSocket()
-{
   int sockfd = socket(IPVERSION, SOCKETTYPE, 0);
   if (sockfd < 0) {
     perror("Failed to create socket");
     exit(1);
   }
   
-  if ((bind(sockfd, this->sockaddr->ai_addr, this->sockaddr->ai_addrlen)) < 0) {
+  if ((bind(sockfd, (struct sockaddr*) &servaddr, sizeof(servaddr))) < 0) {
         perror("Failed to bind socket");
         close(sockfd);
         exit(1);
       }
-  freeaddrinfo(this->sockaddr);
 
   return sockfd;
 }

@@ -11,14 +11,13 @@
 #include "udp_socket.h"
 
 int main() {
-  UdpSocket receiving_socket { "6042", RECEIVE };
-  UdpSocket sending_socket { "6044", SEND, "6046" };
+  UdpSocket proxy_socket { 9004, "9002" };
 
   const int MAXBUFLEN = 1024*2;
 
   char buffer[MAXBUFLEN];
   while (true) {
-    int received_bytes = recvfrom(receiving_socket._fd, buffer, MAXBUFLEN-1, MSG_WAITALL, nullptr, nullptr);
+    int received_bytes = recvfrom(proxy_socket.socket_fd, buffer, MAXBUFLEN-1, MSG_WAITALL, nullptr, nullptr);
     if (received_bytes < 0) 
     {
       perror("Failed to receive datagram\n");
@@ -44,7 +43,7 @@ int main() {
     }
     
 
-    int sent_bytes = sendto(sending_socket._fd, buffer, received_bytes, 0, sending_socket.destaddr->ai_addr, sending_socket.destaddr->ai_addrlen);
+    int sent_bytes = sendto(proxy_socket.socket_fd, buffer, received_bytes, 0, proxy_socket.destaddr->ai_addr, proxy_socket.destaddr->ai_addrlen);
     if (sent_bytes < 0 || sent_bytes != received_bytes) // we should proxy the examt same message.
     {
       perror("Failed to send datagram\n");
