@@ -1,8 +1,6 @@
 #pragma once
 
 
-using Socket = int;
-
 enum SocketType 
 {
   SEND,
@@ -12,31 +10,23 @@ enum SocketType
 class UdpSocket 
 {
   public:
-    UdpSocket();
-    Socket receive_sock_fd;
-    struct addrinfo* receive_sock_meta;
-    const char* receive_port { "8000" };
-
-    Socket send_sock_fd;
-    struct addrinfo* send_sock_meta;
-    const char* send_port { "8004" };
-
-
-    struct addrinfo* destination_meta;
-    const char* destination_port { "8002" };
+    UdpSocket(const char*, SocketType, const char* = "-1");
+    const char* port;
+    SocketType socktype;
+    int _fd;
+    struct addrinfo* sockaddr;
     
-    void setSocketMetadata(SocketType);
+
+    struct addrinfo* destaddr;
+    const char* dest_port;
+    
+    void setSocketAddress();
     void setDestination();
-    Socket createSocket(SocketType);
+    int createSocket();
 
 
     ~UdpSocket()
     {
-      close(receive_sock_fd);
-      close(send_sock_fd);
-      freeaddrinfo(receive_sock_meta);
-      freeaddrinfo(send_sock_meta);
-      
-      delete this->destination_meta;
+      close(_fd);
     }
 };

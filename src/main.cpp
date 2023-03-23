@@ -11,13 +11,14 @@
 #include "udp_socket.h"
 
 int main() {
-  UdpSocket s;
+  UdpSocket receiving_socket { "8050", RECEIVE };
+  UdpSocket sending_socket { "8052", SEND, "8054" };
 
   const int MAXBUFLEN = 1024*2;
 
   char buffer[MAXBUFLEN];
   while (true) {
-    int received_bytes = recvfrom(s.receive_sock_fd, buffer, MAXBUFLEN-1, MSG_WAITALL, nullptr, nullptr);
+    int received_bytes = recvfrom(receiving_socket._fd, buffer, MAXBUFLEN-1, MSG_WAITALL, nullptr, nullptr);
     if (received_bytes < 0) 
     {
       perror("Failed to receive datagram\n");
@@ -25,7 +26,7 @@ int main() {
     }
     buffer[received_bytes] = '\0';
 
-    // std::cout << "Received datagram: " << buffer << "\n";
+    std::cout << "Received datagram: " << buffer << "\n";
 
     rtp_header header {
       /* 
@@ -38,15 +39,18 @@ int main() {
       static_cast<uint32_t>(buffer[4] << 24 | (buffer[5] << 16) | (buffer[6]) << 8 | (buffer[7])), // timestamp 32-bits
     };
 
-    std::cout << header.sequence_number << "\n";
+    if (header.sequence_number == 1) {
+      std::cout << header.sequence_number << ": wrap around!\n";
+    }
+    
 
-    int sent_bytes = sendto(s.send_sock_fd, buffer, received_bytes, 0, s.destination_meta->ai_addr, s.destination_meta->ai_addrlen);
+    int sent_bytes = sendto(sending_socket._fd, buffer, received_bytes, 0, sending_socket.destaddr->ai_addr, sending_socket.destaddr->ai_addrlen);
     if (sent_bytes < 0 || sent_bytes != received_bytes) // we should proxy the examt same message.
     {
       perror("Failed to send datagram\n");
       continue;
     }
-    char ipstr[INET6_ADDRSTRLEN];
+    // char ipstr[INET6_ADDRSTRLEN];
 
     // std::cout << "Proxied datagram to " << inet_ntop(AF_INET, &((struct sockaddr_in6 *) s.destination_meta->ai_addr)->sin6_addr, ipstr, sizeof(ipstr)) << ": " << buffer <<  "\n";
 
