@@ -8,7 +8,7 @@
 
 #include "udp_socket.h"
 
-const int IPVERSION = AF_INET;
+const int IPVERSION = AF_INET6;
 const int SOCKETTYPE = SOCK_DGRAM;
  
 UdpSocket::UdpSocket(const char* port, SocketType tpe, const char* dest_port) 
@@ -38,7 +38,7 @@ void UdpSocket::setDestination()
   hints.ai_socktype = SOCKETTYPE;
   // hints.ai_flags = AI_PASSIVE;
 
-  int status = getaddrinfo("0.0.0.0", this->dest_port, &hints, &this->destaddr);
+  int status = getaddrinfo(nullptr, this->dest_port, &hints, &this->destaddr);
   if (status < 0)
   {
     std::cerr << "getaddrinfo destination error: " << gai_strerror(status) << "\n";
@@ -55,9 +55,9 @@ void UdpSocket::setSocketAddress()
     memset(&hints, 0, sizeof(hints));
     hints.ai_family = IPVERSION;
     hints.ai_socktype = SOCKETTYPE;
-    // hints.ai_flags = AI_PASSIVE;
+    hints.ai_flags = AI_PASSIVE; // same as INETADDR_ANY
     
-    int status = getaddrinfo("0.0.0.0", this->port, &hints, &this->sockaddr);
+    int status = getaddrinfo(nullptr, this->port, &hints, &this->sockaddr);
 
     if (status != 0)
     {

@@ -11,8 +11,8 @@
 #include "udp_socket.h"
 
 int main() {
-  UdpSocket receiving_socket { "8050", RECEIVE };
-  UdpSocket sending_socket { "8052", SEND, "8054" };
+  UdpSocket receiving_socket { "6042", RECEIVE };
+  UdpSocket sending_socket { "6044", SEND, "6046" };
 
   const int MAXBUFLEN = 1024*2;
 
