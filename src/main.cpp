@@ -6,6 +6,7 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <cmath>
+#include <cstring>
 
 #include "rtp_packet.h"
 #include "udp_socket.h"
@@ -25,25 +26,30 @@ int main() {
     }
     buffer[received_bytes] = '\0';
 
-    // std::cout << "Received datagram: " << buffer << "\n";
+    rtp_header header;
+    memcpy(&header, buffer, sizeof(header));
 
-    rtp_header header {
-      /* 
-      All integer fields are carried in network byte order, that is, most
-      significant byte (octet) first (RFC 3550)
-      the bit-wise OR | and the left-shift will make the byte at buffer 2 and buffer 3 offset from eachother, 
-      saving each. b2 = 10010101'00000000, b3 = 11010110 => b2 | b3 = 10010101'11010110
-      */
-      static_cast<uint16_t>((buffer[2]) << 8 | buffer[3]), // ssqno 16-bits
-      static_cast<uint32_t>(buffer[4] << 24 | (buffer[5] << 16) | (buffer[6]) << 8 | (buffer[7])), // timestamp 32-bits
-    };
+    std::cout << header.get_payload_type() << "\n";
+    std::cout << header.get_sequence_number() << "\n\n";
+  
 
-    bool measure = true; 
+    // rtp_header header {
+    //   /* 
+    //   All integer fields are carried in network byte order, that is, most
+    //   significant byte (octet) first (RFC 3550)
+    //   the bit-wise OR | and the left-shift will make the byte at buffer 2 and buffer 3 offset from eachother, 
+    //   saving each. b2 = 10010101'00000000, b3 = 11010110 => b2 | b3 = 10010101'11010110
+    //   */
+    //   static_cast<uint16_t>((buffer[2]) << 8 | buffer[3]), // ssqno 16-bits
+    //   static_cast<uint32_t>(buffer[4] << 24 | (buffer[5] << 16) | (buffer[6]) << 8 | (buffer[7])), // timestamp 32-bits
+    // };
 
-    if (measure) 
-    {
-      std::cout << header.sequence_number << "\n";
-    }
+    // bool measure = true; 
+
+    // if (measure) 
+    // {
+    //   std::cout << header.sequence_number << "\n";
+    // }
     
 
     int sent_bytes = sendto(proxy_socket.socket_fd, buffer, received_bytes, 0, proxy_socket.destaddr->ai_addr, proxy_socket.destaddr->ai_addrlen);
