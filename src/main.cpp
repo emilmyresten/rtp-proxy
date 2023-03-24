@@ -29,7 +29,8 @@ int main() {
     rtp_header header;
     memcpy(&header, buffer, sizeof(header));
 
-    std::cout << header.get_payload_type() << "\n";
+    std::cout << header.get_timestamp() << "\n";
+    std::cout << header.get_ssrc() << "\n";
     std::cout << header.get_sequence_number() << "\n\n";
   
 
