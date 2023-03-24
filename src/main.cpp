@@ -17,7 +17,7 @@ int main() {
 
   char buffer[MAXBUFLEN];
   while (true) {
-    int received_bytes = recvfrom(proxy_socket.socket_fd, buffer, MAXBUFLEN-1, MSG_WAITALL, nullptr, nullptr);
+    int received_bytes = recvfrom(proxy_socket.socket_fd, buffer, MAXBUFLEN-1, 0, nullptr, nullptr);
     if (received_bytes < 0) 
     {
       perror("Failed to receive datagram\n");
@@ -25,7 +25,7 @@ int main() {
     }
     buffer[received_bytes] = '\0';
 
-    std::cout << "Received datagram: " << buffer << "\n";
+    // std::cout << "Received datagram: " << buffer << "\n";
 
     rtp_header header {
       /* 
@@ -38,8 +38,11 @@ int main() {
       static_cast<uint32_t>(buffer[4] << 24 | (buffer[5] << 16) | (buffer[6]) << 8 | (buffer[7])), // timestamp 32-bits
     };
 
-    if (header.sequence_number == 1) {
-      std::cout << header.sequence_number << ": wrap around!\n";
+    bool measure = true; 
+
+    if (measure) 
+    {
+      std::cout << header.sequence_number << "\n";
     }
     
 
