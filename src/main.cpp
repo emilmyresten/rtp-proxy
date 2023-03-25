@@ -7,18 +7,49 @@
 #include <unistd.h>
 #include <cmath>
 #include <cstring>
+#include <chrono>
+#include <queue>
 
 #include "rtp_packet.h"
 #include "udp_socket.h"
 
+const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
+
+struct Packet {
+  char* data;
+  int num_bytes_to_send; // the bytes received by recvfrom
+  std::chrono::time_point<std::chrono::high_resolution_clock> send_time;
+};
+
+
 int main() {
   UdpSocket proxy_socket { "9304", "9002" };
 
-  const int MAXBUFLEN = 1024*2;
+  auto cmp = [](Packet left, Packet right){
+    auto now = std::chrono::high_resolution_clock::now();
+    std::chrono::duration left_delta = left.send_time - now;
+    std::chrono::duration right_delta = right.send_time - now;
+    return left_delta > right_delta;
+  };
+
+  std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cmp); 
 
   char buffer[MAXBUFLEN];
   while (true) {
-    int received_bytes = recvfrom(proxy_socket.socket_fd, buffer, MAXBUFLEN-1, 0, nullptr, nullptr);
+    std::cout << network_queue.size() << "\n";
+    
+    if (network_queue.size() > 4) {
+      Packet t = network_queue.top();
+      rtp_header* header = (rtp_header*) t.data;
+      std::cout << header->get_sequence_number() << "\n";
+      // std::cout << t.data;
+      std::cout << std::chrono::duration_cast<std::chrono::nanoseconds>(t.send_time.time_since_epoch()).count();
+      delete t.data;
+      network_queue.pop();
+    }
+  
+
+    int received_bytes = recvfrom(proxy_socket.socket_fd, buffer, MAXBUFLEN, 0, nullptr, nullptr);
     if (received_bytes < 0) 
     {
       perror("Failed to receive datagram\n");
@@ -28,30 +59,20 @@ int main() {
 
     rtp_header header;
     memcpy(&header, buffer, sizeof(header));
-
-    std::cout << header.get_timestamp() << "\n";
-    std::cout << header.get_ssrc() << "\n";
-    std::cout << header.get_sequence_number() << "\n\n";
-  
-
-    // rtp_header header {
-    //   /* 
-    //   All integer fields are carried in network byte order, that is, most
-    //   significant byte (octet) first (RFC 3550)
-    //   the bit-wise OR | and the left-shift will make the byte at buffer 2 and buffer 3 offset from eachother, 
-    //   saving each. b2 = 10010101'00000000, b3 = 11010110 => b2 | b3 = 10010101'11010110
-    //   */
-    //   static_cast<uint16_t>((buffer[2]) << 8 | buffer[3]), // ssqno 16-bits
-    //   static_cast<uint32_t>(buffer[4] << 24 | (buffer[5] << 16) | (buffer[6]) << 8 | (buffer[7])), // timestamp 32-bits
-    // };
-
-    // bool measure = true; 
-
-    // if (measure) 
-    // {
-    //   std::cout << header.sequence_number << "\n";
-    // }
     
+    // std::cout << header.get_sequence_number() << "\n";
+    // std::cout << std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count() << "\n";
+
+
+    char* payload = new char[received_bytes];
+    memcpy(payload, &buffer, received_bytes);
+    Packet p {
+      payload,
+      received_bytes,
+      std::chrono::high_resolution_clock::now()
+    };
+
+    network_queue.push(p);
 
     int sent_bytes = sendto(proxy_socket.socket_fd, buffer, received_bytes, 0, proxy_socket.destaddr->ai_addr, proxy_socket.destaddr->ai_addrlen);
     if (sent_bytes < 0 || sent_bytes != received_bytes) // we should proxy the examt same message.
