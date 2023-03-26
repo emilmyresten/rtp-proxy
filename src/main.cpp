@@ -10,16 +10,19 @@
 #include <chrono>
 #include <queue>
 #include <thread>
+#include <random>
 
 #include "rtp_packet.h"
 #include "udp_socket.h"
 
 const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
-std::mutex mtx; // protect the priority queue
-std::condition_variable coordinator; // coordinate threads
+std::mutex gMtx; // protect the priority queue
+std::condition_variable gCoordinator; // coordinate threads
 
-auto constant_factor = std::chrono::seconds(2);
-using variable_time_unit = std::chrono::microseconds;
+auto gConstant_factor = std::chrono::seconds(2);
+using gVariable_time_unit = std::chrono::microseconds;
+std::default_random_engine gGenerator(1); // explicitly seed the random generator for clarity.
+std::normal_distribution<int> gJitter_distribution(10.0, 5.0); // mean of 10.0, std deviation of 5.0 (dont want negative jitter)
 
 
 struct Packet {
@@ -34,7 +37,7 @@ auto cmp = [](Packet left, Packet right){
     auto right_delta = right.send_time - now;
     return left_delta > right_delta;
   };
-std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cmp); 
+std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> gNetwork_queue(cmp); 
 
 
 void receiver(char* from) {
@@ -56,18 +59,18 @@ void receiver(char* from) {
     char* payload = new char[received_bytes];
     memcpy(payload, &buffer, received_bytes);
 
-    auto jitter = variable_time_unit(rand()%1000);
+    auto jitter = gVariable_time_unit(gJitter_distribution(gGenerator)%1000);
     Packet p {
       payload,
       received_bytes,
-      std::chrono::high_resolution_clock::now() + constant_factor + jitter
+      std::chrono::high_resolution_clock::now() + gConstant_factor + jitter
     };
 
     std::cout << "Received " << header.get_sequence_number() << "\n";
 
-    std::lock_guard<std::mutex> lock(mtx);
-    network_queue.push(p);
-    coordinator.notify_all();
+    std::lock_guard<std::mutex> lock(gMtx);
+    gNetwork_queue.push(p);
+    gCoordinator.notify_all();
   }
 }
 
@@ -75,11 +78,11 @@ void sender(char* to) {
   UdpSocket sending_socket { "9002", to };
 
   while (true) {
-    if (!network_queue.empty()) {
-      Packet p = network_queue.top(); // .top() doesn't mutate, no need to lock.
+    if (!gNetwork_queue.empty()) {
+      Packet p = gNetwork_queue.top(); // .top() doesn't mutate, no need to lock.
       if ((p.send_time - std::chrono::high_resolution_clock::now()).count() <= 0) {
-        std::unique_lock<std::mutex> lock(mtx);
-        network_queue.pop();
+        std::unique_lock<std::mutex> lock(gMtx);
+        gNetwork_queue.pop();
         lock.unlock();
 
         int sent_bytes = sendto(sending_socket.socket_fd, p.data, p.num_bytes_to_send, 0, sending_socket.destaddr->ai_addr, sending_socket.destaddr->ai_addrlen);
@@ -93,8 +96,7 @@ void sender(char* to) {
 
         delete p.data;
       }
-    }
-        
+    } 
   }
 }
 
@@ -102,11 +104,12 @@ void sender(char* to) {
 int main() {  
   char from[5] { "9001" };
   char to[5] { "9024" };
+
   std::thread recv_thread(receiver, from);
   std::thread send_thread(sender, to);
 
   std::cout << "Started proxy: " << from << "->" << to 
-            << " with a " << constant_factor.count() << " second propagation delay." << "\n";
+            << " with a " << gConstant_factor.count() << " second propagation delay." << "\n";
 
   recv_thread.join();
   send_thread.join();
