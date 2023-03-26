@@ -16,7 +16,6 @@ UdpSocket::UdpSocket(char* recv_port, char* dest_port)
 {
   this->setDestination(dest_port);
   this->socket_fd = createSocket(recv_port);  
-  std::cout << "Created proxy: port " << recv_port << "->" << dest_port << "\n";
 }
 
 void UdpSocket::setDestination(char* port)
