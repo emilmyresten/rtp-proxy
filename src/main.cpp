@@ -25,7 +25,7 @@ std::mutex network_mutex; // protect the priority queue
 auto constant_playout_delay = std::chrono::seconds(2);
 using variable_playout_delay_unit = std::chrono::microseconds;
 std::default_random_engine random_generator(1); // explicitly seed the random generator for clarity.
-std::normal_distribution<int> jitter_distribution(10.0, 5.0); // mean of 10.0, std deviation of 5.0 (dont want negative jitter)
+std::binomial_distribution<int> jitter_distribution(10.0, 5.0); // mean of 10.0, std deviation of 5.0 (dont want negative jitter)
 
 
 struct Packet {
