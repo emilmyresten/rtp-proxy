@@ -10,6 +10,9 @@
 #include <chrono>
 #include <queue>
 #include <thread>
+#include <mutex>
+#include <atomic>
+#include <iomanip>
 #include <random>
 #include <fstream>
 
@@ -51,7 +54,7 @@ std::ofstream log_file;
 
 std::atomic<bool> keep_server_running{true};
 
-void file_writer(std::string_view filepath) {
+void file_writer(std::string filepath) {
   log_file.open(filepath, std::ofstream::app);
   std::chrono::nanoseconds ns_since_epoch(std::chrono::system_clock::now().time_since_epoch());
   std::chrono::time_point<std::chrono::system_clock> time_point(std::chrono::duration_cast<std::chrono::system_clock::duration>(ns_since_epoch));
@@ -143,7 +146,7 @@ void sender(char* to) {
 int main() {  
   char from[5] { "9001" };
   char to[5] { "9024" };
-  std::string_view filepath { "../data/original_timings.txt"};
+  std::string filepath { "../data/original_timings.txt"};
 
   std::thread recv_thread(receiver, from);
   std::thread send_thread(sender, to);

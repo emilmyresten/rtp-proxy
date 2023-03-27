@@ -6,6 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(main VERSION 1.0)
 
+# add multithreading
+find_package(Threads)
 # add source files (.cpp)
 file(GLOB_RECURSE SRC_FILES src/*.cpp)
 add_executable(
@@ -14,7 +16,6 @@ add_executable(
 
 # include header files (.h):
 target_include_directories(main PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-
-
 include_directories(BEFORE SYSTEM "/usr/local/include")
  
+target_link_libraries(main Threads::Threads)
