@@ -101,7 +101,7 @@ void receiver(char* from) {
       now + constant_playout_delay + jitter
     };
 
-    // std::cout << "Received " << header.get_sequence_number() << "\n";
+    std::cout << "Received ts " << header.get_timestamp() << "\n";
     auto ssq_no = header.get_sequence_number();
     if (ssq_no >= 100 && ssq_no < 110) {
       LogInfo l {
@@ -153,6 +153,7 @@ int main() {
   std::thread datastore_thread(file_writer, filepath);
 
   std::cout << "Started proxy: " << from << "->" << to 
+            << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6")
             << " with a " << constant_playout_delay.count() << " second propagation delay." << "\n";
 
   std::cout << "Press enter to stop.\n";

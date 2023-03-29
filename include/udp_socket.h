@@ -1,6 +1,9 @@
 #pragma once
 
 
+const int IPVERSION = AF_INET;
+const int SOCKETTYPE = SOCK_DGRAM;
+
 class UdpSocket 
 {
   public:

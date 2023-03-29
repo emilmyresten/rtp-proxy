@@ -8,9 +8,6 @@
 #include <unistd.h>
 
 #include "udp_socket.h"
-
-const int IPVERSION = AF_INET6;
-const int SOCKETTYPE = SOCK_DGRAM;
  
 UdpSocket::UdpSocket(char* recv_port, char* dest_port) 
 {
