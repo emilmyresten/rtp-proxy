@@ -31,48 +31,18 @@ std::binomial_distribution<int> jitter_distribution(10.0, 5.0); // mean of 10.0,
 struct Packet {
   char* data;
   int num_bytes_to_send; // the bytes received by recvfrom
-  std::chrono::time_point<std::chrono::high_resolution_clock> send_time;
+  std::chrono::time_point<std::chrono::steady_clock> send_time;
 };
 
 auto cmp = [](Packet left, Packet right){
-    auto now = std::chrono::high_resolution_clock::now();
+    auto now = std::chrono::steady_clock::now();
     auto left_delta = left.send_time - now;
     auto right_delta = right.send_time - now;
     return left_delta > right_delta;
   };
 std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cmp); 
 
-
-struct LogInfo {
-  uint16_t ssq_no;
-  long long time_since_epoch;
-};
-
-std::queue<LogInfo> log_queue;
-std::mutex log_queue_mutex;
-std::ofstream log_file;
-
 std::atomic<bool> keep_server_running{true};
-
-void file_writer(std::string filepath) {
-  log_file.open(filepath, std::ofstream::app);
-  std::chrono::nanoseconds ns_since_epoch(std::chrono::system_clock::now().time_since_epoch());
-  std::chrono::time_point<std::chrono::system_clock> time_point(std::chrono::duration_cast<std::chrono::system_clock::duration>(ns_since_epoch));
-  std::time_t time_t(std::chrono::system_clock::to_time_t(time_point));
-  
-  log_file << "Session init: " << std::put_time(std::localtime(&time_t), "%Y-%m-%d %H:%M:%S") << "\n" << std::endl;
-
-  while (keep_server_running) {
-    if (!log_queue.empty()) {
-      std::lock_guard<std::mutex> lock(log_queue_mutex);
-      LogInfo l = log_queue.front();
-      log_queue.pop();
-      log_file << l.ssq_no << ", " << l.time_since_epoch << std::endl;
-    }
-  }
-  log_file.close();
-}
-
 
 void receiver(char* from) {
   UdpSocket receiving_socket { from, "9002" };
@@ -93,7 +63,7 @@ void receiver(char* from) {
     char* payload = new char[received_bytes];
     memcpy(payload, &buffer, received_bytes);
 
-    auto now = std::chrono::high_resolution_clock::now();
+    auto now = std::chrono::steady_clock::now();
     auto jitter = variable_playout_delay_unit(jitter_distribution(random_generator)%1000);
     Packet p {
       payload,
@@ -101,16 +71,11 @@ void receiver(char* from) {
       now + constant_playout_delay + jitter
     };
 
-    std::cout << "Received ts " << header.get_timestamp() << "\n";
+    // std::cout << "Received " << header.get_sequence_number() << " at " << std::chrono::steady_clock::now().time_since_epoch().count() << "\n";
+    
     auto ssq_no = header.get_sequence_number();
     if (ssq_no >= 100 && ssq_no < 110) {
-      LogInfo l {
-        ssq_no,
-        now.time_since_epoch().count()
-      };
-      std::unique_lock<std::mutex> lock(log_queue_mutex);
-      log_queue.push(l);
-      lock.unlock();
+      std::cerr << ssq_no << ", " << now.time_since_epoch().count() << "\n";
     }
 
     std::lock_guard<std::mutex> lock(network_mutex);
@@ -124,7 +89,7 @@ void sender(char* to) {
   while (keep_server_running) {
     if (!network_queue.empty()) {
       Packet p = network_queue.top(); // .top() doesn't mutate, no need to lock.
-      if ((p.send_time - std::chrono::high_resolution_clock::now()).count() <= 0) {
+      if ((p.send_time - std::chrono::steady_clock::now()).count() <= 0) {
         std::unique_lock<std::mutex> lock(network_mutex);
         network_queue.pop();
         lock.unlock();
@@ -150,21 +115,25 @@ int main() {
 
   std::thread recv_thread(receiver, from);
   std::thread send_thread(sender, to);
-  std::thread datastore_thread(file_writer, filepath);
 
   std::cout << "Started proxy: " << from << "->" << to 
             << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6")
             << " with a " << constant_playout_delay.count() << " second propagation delay." << "\n";
 
+  std::chrono::nanoseconds ns_since_epoch(std::chrono::system_clock::now().time_since_epoch());
+  std::chrono::time_point<std::chrono::system_clock> time_point(std::chrono::duration_cast<std::chrono::system_clock::duration>(ns_since_epoch));
+  std::time_t time_t(std::chrono::system_clock::to_time_t(time_point));
+  
+  std::cerr << "Session init: " << std::put_time(std::localtime(&time_t), "%Y-%m-%d %H:%M:%S") << "\n";
+
   std::cout << "Press enter to stop.\n";
-  std::cin.get();
+  std::cin.get(); // main thread blocks here until something arrives on stdin.
 
   // signal to stop the thread
   keep_server_running = false;
 
   recv_thread.join();
   send_thread.join();
-  datastore_thread.join();
 
   return 0;
 }

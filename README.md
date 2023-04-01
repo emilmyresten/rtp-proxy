@@ -29,3 +29,10 @@ mkdir build && cd build
 ```
 cmake .. && make
 ```
+
+
+## Data collection
+Collect data by piping stderr to file, e.g. 
+```
+./main 2>./test_data.txt
+```
