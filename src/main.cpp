@@ -23,9 +23,14 @@ const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
 std::mutex network_mutex; // protect the priority queue
 
 auto constant_playout_delay = std::chrono::seconds(2);
-using variable_playout_delay_unit = std::chrono::microseconds;
+using variable_playout_delay_unit = std::chrono::milliseconds;
 std::default_random_engine random_generator(1); // explicitly seed the random generator for clarity.
-std::binomial_distribution<int> jitter_distribution(10.0, 5.0); // mean of 10.0, std deviation of 5.0 (dont want negative jitter)
+
+// PDV with Gaussian/Normal/Binomial probability density function. Haven't found real support in the literature for values of mean and stddev.
+// std::binomial_distribution<int> jitter_distribution(10.0, 5.0); // mean of 10.0, std deviation of 5.0 (dont want negative jitter)
+
+// used to simulate jitter in ns3: https://gitlab.com/nsnam/ns-3-dev/-/blob/master/src/aodv/model/aodv-routing-protocol.cc
+std::uniform_int_distribution<int> jitter_distribution(0, 10); // mean of 10.0, std deviation of 5.0 (dont want negative jitter)
 
 
 struct Packet {
@@ -71,7 +76,7 @@ void receiver(char* from) {
       now + constant_playout_delay + jitter
     };
 
-    // std::cout << "Received " << header.get_sequence_number() << " at " << std::chrono::steady_clock::now().time_since_epoch().count() << "\n";
+    // std::cout << "Received " << header.get_sequence_number() << " with ts " << header.get_timestamp() << "\n";
     
     auto ssq_no = header.get_sequence_number();
     if (ssq_no >= 100 && ssq_no < 110) {
