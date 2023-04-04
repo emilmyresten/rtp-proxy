@@ -22,15 +22,15 @@
 const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
 std::mutex network_mutex; // protect the priority queue
 
-auto constant_playout_delay = std::chrono::seconds(2);
-using variable_playout_delay_unit = std::chrono::milliseconds;
+auto constant_playout_delay = std::chrono::milliseconds(10);
+using variable_playout_delay_unit = std::chrono::microseconds;
 std::default_random_engine random_generator(1); // explicitly seed the random generator for clarity.
 
 // PDV with Gaussian/Normal/Binomial probability density function. Haven't found real support in the literature for values of mean and stddev.
-// std::binomial_distribution<int> jitter_distribution(10.0, 5.0); // mean of 10.0, std deviation of 5.0 (dont want negative jitter)
+std::binomial_distribution<int> jitter_distribution(500, 500); // mean of 500 microseconds, std deviation of 500 microseconds i.e. rarely above 1ms.
 
 // used to simulate jitter in ns3: https://gitlab.com/nsnam/ns-3-dev/-/blob/master/src/aodv/model/aodv-routing-protocol.cc
-std::uniform_int_distribution<int> jitter_distribution(0, 10); // mean of 10.0, std deviation of 5.0 (dont want negative jitter)
+// std::uniform_int_distribution<int> jitter_distribution(0, 10); // between 0 and 10 microseconds. Too low.
 
 
 struct Packet {
