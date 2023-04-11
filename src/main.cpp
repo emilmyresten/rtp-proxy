@@ -112,11 +112,20 @@ void sender(char* to) {
   }
 }
 
+std::time_t get_current_date(std::chrono::system_clock::time_point tp)
+{
+  std::chrono::nanoseconds ns_since_epoch(tp.time_since_epoch());
+  std::chrono::time_point<std::chrono::system_clock> time_point(std::chrono::duration_cast<std::chrono::system_clock::duration>(ns_since_epoch));
+  return std::chrono::system_clock::to_time_t(time_point);
+}
 
 int main() {  
   char from[5] { "9001" };
   char to[5] { "9024" };
   std::string filepath { "../data/original_timings.txt"};
+
+  auto test_duration { std::chrono::hours(24) };
+  auto test_start { std::chrono::system_clock::now() };
 
   std::thread recv_thread(receiver, from);
   std::thread send_thread(sender, to);
@@ -125,15 +134,16 @@ int main() {
             << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6")
             << " with a " << constant_playout_delay.count() << " second propagation delay." << "\n";
 
-  std::chrono::nanoseconds ns_since_epoch(std::chrono::system_clock::now().time_since_epoch());
-  std::chrono::time_point<std::chrono::system_clock> time_point(std::chrono::duration_cast<std::chrono::system_clock::duration>(ns_since_epoch));
-  std::time_t time_t(std::chrono::system_clock::to_time_t(time_point));
   
-  std::cerr << "Session init: " << std::put_time(std::localtime(&time_t), "%Y-%m-%d %H:%M:%S") << "\n";
+  std::time_t start_date { get_current_date(test_start) };
+  
+  std::cerr << "Session init: " << std::put_time(std::localtime(&start_date), "%Y-%m-%d %H:%M:%S") << "\n";
 
-  std::cout << "Press enter to stop.\n";
-  std::cin.get(); // main thread blocks here until something arrives on stdin.
+  while (std::chrono::system_clock::now() - test_start < test_duration);
 
+  std::time_t end_date { get_current_date(std::chrono::system_clock::now()) };
+  
+  std::cerr << "Session stopped at: " << std::put_time(std::localtime(&end_date), "%Y-%m-%d %H:%M:%S") << "\n";
   // signal to stop the thread
   keep_server_running = false;
 
