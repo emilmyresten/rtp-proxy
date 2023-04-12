@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netdb.h>
@@ -22,16 +23,62 @@
 const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
 std::mutex network_mutex; // protect the priority queue
 
-auto constant_playout_delay = std::chrono::milliseconds(10);
+auto constant_playout_delay = std::chrono::milliseconds(40);
 using variable_playout_delay_unit = std::chrono::microseconds;
 std::default_random_engine random_generator(1); // explicitly seed the random generator for clarity.
 
 // PDV with Gaussian/Normal/Binomial probability density function. Haven't found real support in the literature for values of mean and stddev.
-std::binomial_distribution<int> jitter_distribution(500, 500); // mean of 500 microseconds, std deviation of 500 microseconds i.e. rarely above 1ms.
+std::uniform_int_distribution<int> jitter_distribution(400, 800); // jitter as 1-2% of constant delay factor.
 
 // used to simulate jitter in ns3: https://gitlab.com/nsnam/ns-3-dev/-/blob/master/src/aodv/model/aodv-routing-protocol.cc
 // std::uniform_int_distribution<int> jitter_distribution(0, 10); // between 0 and 10 microseconds. Too low.
 
+/*
+Creates a histogram with the distribution of packet delay variation.
+Measured in microseconds (us), and stored in BUCKETS buckets. Each bucket represents BUCKET_RESOLUTION us, everything rounded down to nearest hundredth.
+As an example; A packet that arrives 686 us after the previous, will be rounded to 600 us and 'put' in bucket 6.
+*/
+const int BUCKET_RESOLUTION = 100; // 100 ms bucket resolution
+const int BUCKETS = 6000 / BUCKET_RESOLUTION;
+std::vector<int> jitter_histogram(BUCKETS);
+
+void dump_jitter_histogram_styled()
+{
+  std::cout << "\nJitter distribution, measured in microseconds, and stored in " 
+            << BUCKETS 
+            << " buckets. \nEach bucket represents " 
+            << BUCKET_RESOLUTION 
+            << " microseconds (us), everything rounded down to nearest hundredth. \nAs an example; A packet that arrives 686 us after the previous, will be rounded to 600 us and 'put' in bucket 6.\n"
+            << "Each * represents "
+            << BUCKET_RESOLUTION
+            << " samples.\n";
+
+  std::cout << "bucket_no\tno_samples\thistogram\n";
+  for (int bucket = 0; bucket < jitter_histogram.size(); bucket++)
+  {
+    std::string o = "";
+    for (int i = 1; i <= jitter_histogram[bucket]; i++)
+    {
+      if (i % BUCKET_RESOLUTION == 0)
+      {
+        o += '*';
+      }
+      
+    }
+    std::cout << bucket << "\t\t" << jitter_histogram[bucket] << "\t\t";
+    std::cout << o << "\n";
+  }
+}
+
+void dump_jitter_histogram_raw()
+{
+  std::cerr << "jitter_histogram start: \n";
+  for (int bucket = 0; bucket < jitter_histogram.size(); bucket++)
+  {
+    std::cerr << bucket << "," << jitter_histogram[bucket] << "\n";
+  }
+  std::cerr << "jitter_histogram end: \n";
+}
 
 struct Packet {
   char* data;
@@ -52,6 +99,8 @@ std::atomic<bool> keep_server_running{true};
 void receiver(char* from) {
   UdpSocket receiving_socket { from, "9002" };
   char buffer[MAXBUFLEN];
+  std::chrono::steady_clock::time_point previous_packet_arrival {};
+  bool is_first_packet = true;
   while (keep_server_running) {
     
     int received_bytes = recvfrom(receiving_socket.socket_fd, buffer, MAXBUFLEN, 0, nullptr, nullptr);
@@ -69,18 +118,46 @@ void receiver(char* from) {
     memcpy(payload, &buffer, received_bytes);
 
     auto now = std::chrono::steady_clock::now();
-    auto jitter = variable_playout_delay_unit(jitter_distribution(random_generator)%1000);
+    auto jitter = variable_playout_delay_unit(jitter_distribution(random_generator));
     Packet p {
       payload,
       received_bytes,
       now + constant_playout_delay + jitter
     };
 
+    if (is_first_packet)
+    {
+      previous_packet_arrival = now;
+      is_first_packet = false;
+    } else 
+    {
+      auto diff = now - previous_packet_arrival;
+      auto diff_in_us = std::chrono::duration_cast<std::chrono::microseconds>(diff);
+      
+      /*
+      Round down to tens of microseconds
+      */
+      int bucket = (diff_in_us.count() / BUCKET_RESOLUTION);
+      if (bucket > BUCKETS) // If larger than highest bucket, put the measurement in the highest bucket 
+      {
+        bucket = BUCKETS - 1;
+      }
+      jitter_histogram[bucket]++;
+      previous_packet_arrival = now;
+    }
+
+
+
     // std::cout << "Received " << header.get_sequence_number() << " with ts " << header.get_timestamp() << "\n";
+    // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
     auto ssq_no = header.get_sequence_number();
     if (ssq_no >= 100 && ssq_no < 110) {
       std::cerr << ssq_no << ", " << now.time_since_epoch().count() << "\n";
+      if (ssq_no == 109)
+      {
+        dump_jitter_histogram_raw();
+      } 
     }
 
     std::lock_guard<std::mutex> lock(network_mutex);
@@ -147,6 +224,8 @@ int main() {
 
   recv_thread.join();
   send_thread.join();
+
+  // dump_jitter_histogram_styled();
 
   return 0;
 }
