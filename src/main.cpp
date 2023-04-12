@@ -72,12 +72,12 @@ void dump_jitter_histogram_styled()
 
 void dump_jitter_histogram_raw()
 {
-  std::cerr << "jitter_histogram start: \n";
+  std::cerr << "- jitter_histogram start: \n";
   for (int bucket = 0; bucket < jitter_histogram.size(); bucket++)
   {
     std::cerr << bucket << "," << jitter_histogram[bucket] << "\n";
   }
-  std::cerr << "jitter_histogram end: \n";
+  std::cerr << "- jitter_histogram end\n";
 }
 
 struct Packet {
