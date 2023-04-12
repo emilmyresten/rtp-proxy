@@ -152,12 +152,9 @@ void receiver(char* from) {
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
     auto ssq_no = header.get_sequence_number();
-    if (ssq_no >= 100 && ssq_no < 110) {
+    if (ssq_no == 100) {
       std::cerr << ssq_no << ", " << now.time_since_epoch().count() << "\n";
-      if (ssq_no == 109)
-      {
-        dump_jitter_histogram_raw();
-      } 
+      dump_jitter_histogram_raw(); 
     }
 
     std::lock_guard<std::mutex> lock(network_mutex);
