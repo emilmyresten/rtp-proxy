@@ -38,8 +38,8 @@ Creates a histogram with the distribution of packet delay variation.
 Measured in microseconds (us), and stored in BUCKETS buckets. Each bucket represents BUCKET_RESOLUTION us, everything rounded down to nearest hundredth.
 As an example; A packet that arrives 686 us after the previous, will be rounded to 600 us and 'put' in bucket 6.
 */
-const int BUCKET_RESOLUTION = 100; // 100 ms bucket resolution
-const int BUCKETS = 6000 / BUCKET_RESOLUTION;
+const int BUCKET_RESOLUTION = 100; // 0.1 ms bucket resolution
+const int BUCKETS = 150'00 / BUCKET_RESOLUTION;
 std::vector<uint64_t> jitter_histogram(BUCKETS);
 
 void dump_jitter_histogram_styled()
@@ -206,7 +206,7 @@ int main() {
 
   std::cout << "Started proxy: " << from << "->" << to 
             << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6")
-            << " with a " << constant_playout_delay.count() << " second propagation delay." << "\n";
+            << " with a " << constant_playout_delay.count() << " ms delay." << "\n";
 
   
   std::time_t start_date { get_current_date(test_start) };
