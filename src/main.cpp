@@ -40,7 +40,7 @@ As an example; A packet that arrives 686 us after the previous, will be rounded 
 */
 const int BUCKET_RESOLUTION = 100; // 100 ms bucket resolution
 const int BUCKETS = 6000 / BUCKET_RESOLUTION;
-std::vector<int> jitter_histogram(BUCKETS);
+std::vector<uint64_t> jitter_histogram(BUCKETS);
 
 void dump_jitter_histogram_styled()
 {
