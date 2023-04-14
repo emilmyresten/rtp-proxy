@@ -39,7 +39,7 @@ Measured in microseconds (us), and stored in BUCKETS buckets. Each bucket repres
 As an example; A packet that arrives 686 us after the previous, will be rounded to 600 us and 'put' in bucket 6.
 */
 const int BUCKET_RESOLUTION = 100; // 0.1 ms bucket resolution
-const int BUCKETS = 150'00 / BUCKET_RESOLUTION;
+const int BUCKETS = 200'00 / BUCKET_RESOLUTION;
 std::vector<uint64_t> jitter_histogram(BUCKETS);
 
 void dump_jitter_histogram_styled()
