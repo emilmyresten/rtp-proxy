@@ -45,9 +45,9 @@ double k = 20;
 std::pair<uint16_t, uint16_t> end_to_end_delay()
 {  
   auto urnd = uniform_dist(random_generator);
+  // inverse transform sampling of Pareto distribution using its CDF
   auto res =  xm * pow((1 - urnd),(-1/k));
   uint16_t constant_factor = (uint16_t) res;
-  // inverse transform sampling of Pareto distribution using its CDF
   uint16_t variable_factor = (uint16_t) round((res - constant_factor) * 10'000);
   return std::make_pair(constant_factor, variable_factor);
 }
