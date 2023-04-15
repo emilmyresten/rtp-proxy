@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <math.h>
+#include <utility>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netdb.h>
@@ -30,8 +32,25 @@ std::default_random_engine random_generator(1); // explicitly seed the random ge
 // PDV with Gaussian/Normal/Binomial probability density function. Haven't found real support in the literature for values of mean and stddev.
 std::uniform_int_distribution<int> jitter_distribution(400, 800); // jitter as 1-2% of constant delay factor.
 
-// used to simulate jitter in ns3: https://gitlab.com/nsnam/ns-3-dev/-/blob/master/src/aodv/model/aodv-routing-protocol.cc
-// std::uniform_int_distribution<int> jitter_distribution(0, 10); // between 0 and 10 microseconds. Too low.
+/* 
+input when doing inverse transform sampling
+*/
+std::uniform_real_distribution<> uniform_dist(0.0, 1.0);
+
+/*
+Model end-to-end delay using pareto distribution according to "Modeling End-to-End Delay Using Pareto Distribution" by Zhang et. al.
+*/
+double xm = 40;
+double k = 20;
+std::pair<uint16_t, uint16_t> end_to_end_delay()
+{  
+  auto urnd = uniform_dist(random_generator);
+  auto res =  xm * pow((1 - urnd),(-1/k));
+  uint16_t constant_factor = (uint16_t) res;
+  // inverse transform sampling of Pareto distribution using its CDF
+  uint16_t variable_factor = (uint16_t) round((res - constant_factor) * 10'000);
+  return std::make_pair(constant_factor, variable_factor);
+}
 
 /*
 Creates a histogram with the distribution of packet delay variation.
@@ -118,11 +137,12 @@ void receiver(char* from) {
     memcpy(payload, &buffer, received_bytes);
 
     auto now = std::chrono::steady_clock::now();
-    auto jitter = variable_playout_delay_unit(jitter_distribution(random_generator));
+    // auto jitter = variable_playout_delay_unit(jitter_distribution(random_generator));
+    auto delay = end_to_end_delay();
     Packet p {
       payload,
       received_bytes,
-      now + constant_playout_delay + jitter
+      now + std::chrono::milliseconds(delay.first) + std::chrono::microseconds(delay.second)
     };
 
     if (is_first_packet)
