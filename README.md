@@ -1,6 +1,6 @@
 # RTP proxy
 
-C++ program to note the interdeparture times of RTP packets and simulate network jitter using a gaussian probability distribution.
+C++ program to note the interdeparture times of RTP packets and simulate network jitter using a pareto distribution.
 
 ## Passing RTP using FFMPEG
 
@@ -11,6 +11,13 @@ ffmpeg -f lavfi -i testsrc=size=640x480:rate=30 -f rtp "rtp://<ip>:<port>?pkt_si
 ```
 
 If a new sdp file is required, run with `-sdp_file saved.sdp` once to generate the session description. Don't forget to update the port within this file to make sure the player listens to the proxy.
+
+### `Proxy`:
+```
+./main <from> <to> <via>
+```
+
+This enables using multiple instances of the RTP proxy simultaneously, so that the RIST server can transmit data to an instance of the RTP proxy for the evaluation of playout schedulers.
 
 ### `Player`:
 

@@ -115,8 +115,8 @@ std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cm
 
 std::atomic<bool> keep_server_running{true};
 
-void receiver(char* from) {
-  UdpSocket receiving_socket { from, "9002" };
+void receiver(char* from, char* via) {
+  UdpSocket receiving_socket { from, via };
   char buffer[MAXBUFLEN];
   std::chrono::steady_clock::time_point previous_packet_arrival {};
   bool is_first_packet = true;
@@ -182,8 +182,8 @@ void receiver(char* from) {
   }
 }
 
-void sender(char* to) {
-  UdpSocket sending_socket { "9002", to };
+void sender(char* to, char* via) {
+  UdpSocket sending_socket { via, to };
 
   while (keep_server_running) {
     if (!network_queue.empty()) {
@@ -213,18 +213,19 @@ std::time_t get_current_date(std::chrono::system_clock::time_point tp)
   return std::chrono::system_clock::to_time_t(time_point);
 }
 
-int main() {  
-  char from[5] { "9001" };
-  char to[5] { "9024" };
+int main(int argc, char* argv[]) {  
+  char* from { argv[1] };
+  char* to { argv[2] };
+  char* via { argv[3] };
   std::string filepath { "../data/original_timings.txt"};
 
   auto test_duration { std::chrono::hours(24) };
   auto test_start { std::chrono::system_clock::now() };
 
-  std::thread recv_thread(receiver, from);
-  std::thread send_thread(sender, to);
+  std::thread recv_thread(receiver, from, via);
+  std::thread send_thread(sender, to, via);
 
-  std::cout << "Started proxy: " << from << "->" << to 
+  std::cout << "Started proxy: " << from << "->" << to << " via " << via
             << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6")
             << " with a " << constant_playout_delay.count() << " ms delay." << "\n";
 
