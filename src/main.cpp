@@ -22,6 +22,8 @@
 #include "rtp_packet.h"
 #include "udp_socket.h"
 
+auto test_duration { std::chrono::hours(24) };
+
 const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
 std::mutex network_mutex; // protect the priority queue
 
@@ -29,8 +31,8 @@ auto constant_playout_delay = std::chrono::milliseconds(40);
 using variable_playout_delay_unit = std::chrono::microseconds;
 std::default_random_engine random_generator(1); // explicitly seed the random generator for clarity.
 
-// PDV with Gaussian/Normal/Binomial probability density function. Haven't found real support in the literature for values of mean and stddev.
-std::uniform_int_distribution<int> jitter_distribution(400, 800); // jitter as 1-2% of constant delay factor.
+// uniform distribution to simply destroy the inter-packet timings.
+std::uniform_int_distribution<int> jitter_distribution(0, 1000);
 
 /* 
 input when doing inverse transform sampling
@@ -105,18 +107,20 @@ struct Packet {
   std::chrono::time_point<std::chrono::steady_clock> send_time;
 };
 
-auto cmp = [](Packet left, Packet right){
+auto cmp = [](Packet left, Packet right)
+{
     auto now = std::chrono::steady_clock::now();
     auto left_delta = left.send_time - now;
     auto right_delta = right.send_time - now;
     return left_delta > right_delta;
-  };
+};
 std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cmp); 
 
 std::atomic<bool> keep_server_running{true};
 
-void receiver(char* from, char* via) {
-  UdpSocket receiving_socket { from, via };
+void receiver(char* from, bool simulate_nw) 
+{
+  UdpSocket receiving_socket { from, "1234" };
   char buffer[MAXBUFLEN];
   std::chrono::steady_clock::time_point previous_packet_arrival {};
   bool is_first_packet = true;
@@ -138,21 +142,27 @@ void receiver(char* from, char* via) {
 
     auto now = std::chrono::steady_clock::now();
     // auto jitter = variable_playout_delay_unit(jitter_distribution(random_generator));
-    auto delay = end_to_end_delay();
-    Packet p {
-      payload,
-      received_bytes,
-      now + std::chrono::milliseconds(delay.first) + std::chrono::microseconds(delay.second)
-    };
-
+    // auto delay = end_to_end_delay();
+    // Packet p {
+    //   payload,
+    //   received_bytes,
+    //   now + std::chrono::milliseconds(delay.first) + std::chrono::microseconds(delay.second)
+    // };
+    Packet p;
     if (is_first_packet)
     {
       previous_packet_arrival = now;
       is_first_packet = false;
+      p = Packet {
+        payload,
+        received_bytes,
+        now + constant_playout_delay
+      };
     } else 
     {
       auto diff = now - previous_packet_arrival;
       auto diff_in_us = std::chrono::duration_cast<std::chrono::microseconds>(diff);
+      // std::cout << diff_in_us.count() << "\n";
       
       /*
       Round down to tens of microseconds
@@ -164,6 +174,14 @@ void receiver(char* from, char* via) {
       }
       jitter_histogram[bucket]++;
       previous_packet_arrival = now;
+
+      auto jitter = variable_playout_delay_unit(jitter_distribution(random_generator) % diff_in_us.count());
+      // std::cout << "jitter: " << jitter.count() << "\n" << "diff: " << diff_in_us.count() << "\n";
+      p = Packet {
+        payload,
+        received_bytes,
+        now + constant_playout_delay - jitter // shift packet ahead
+      };
     }
 
 
@@ -172,17 +190,22 @@ void receiver(char* from, char* via) {
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
     auto ssq_no = header.get_sequence_number();
-    if (ssq_no == 100) {
+    if (ssq_no == 100) 
+    {
       std::cerr << ssq_no << ", " << now.time_since_epoch().count() << "\n";
       dump_jitter_histogram_raw(); 
     }
 
-    std::lock_guard<std::mutex> lock(network_mutex);
-    network_queue.push(p); 
+    if (simulate_nw)
+    {
+      std::lock_guard<std::mutex> lock(network_mutex);
+      network_queue.push(p); 
+    }
   }
 }
 
-void sender(char* to, char* via) {
+void sender(char* to, char* via) 
+{
   UdpSocket sending_socket { via, to };
 
   while (keep_server_running) {
@@ -213,16 +236,15 @@ std::time_t get_current_date(std::chrono::system_clock::time_point tp)
   return std::chrono::system_clock::to_time_t(time_point);
 }
 
-int main(int argc, char* argv[]) {  
+void run_as_proxy(char* argv[])
+{
   char* from { argv[1] };
   char* to { argv[2] };
   char* via { argv[3] };
-  std::string filepath { "../data/original_timings.txt"};
 
-  auto test_duration { std::chrono::hours(24) };
   auto test_start { std::chrono::system_clock::now() };
 
-  std::thread recv_thread(receiver, from, via);
+  std::thread recv_thread(receiver, from, true);
   std::thread send_thread(sender, to, via);
 
   std::cout << "Started proxy: " << from << "->" << to << " via " << via
@@ -242,6 +264,52 @@ int main(int argc, char* argv[]) {
 
   recv_thread.join();
   send_thread.join();
+
+}
+
+
+void run_as_util(char* argv[])
+{
+  char* port { argv[1] };
+
+  auto test_start { std::chrono::system_clock::now() };
+
+  std::thread recv_thread(receiver, port, true);
+
+  std::cout << "Started point-of-measure on " << port
+            << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6") << "\n";
+
+  
+  std::time_t start_date { get_current_date(test_start) };
+  std::cerr << "Session init: " << std::put_time(std::localtime(&start_date), "%Y-%m-%d %H:%M:%S") << "\n";
+
+  std::this_thread::sleep_for(test_duration);
+  // signal to stop the threads
+  keep_server_running = false;
+
+  std::time_t end_date { get_current_date(std::chrono::system_clock::now()) };
+  std::cerr << "Session stopped at: " << std::put_time(std::localtime(&end_date), "%Y-%m-%d %H:%M:%S") << "\n";
+
+  recv_thread.join();
+}
+
+
+int main(int argc, char* argv[]) 
+{
+  if (argc-1 != 1 && argc-1 != 3)
+  {
+    std::cout << "Supply 1 argument for measurement only, 3 arguments for proxy. ./main <from> [<to> <via>]\n";
+    exit(1);
+  }
+
+  bool is_proxy = argc-1 == 3 ? true : false;
+  if (is_proxy)
+  {
+    run_as_proxy(argv);
+  } else
+  {
+    run_as_util(argv);
+  }
 
   // dump_jitter_histogram_styled();
 
