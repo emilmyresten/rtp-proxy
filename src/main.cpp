@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
+#include <memory>
 #include <math.h>
 #include <utility>
 #include <sys/types.h>
@@ -64,6 +65,28 @@ const int BUCKET_RESOLUTION = 100; // 0.1 ms bucket resolution
 const int BUCKETS = 200'00 / BUCKET_RESOLUTION;
 std::vector<uint64_t> jitter_histogram(BUCKETS);
 
+struct Packet {
+  std::shared_ptr<char[]> data;
+  int byte_size; // the bytes received by recvfrom
+  std::chrono::time_point<std::chrono::steady_clock> send_time;
+
+  Packet(
+    std::shared_ptr<char[]> d,
+    int bs, 
+    std::chrono::time_point<std::chrono::steady_clock> st) : data(d), byte_size(bs), send_time(st) {}
+};
+
+auto cmp = [](std::shared_ptr<Packet> left, std::shared_ptr<Packet> right)
+{
+    auto now = std::chrono::steady_clock::now();
+    auto left_delta = left->send_time - now;
+    auto right_delta = right->send_time - now;
+    return left_delta > right_delta;
+};
+std::priority_queue<std::shared_ptr<Packet>, std::vector<std::shared_ptr<Packet>>, decltype(cmp)> network_queue(cmp); 
+
+std::atomic<bool> keep_server_running{true};
+
 void dump_jitter_histogram_styled()
 {
   std::cout << "\nJitter distribution, measured in microseconds, and stored in " 
@@ -101,23 +124,6 @@ void dump_jitter_histogram_raw()
   }
   std::cerr << "- jitter_histogram end\n";
 }
-
-struct Packet {
-  char* data;
-  int num_bytes_to_send; // the bytes received by recvfrom
-  std::chrono::time_point<std::chrono::steady_clock> send_time;
-};
-
-auto cmp = [](Packet left, Packet right)
-{
-    auto now = std::chrono::steady_clock::now();
-    auto left_delta = left.send_time - now;
-    auto right_delta = right.send_time - now;
-    return left_delta > right_delta;
-};
-std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cmp); 
-
-std::atomic<bool> keep_server_running{true};
 
 std::chrono::microseconds add_to_jitter_histogram_and_return_diff(std::chrono::steady_clock::time_point now, std::chrono::steady_clock::time_point prev)
 {
@@ -158,7 +164,7 @@ void receiver(char* from, double packet_reorder_percentage)
   char buffer[MAXBUFLEN];
   std::chrono::steady_clock::time_point previous_packet_arrival {};
   bool is_first_packet = true;
-  Packet* previous_packet = nullptr;
+  std::shared_ptr<Packet> previous_packet = nullptr;
   std::set<int> reorder_on = create_reorder_set(packet_reorder_percentage);
   uint64_t packets_received {};
   uint64_t packets_reordered {};
@@ -177,15 +183,15 @@ void receiver(char* from, double packet_reorder_percentage)
     rtp_header header;
     memcpy(&header, buffer, sizeof(header));
     
-    char* payload = new char[received_bytes];
-    memcpy(payload, &buffer, received_bytes);
+    std::shared_ptr<char[]> data(new char[received_bytes]);
+    memcpy(data.get(), &buffer, received_bytes);
+    
+
 
     auto now = std::chrono::steady_clock::now();
-    Packet* p = new Packet {
-        payload,
-        received_bytes,
-        now + constant_playout_delay
-    };
+    auto p = std::make_shared<Packet>(
+      std::move(data), received_bytes, now + constant_playout_delay
+    );
     if (is_first_packet)
     {
       previous_packet_arrival = now;
@@ -221,8 +227,7 @@ void receiver(char* from, double packet_reorder_percentage)
     if (previous_packet != nullptr)
     {
       std::lock_guard<std::mutex> lock(network_mutex);
-      network_queue.push(*previous_packet);
-      delete previous_packet;
+      network_queue.push(previous_packet);
     }
     previous_packet = p;
   }
@@ -234,21 +239,21 @@ void sender(char* to, char* via)
 
   while (keep_server_running) {
     if (!network_queue.empty()) {
-      Packet p = network_queue.top(); // .top() doesn't mutate, no need to lock.
-      if ((p.send_time - std::chrono::steady_clock::now()).count() <= 0) {
-        std::unique_lock<std::mutex> lock(network_mutex);
-        network_queue.pop();
-        lock.unlock();
-
-        int sent_bytes = sendto(sending_socket.socket_fd, p.data, p.num_bytes_to_send, 0, sending_socket.destaddr->ai_addr, sending_socket.destaddr->ai_addrlen);
-        if (sent_bytes < 0 || sent_bytes != p.num_bytes_to_send) // we should proxy the examt same message.
+      std::unique_lock<std::mutex> lock(network_mutex);
+      const std::shared_ptr<Packet>& p = network_queue.top(); // .top() doesn't mutate, no need to lock.
+      if ((p.get()->send_time - std::chrono::steady_clock::now()).count() <= 0) {
+        int sent_bytes = sendto(sending_socket.socket_fd, p.get()->data.get(), p->byte_size, 0, sending_socket.destaddr->ai_addr, sending_socket.destaddr->ai_addrlen);
+        if (sent_bytes < 0 || sent_bytes != p->byte_size) // we should proxy the examt same message.
         {
           perror("Failed to send datagram\n");
           continue;
         }
-        // std::cout << "Sent " << ((rtp_header*) p.data)->get_sequence_number() << "\n";
-        delete [] p.data;
+
+        network_queue.pop(); // release shared_ptr from network_queue
+        
+        // std::cout << "Sent " << p.get()->send_time.time_since_epoch().count() << "\n";
       }
+      lock.unlock();
     } 
   }
 }
