@@ -252,6 +252,49 @@ void sender(char* to, char* via)
   }
 }
 
+void measurer(char* from) 
+{
+  UdpSocket receiving_socket { from, "1234" };
+  char buffer[MAXBUFLEN];
+  std::chrono::steady_clock::time_point previous_packet_arrival {};
+  bool is_first_packet = true;  
+  while (keep_server_running) {
+    
+    int received_bytes = recvfrom(receiving_socket.socket_fd, buffer, MAXBUFLEN, 0, nullptr, nullptr);
+    if (received_bytes < 0) 
+    {
+      perror("Failed to receive datagram\n");
+      continue;
+    }
+    buffer[received_bytes] = '\0';
+
+    rtp_header header;
+    memcpy(&header, buffer, sizeof(header));
+    
+    auto now = std::chrono::steady_clock::now();
+    if (is_first_packet)
+    {
+      previous_packet_arrival = now;
+      is_first_packet = false;
+    } else 
+    {
+      auto diff_in_us = add_to_jitter_histogram_and_return_diff(now, previous_packet_arrival);
+      previous_packet_arrival = now;
+
+    }
+
+    // std::cout << "Received " << header.get_sequence_number() << " with ts " << header.get_timestamp() << "\n";
+    // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
+    
+    auto seq_no = header.get_sequence_number();
+    if (seq_no == 100) 
+    {
+      std::cerr << seq_no << ", " << now.time_since_epoch().count() << "\n";
+      dump_jitter_histogram_raw(); 
+    }
+  }
+}
+
 std::time_t get_current_date(std::chrono::system_clock::time_point tp)
 {
   std::chrono::nanoseconds ns_since_epoch(tp.time_since_epoch());
@@ -299,7 +342,7 @@ void run_as_util(char* argv[])
 
   auto test_start { std::chrono::system_clock::now() };
 
-  std::thread recv_thread(receiver, port, true, 0.0);
+  std::thread measure_thread(measurer, port);
 
   std::cout << "Started point-of-measure on " << port
             << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6") << "\n";
@@ -315,7 +358,7 @@ void run_as_util(char* argv[])
   std::time_t end_date { get_current_date(std::chrono::system_clock::now()) };
   std::cerr << "Session stopped at: " << std::put_time(std::localtime(&end_date), "%Y-%m-%d %H:%M:%S") << "\n";
 
-  recv_thread.join();
+  measure_thread.join();
 }
 
 
