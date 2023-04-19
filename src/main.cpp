@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <set>
 #include <math.h>
 #include <utility>
 #include <sys/types.h>
@@ -118,12 +119,50 @@ std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cm
 
 std::atomic<bool> keep_server_running{true};
 
-void receiver(char* from, bool simulate_nw) 
+std::chrono::microseconds add_to_jitter_histogram_and_return_diff(std::chrono::steady_clock::time_point now, std::chrono::steady_clock::time_point prev)
+{
+  auto diff = now - prev;
+  auto diff_in_us = std::chrono::duration_cast<std::chrono::microseconds>(diff);
+      
+  /*
+  Round down to BUCKET_RESOLUTION of microseconds
+  */
+  int bucket = (diff_in_us.count() / BUCKET_RESOLUTION);
+  if (bucket > BUCKETS) // If larger than highest bucket, put the measurement in the highest bucket 
+  {
+    bucket = BUCKETS - 1;
+  }
+  jitter_histogram[bucket]++;
+
+  return diff_in_us;
+}
+
+
+std::set<int> create_reorder_set(double packet_reorder_percentage)
+{
+  int num_reorders = round<int>(65355 * packet_reorder_percentage);
+  std::uniform_int_distribution<> dis(0, 65355);
+  std::set<int> unique_numbers;
+  while (unique_numbers.size() < num_reorders) {
+    int new_number = dis(random_generator);
+    if (unique_numbers.find(new_number) == unique_numbers.end()) {
+      unique_numbers.insert(new_number);
+    }
+  }
+  return unique_numbers;
+}
+
+void receiver(char* from, bool simulate_nw, double packet_reorder_percentage) 
 {
   UdpSocket receiving_socket { from, "1234" };
   char buffer[MAXBUFLEN];
   std::chrono::steady_clock::time_point previous_packet_arrival {};
   bool is_first_packet = true;
+  Packet* previous_packet = nullptr;
+  std::set<int> reorder_on = create_reorder_set(packet_reorder_percentage);
+  uint64_t packets_received {};
+  uint64_t packets_reordered {};
+  bool previous_was_reorder = false;
   while (keep_server_running) {
     
     int received_bytes = recvfrom(receiving_socket.socket_fd, buffer, MAXBUFLEN, 0, nullptr, nullptr);
@@ -133,6 +172,7 @@ void receiver(char* from, bool simulate_nw)
       continue;
     }
     buffer[received_bytes] = '\0';
+    packets_received += 1;
 
     rtp_header header;
     memcpy(&header, buffer, sizeof(header));
@@ -141,47 +181,29 @@ void receiver(char* from, bool simulate_nw)
     memcpy(payload, &buffer, received_bytes);
 
     auto now = std::chrono::steady_clock::now();
-    // auto jitter = variable_playout_delay_unit(jitter_distribution(random_generator));
-    // auto delay = end_to_end_delay();
-    // Packet p {
-    //   payload,
-    //   received_bytes,
-    //   now + std::chrono::milliseconds(delay.first) + std::chrono::microseconds(delay.second)
-    // };
-    Packet p;
+    Packet* p = new Packet {
+        payload,
+        received_bytes,
+        now + constant_playout_delay
+    };
     if (is_first_packet)
     {
       previous_packet_arrival = now;
       is_first_packet = false;
-      p = Packet {
-        payload,
-        received_bytes,
-        now + constant_playout_delay
-      };
     } else 
     {
-      auto diff = now - previous_packet_arrival;
-      auto diff_in_us = std::chrono::duration_cast<std::chrono::microseconds>(diff);
-      // std::cout << diff_in_us.count() << "\n";
-      
-      /*
-      Round down to tens of microseconds
-      */
-      int bucket = (diff_in_us.count() / BUCKET_RESOLUTION);
-      if (bucket > BUCKETS) // If larger than highest bucket, put the measurement in the highest bucket 
-      {
-        bucket = BUCKETS - 1;
-      }
-      jitter_histogram[bucket]++;
+      auto diff_in_us = add_to_jitter_histogram_and_return_diff(now, previous_packet_arrival);
       previous_packet_arrival = now;
 
       auto jitter = variable_playout_delay_unit(jitter_distribution(random_generator) % diff_in_us.count());
-      // std::cout << "jitter: " << jitter.count() << "\n" << "diff: " << diff_in_us.count() << "\n";
-      p = Packet {
-        payload,
-        received_bytes,
-        now + constant_playout_delay - jitter // shift packet ahead
-      };
+      if (reorder_on.count(header.get_sequence_number()))
+      {
+        packets_reordered += 1;
+        jitter += diff_in_us + std::chrono::milliseconds(2);
+        // std::cout << header.get_sequence_number() << " was reordered \n";
+        // std::cout << "reorder ratio: " << (double) packets_reordered / packets_received << "\n";
+      }
+      previous_packet->send_time += jitter;
     }
 
 
@@ -196,11 +218,12 @@ void receiver(char* from, bool simulate_nw)
       dump_jitter_histogram_raw(); 
     }
 
-    if (simulate_nw)
+    if (simulate_nw && previous_packet != nullptr)
     {
       std::lock_guard<std::mutex> lock(network_mutex);
-      network_queue.push(p); 
+      network_queue.push(*previous_packet);
     }
+    previous_packet = p;
   }
 }
 
@@ -241,15 +264,17 @@ void run_as_proxy(char* argv[])
   char* from { argv[1] };
   char* to { argv[2] };
   char* via { argv[3] };
+  double reorders { std::stod(argv[4]) };
 
   auto test_start { std::chrono::system_clock::now() };
 
-  std::thread recv_thread(receiver, from, true);
+  std::thread recv_thread(receiver, from, true, reorders);
   std::thread send_thread(sender, to, via);
 
   std::cout << "Started proxy: " << from << "->" << to << " via " << via
             << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6")
-            << " with a " << constant_playout_delay.count() << " ms delay." << "\n";
+            << " with a " << constant_playout_delay.count() << " ms delay and " 
+            << reorders * 100 << "% reorders. " << "\n";
 
   
   std::time_t start_date { get_current_date(test_start) };
@@ -274,7 +299,7 @@ void run_as_util(char* argv[])
 
   auto test_start { std::chrono::system_clock::now() };
 
-  std::thread recv_thread(receiver, port, true);
+  std::thread recv_thread(receiver, port, true, 0.0);
 
   std::cout << "Started point-of-measure on " << port
             << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6") << "\n";
@@ -296,13 +321,13 @@ void run_as_util(char* argv[])
 
 int main(int argc, char* argv[]) 
 {
-  if (argc-1 != 1 && argc-1 != 3)
+  if (argc-1 != 1 && argc-1 != 4)
   {
-    std::cout << "Supply 1 argument for measurement only, 3 arguments for proxy. ./main <from> [<to> <via>]\n";
+    std::cout << "Supply 1 argument for measurement only, 4 arguments for proxy. ./main <from> [<to> <via> <reordering%>]\n";
     exit(1);
   }
 
-  bool is_proxy = argc-1 == 3 ? true : false;
+  bool is_proxy = argc-1 == 4 ? true : false;
   if (is_proxy)
   {
     run_as_proxy(argv);
