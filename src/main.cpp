@@ -222,6 +222,7 @@ void receiver(char* from, double packet_reorder_percentage)
     {
       std::lock_guard<std::mutex> lock(network_mutex);
       network_queue.push(*previous_packet);
+      delete previous_packet;
     }
     previous_packet = p;
   }
