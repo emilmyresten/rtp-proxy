@@ -246,7 +246,7 @@ void sender(char* to, char* via)
           continue;
         }
         // std::cout << "Sent " << ((rtp_header*) p.data)->get_sequence_number() << "\n";
-        delete p.data;
+        delete [] p.data;
       }
     } 
   }
