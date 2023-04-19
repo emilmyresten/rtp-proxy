@@ -152,7 +152,7 @@ std::set<int> create_reorder_set(double packet_reorder_percentage)
   return unique_numbers;
 }
 
-void receiver(char* from, bool simulate_nw, double packet_reorder_percentage) 
+void receiver(char* from, double packet_reorder_percentage) 
 {
   UdpSocket receiving_socket { from, "1234" };
   char buffer[MAXBUFLEN];
@@ -218,7 +218,7 @@ void receiver(char* from, bool simulate_nw, double packet_reorder_percentage)
       dump_jitter_histogram_raw(); 
     }
 
-    if (simulate_nw && previous_packet != nullptr)
+    if (previous_packet != nullptr)
     {
       std::lock_guard<std::mutex> lock(network_mutex);
       network_queue.push(*previous_packet);
@@ -311,7 +311,7 @@ void run_as_proxy(char* argv[])
 
   auto test_start { std::chrono::system_clock::now() };
 
-  std::thread recv_thread(receiver, from, true, reorders);
+  std::thread recv_thread(receiver, from, reorders);
   std::thread send_thread(sender, to, via);
 
   std::cout << "Started proxy: " << from << "->" << to << " via " << via
