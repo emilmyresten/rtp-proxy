@@ -22,6 +22,7 @@
 #include "rtp_packet.h"
 #include "udp_socket.h"
 
+const double nanos_per_90kHz = 11111.1111111;
 
 auto test_duration { std::chrono::hours(24) };
 
@@ -81,7 +82,13 @@ std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cm
 
 std::atomic<bool> keep_server_running{true};
 
-std::chrono::microseconds add_to_jitter_histogram_and_return_diff(std::chrono::steady_clock::time_point now, std::chrono::steady_clock::time_point prev)
+struct interarrival_jitter
+{
+  uint64_t previous_transit = 0;
+  double estimate = 0;
+};
+
+void add_to_jitter_histogram(std::chrono::steady_clock::time_point now, std::chrono::steady_clock::time_point prev)
 {
   auto diff = now - prev;
   auto diff_in_us = std::chrono::duration_cast<std::chrono::microseconds>(diff);
@@ -95,8 +102,6 @@ std::chrono::microseconds add_to_jitter_histogram_and_return_diff(std::chrono::s
     bucket = BUCKETS - 1;
   }
   jitter_histogram[bucket]++;
-
-  return diff_in_us;
 }
 
 void dump_jitter_histogram_styled()
@@ -137,11 +142,25 @@ void dump_jitter_histogram_raw()
   std::cerr << "- jitter_histogram end\n";
 }
 
+/*
+Inter-arrival jitter estimate according to RFC3550 https://www.rfc-editor.org/rfc/rfc3550#appendix-A.8
+*/
+void update_jitter_estimate(interarrival_jitter* j, double transit)
+{
+  auto d = transit - j->previous_transit;
+  j->previous_transit = transit;
+  if (d < 0) { d = - d; }
+  j->estimate += (1.0/16.0) * ((double) d - j->estimate);
+}
+
 void receiver(char* from, char* via) {
   UdpSocket receiving_socket { from, via };
   char buffer[MAXBUFLEN];
   std::chrono::steady_clock::time_point previous_packet_arrival {};
   bool is_first_packet = true;
+
+  interarrival_jitter rfc3550_jitter{};
+
   while (keep_server_running) {
     
     int received_bytes = recvfrom(receiving_socket.socket_fd, buffer, MAXBUFLEN, 0, nullptr, nullptr);
@@ -172,13 +191,16 @@ void receiver(char* from, char* via) {
     {
       previous_packet_arrival = now;
       is_first_packet = false;
+      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
     } else 
     {
-      auto diff_in_us = add_to_jitter_histogram_and_return_diff(now, previous_packet_arrival);
+      add_to_jitter_histogram(now, previous_packet_arrival);
+      auto transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
+      update_jitter_estimate(&rfc3550_jitter, transit);
       previous_packet_arrival = now;
     }
 
-
+    // std::cout << rfc3550_jitter.previous_transit << "\n";
 
     // std::cout << "Received " << header.get_sequence_number() << " with ts " << header.get_timestamp() << "\n";
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
@@ -187,6 +209,7 @@ void receiver(char* from, char* via) {
     if (ssq_no == 100) {
       std::cerr << ssq_no << ", " << now.time_since_epoch().count() << "\n";
       dump_jitter_histogram_raw(); 
+      std::cerr << "inter-arrival jitter: " << rfc3550_jitter.estimate << "ns\n";
     }
 
     std::lock_guard<std::mutex> lock(network_mutex);
@@ -223,6 +246,9 @@ void measurer(char* from)
   char buffer[MAXBUFLEN];
   std::chrono::steady_clock::time_point previous_packet_arrival {};
   bool is_first_packet = true;  
+
+  interarrival_jitter rfc3550_jitter{};
+
   while (keep_server_running) {
     
     int received_bytes = recvfrom(receiving_socket.socket_fd, buffer, MAXBUFLEN, 0, nullptr, nullptr);
@@ -241,9 +267,12 @@ void measurer(char* from)
     {
       previous_packet_arrival = now;
       is_first_packet = false;
+      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
     } else 
     {
-      auto diff_in_us = add_to_jitter_histogram_and_return_diff(now, previous_packet_arrival);
+      add_to_jitter_histogram(now, previous_packet_arrival);
+      auto transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
+      update_jitter_estimate(&rfc3550_jitter, transit);
       previous_packet_arrival = now;
     }
 
@@ -255,6 +284,7 @@ void measurer(char* from)
     {
       std::cerr << seq_no << ", " << now.time_since_epoch().count() << "\n";
       dump_jitter_histogram_raw(); 
+      std::cerr << "inter-arrival jitter: " << rfc3550_jitter.estimate << "ns\n";
     }
   }
 }

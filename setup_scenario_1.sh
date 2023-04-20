@@ -22,23 +22,21 @@ start_traffic_shaping() {
 mkdir ./data/$1
 
 reset_traffic_shaping() {
-    tc qdisc del dev lo root
+    tc qdisc del dev $IF root
 }
 
-start_measure_point_in_bg() {
+start_measure_point() {
     ./build/main 9026 2>./data/$1/reconstructed.txt &
 }
 
-start_proxy_in_bg() {
+start_proxy() {
     ./build/main 9001 9024 9002 2>./data/$1/initial.txt &
 }
 
 
-
+reset_traffic_shaping
 start_traffic_shaping
-start_measure_point_in_bg $1
-start_proxy_in_bg $1
+start_measure_point $1
+start_proxy $1
 
 ps T
-
-# reset_traffic_shaping
