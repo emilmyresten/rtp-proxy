@@ -61,8 +61,8 @@ Creates a histogram with the distribution of packet delay variation.
 Measured in microseconds (us), and stored in BUCKETS buckets. Each bucket represents BUCKET_RESOLUTION us, everything rounded down to nearest hundredth.
 As an example; A packet that arrives 686 us after the previous, will be rounded to 600 us and 'put' in bucket 6.
 */
-const int BUCKET_RESOLUTION = 100; // 0.1 ms bucket resolution
-const int BUCKETS = 200'00 / BUCKET_RESOLUTION;
+const int BUCKET_RESOLUTION = 10; // 10 microseconds bucket resolution
+const int BUCKETS = 2000;
 std::vector<uint64_t> jitter_histogram(BUCKETS);
 
 struct Packet {
