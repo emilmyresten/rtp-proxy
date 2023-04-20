@@ -22,6 +22,9 @@
 #include "rtp_packet.h"
 #include "udp_socket.h"
 
+
+auto test_duration { std::chrono::hours(24) };
+
 const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
 std::mutex network_mutex; // protect the priority queue
 
@@ -47,9 +50,9 @@ std::pair<uint16_t, uint16_t> end_to_end_delay()
   auto urnd = uniform_dist(random_generator);
   // inverse transform sampling of Pareto distribution using its CDF
   auto res =  xm * pow((1 - urnd),(-1/k));
-  uint16_t constant_factor = (uint16_t) res;
-  uint16_t variable_factor = (uint16_t) round((res - constant_factor) * 1'000);
-  return std::make_pair(constant_factor, variable_factor);
+  uint16_t whole_factor = (uint16_t) res;
+  uint16_t decimal_factor = (uint16_t) round((res - whole_factor) * 1'000);
+  return std::make_pair(whole_factor, decimal_factor);
 }
 
 /*
@@ -60,6 +63,41 @@ As an example; A packet that arrives 686 us after the previous, will be rounded 
 const int BUCKET_RESOLUTION = 100; // 0.1 ms bucket resolution
 const int BUCKETS = 200'00 / BUCKET_RESOLUTION;
 std::vector<uint64_t> jitter_histogram(BUCKETS);
+
+struct Packet {
+  char* data;
+  int num_bytes_to_send; // the bytes received by recvfrom
+  std::chrono::time_point<std::chrono::steady_clock> send_time;
+};
+
+auto cmp = [](Packet left, Packet right)
+{
+    auto now = std::chrono::steady_clock::now();
+    auto left_delta = left.send_time - now;
+    auto right_delta = right.send_time - now;
+    return left_delta > right_delta;
+};
+std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cmp); 
+
+std::atomic<bool> keep_server_running{true};
+
+std::chrono::microseconds add_to_jitter_histogram_and_return_diff(std::chrono::steady_clock::time_point now, std::chrono::steady_clock::time_point prev)
+{
+  auto diff = now - prev;
+  auto diff_in_us = std::chrono::duration_cast<std::chrono::microseconds>(diff);
+      
+  /*
+  Round down to BUCKET_RESOLUTION of microseconds
+  */
+  int bucket = (diff_in_us.count() / BUCKET_RESOLUTION);
+  if (bucket > BUCKETS) // If larger than highest bucket, put the measurement in the highest bucket 
+  {
+    bucket = BUCKETS - 1;
+  }
+  jitter_histogram[bucket]++;
+
+  return diff_in_us;
+}
 
 void dump_jitter_histogram_styled()
 {
@@ -99,22 +137,6 @@ void dump_jitter_histogram_raw()
   std::cerr << "- jitter_histogram end\n";
 }
 
-struct Packet {
-  char* data;
-  int num_bytes_to_send; // the bytes received by recvfrom
-  std::chrono::time_point<std::chrono::steady_clock> send_time;
-};
-
-auto cmp = [](Packet left, Packet right){
-    auto now = std::chrono::steady_clock::now();
-    auto left_delta = left.send_time - now;
-    auto right_delta = right.send_time - now;
-    return left_delta > right_delta;
-  };
-std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cmp); 
-
-std::atomic<bool> keep_server_running{true};
-
 void receiver(char* from, char* via) {
   UdpSocket receiving_socket { from, via };
   char buffer[MAXBUFLEN];
@@ -151,18 +173,7 @@ void receiver(char* from, char* via) {
       is_first_packet = false;
     } else 
     {
-      auto diff = now - previous_packet_arrival;
-      auto diff_in_us = std::chrono::duration_cast<std::chrono::microseconds>(diff);
-      
-      /*
-      Round down to tens of microseconds
-      */
-      int bucket = (diff_in_us.count() / BUCKET_RESOLUTION);
-      if (bucket > BUCKETS) // If larger than highest bucket, put the measurement in the highest bucket 
-      {
-        bucket = BUCKETS - 1;
-      }
-      jitter_histogram[bucket]++;
+      auto diff_in_us = add_to_jitter_histogram_and_return_diff(now, previous_packet_arrival);
       previous_packet_arrival = now;
     }
 
@@ -205,6 +216,47 @@ void sender(char* to, char* via) {
     } 
   }
 }
+void measurer(char* from) 
+{
+  UdpSocket receiving_socket { from, "1234" };
+  char buffer[MAXBUFLEN];
+  std::chrono::steady_clock::time_point previous_packet_arrival {};
+  bool is_first_packet = true;  
+  while (keep_server_running) {
+    
+    int received_bytes = recvfrom(receiving_socket.socket_fd, buffer, MAXBUFLEN, 0, nullptr, nullptr);
+    if (received_bytes < 0) 
+    {
+      perror("Failed to receive datagram\n");
+      continue;
+    }
+    buffer[received_bytes] = '\0';
+
+    rtp_header header;
+    memcpy(&header, buffer, sizeof(header));
+    
+    auto now = std::chrono::steady_clock::now();
+    if (is_first_packet)
+    {
+      previous_packet_arrival = now;
+      is_first_packet = false;
+    } else 
+    {
+      auto diff_in_us = add_to_jitter_histogram_and_return_diff(now, previous_packet_arrival);
+      previous_packet_arrival = now;
+    }
+
+    // std::cout << "Received " << header.get_sequence_number() << " with ts " << header.get_timestamp() << "\n";
+    // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
+    
+    auto seq_no = header.get_sequence_number();
+    if (seq_no == 100) 
+    {
+      std::cerr << seq_no << ", " << now.time_since_epoch().count() << "\n";
+      dump_jitter_histogram_raw(); 
+    }
+  }
+}
 
 std::time_t get_current_date(std::chrono::system_clock::time_point tp)
 {
@@ -213,13 +265,12 @@ std::time_t get_current_date(std::chrono::system_clock::time_point tp)
   return std::chrono::system_clock::to_time_t(time_point);
 }
 
-int main(int argc, char* argv[]) {  
+void run_as_proxy(char* argv[])
+{
   char* from { argv[1] };
   char* to { argv[2] };
   char* via { argv[3] };
-  std::string filepath { "../data/original_timings.txt"};
 
-  auto test_duration { std::chrono::hours(24) };
   auto test_start { std::chrono::system_clock::now() };
 
   std::thread recv_thread(receiver, from, via);
@@ -227,7 +278,7 @@ int main(int argc, char* argv[]) {
 
   std::cout << "Started proxy: " << from << "->" << to << " via " << via
             << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6")
-            << " with a " << constant_playout_delay.count() << " ms delay." << "\n";
+            << " with a " << constant_playout_delay.count() << " ms delay.\n";
 
   
   std::time_t start_date { get_current_date(test_start) };
@@ -242,6 +293,52 @@ int main(int argc, char* argv[]) {
 
   recv_thread.join();
   send_thread.join();
+
+}
+
+
+void run_as_util(char* argv[])
+{
+  char* port { argv[1] };
+
+  auto test_start { std::chrono::system_clock::now() };
+
+  std::thread measure_thread(measurer, port);
+
+  std::cout << "Started point-of-measure on " << port
+            << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6") << "\n";
+
+  
+  std::time_t start_date { get_current_date(test_start) };
+  std::cerr << "Session init: " << std::put_time(std::localtime(&start_date), "%Y-%m-%d %H:%M:%S") << "\n";
+
+  std::this_thread::sleep_for(test_duration);
+  // signal to stop the threads
+  keep_server_running = false;
+
+  std::time_t end_date { get_current_date(std::chrono::system_clock::now()) };
+  std::cerr << "Session stopped at: " << std::put_time(std::localtime(&end_date), "%Y-%m-%d %H:%M:%S") << "\n";
+
+  measure_thread.join();
+}
+
+
+int main(int argc, char* argv[]) 
+{
+  if (argc-1 != 1 && argc-1 != 3)
+  {
+    std::cout << "Supply 1 argument for measurement only, 3 arguments for proxy. ./main <from> [<to> <via>]\n";
+    exit(1);
+  }
+
+  bool is_proxy = argc-1 == 3 ? true : false;
+  if (is_proxy)
+  {
+    run_as_proxy(argv);
+  } else
+  {
+    run_as_util(argv);
+  }
 
   // dump_jitter_histogram_styled();
 
