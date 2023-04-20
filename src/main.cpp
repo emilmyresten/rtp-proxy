@@ -164,7 +164,8 @@ void receiver(char* from, char* via) {
     Packet p {
       payload,
       received_bytes,
-      now + std::chrono::milliseconds(delay.first) + std::chrono::microseconds(delay.second)
+      // now + std::chrono::milliseconds(delay.first) + std::chrono::microseconds(delay.second)
+      now + constant_playout_delay
     };
 
     if (is_first_packet)

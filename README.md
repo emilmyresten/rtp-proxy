@@ -43,3 +43,28 @@ Collect data by piping stderr to file, e.g.
 ```
 ./main 2>./test_data.txt
 ```
+
+
+## TC / NetEm
+
+Show all queueing rules on loopback
+```
+sudo tc qdisc del dev lo root
+```
+
+Remove all queueing rules from loopback
+```
+sudo tc qdisc del dev lo root
+```
+
+`Shape only the traffic going to a specific port.`
+```
+sudo tc qdisc add dev lo root handle 1: prio
+sudo tc filter add dev lo parent 1: protocol ip u32 match ip dport 9024 0xffff flowid 1:1
+sudo tc qdisc add dev lo parent 1:1 netem delay 100ms 10ms distribution normal
+```
+```
+sudo tc qdisc del dev lo root handle 1: prio
+sudo tc qdisc del dev lo parent 1:1 netem
+sudo tc filter del dev lo parent 1: protocol ip u32 match ip dport 9024 0xffff flowid 1:1
+```
