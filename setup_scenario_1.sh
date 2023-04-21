@@ -1,7 +1,7 @@
 #!/bin/bash
 
 IF=lo
-DPORT=9024
+DPORT=9003
 SCENARIO=1
 LATENCY=100ms
 JITTER=10ms
@@ -25,18 +25,25 @@ reset_traffic_shaping() {
     tc qdisc del dev $IF root
 }
 
+## ffmpeg to port 9001 (initial) -> jitter to port 9003 (jittered) -> rist server on port 9005 -> reconstructed measure on 9006.
+
 start_measure_point() {
-    ./build/main 9026 2>./data/$1/reconstructed.txt &
+    ./build/main 9006 2>./data/$1/reconstructed.txt &
 }
 
-start_proxy() {
-    ./build/main 9001 9024 9002 2>./data/$1/initial.txt &
+start_jittered_proxy() {
+    ./build/main 9003 9005 9004 2>./data/$1/jittered.txt &
+}
+
+start_initial_proxy() {
+    ./build/main 9001 9003 9002 2>./data/$1/initial.txt &
 }
 
 
 reset_traffic_shaping
 start_traffic_shaping
+start_initial_proxy $1
+start_jittered_proxy $1
 start_measure_point $1
-start_proxy $1
 
 ps T

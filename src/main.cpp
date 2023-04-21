@@ -29,7 +29,7 @@ auto test_duration { std::chrono::hours(24) };
 const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
 std::mutex network_mutex; // protect the priority queue
 
-auto constant_playout_delay = std::chrono::milliseconds(40);
+auto constant_playout_delay = std::chrono::milliseconds(0);
 using variable_playout_delay_unit = std::chrono::microseconds;
 std::default_random_engine random_generator(1); // explicitly seed the random generator for clarity.
 
@@ -207,7 +207,7 @@ void receiver(char* from, char* via) {
     
     auto ssq_no = header.get_sequence_number();
     if (ssq_no == 100) {
-      std::cerr << ssq_no << ", " << now.time_since_epoch().count() << "\n";
+      std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
       dump_jitter_histogram_raw(); 
       std::cerr << "inter-arrival jitter: " << rfc3550_jitter.estimate << "ns\n";
     }
@@ -282,7 +282,7 @@ void measurer(char* from)
     auto seq_no = header.get_sequence_number();
     if (seq_no == 100) 
     {
-      std::cerr << seq_no << ", " << now.time_since_epoch().count() << "\n";
+      std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
       dump_jitter_histogram_raw(); 
       std::cerr << "inter-arrival jitter: " << rfc3550_jitter.estimate << "ns\n";
     }
