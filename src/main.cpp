@@ -161,10 +161,10 @@ void receiver(char* from, char* via) {
 
   interarrival_jitter rfc3550_jitter{};
 
-  uint64_t packets_received = 0;
-  uint64_t reordered_packets = 0;
-  uint32_t previous_ts = 0;
-  uint16_t previous_seqno = 0;
+  // uint64_t packets_received = 0;
+  // uint64_t reordered_packets = 0;
+  // uint32_t previous_ts = 0;
+  // uint16_t previous_seqno = 0;
   while (keep_server_running) {
     
     int received_bytes = recvfrom(receiving_socket.socket_fd, buffer, MAXBUFLEN, 0, nullptr, nullptr);
@@ -174,7 +174,7 @@ void receiver(char* from, char* via) {
       continue;
     }
     buffer[received_bytes] = '\0';
-    packets_received += 1;
+    // packets_received += 1;
 
     rtp_header header;
     memcpy(&header, buffer, sizeof(header));
@@ -205,18 +205,18 @@ void receiver(char* from, char* via) {
       previous_packet_arrival = now;
     }
 
-    if (header.get_sequence_number() < previous_seqno)
-    {
-      reordered_packets += 1;
-      std::cout << "reorder-ratio: " << (double) reordered_packets / packets_received << "\n";
-      std::cout << header.get_sequence_number() << " after " << previous_seqno << "\n";
-    }
-    previous_ts = header.get_timestamp();
-    previous_seqno = header.get_sequence_number();
+    // if (header.get_sequence_number() < previous_seqno)
+    // {
+    //   reordered_packets += 1;
+    //   std::cout << "reorder-ratio: " << (double) reordered_packets / packets_received << "\n";
+    //   std::cout << header.get_sequence_number() << " after " << previous_seqno << "\n";
+    // }
+    // previous_ts = header.get_timestamp();
+    // previous_seqno = header.get_sequence_number();
 
     // std::cout << rfc3550_jitter.previous_transit << "\n";
 
-    std::cout << "Received " << header.get_sequence_number() << " with ts " << header.get_timestamp() << "\n";
+    // std::cout << "Received " << header.get_sequence_number() << " with ts " << header.get_timestamp() << "\n";
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
     auto ssq_no = header.get_sequence_number();
@@ -263,10 +263,10 @@ void measurer(char* from)
 
   interarrival_jitter rfc3550_jitter{};
 
-  uint64_t packets_received = 0;
-  uint64_t reordered_packets = 0;
-  uint32_t previous_ts = 0;
-  uint16_t previous_seqno = 0;
+  // uint64_t packets_received = 0;
+  // uint64_t reordered_packets = 0;
+  // uint32_t previous_ts = 0;
+  // uint16_t previous_seqno = 0;
 
   while (keep_server_running) {
     
@@ -277,7 +277,7 @@ void measurer(char* from)
       continue;
     }
     buffer[received_bytes] = '\0';
-    packets_received += 1;
+    // packets_received += 1;
 
     rtp_header header;
     memcpy(&header, buffer, sizeof(header));
@@ -296,14 +296,15 @@ void measurer(char* from)
       previous_packet_arrival = now;
     }
 
-    if (header.get_sequence_number() < previous_seqno)
-    {
-      reordered_packets += 1;
-      std::cout << "reorder-ratio: " << (double) reordered_packets / packets_received << "\n";
-      std::cout << header.get_sequence_number() << " after " << previous_seqno << "\n";
-    }
-    previous_ts = header.get_timestamp();
-    previous_seqno = header.get_sequence_number();
+    // if (header.get_sequence_number() < previous_seqno)
+    // {
+    //   reordered_packets += 1;
+    //   std::cout << "reorder-ratio: " << (double) reordered_packets / packets_received << "\n";
+    //   std::cout << header.get_sequence_number() << " after " << previous_seqno << "\n";
+    // }
+    // previous_ts = header.get_timestamp();
+    // previous_seqno = header.get_sequence_number();
+    
     // std::cout << "Received " << header.get_sequence_number() << " with ts " << header.get_timestamp() << "\n";
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
