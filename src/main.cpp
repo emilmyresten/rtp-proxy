@@ -337,9 +337,9 @@ void run_as_proxy(char* argv[])
   std::thread recv_thread(receiver, from, via);
   std::thread send_thread(sender, via, to_ip, to_port);
 
-  std::cout << "Started proxy: " << from << "-> " << to_ip << ":" << to_port << " via " << via
+  std::cout << "Started proxy: " << from << " -> " << to_ip << ":" << to_port << " via " << via
             << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6")
-            << " with a " << constant_playout_delay.count() << " ms delay.\n";
+            << " with " << constant_playout_delay.count() << " ms added delay.\n";
 
   
   std::time_t start_date { get_current_date(test_start) };

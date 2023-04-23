@@ -1,6 +1,5 @@
 #!/bin/bash
 
-IF=lo
 DPORT=9003
 SCENARIO=1
 LATENCY=100ms
@@ -8,40 +7,62 @@ JITTER=10ms
 CORRELATION=100%
 DISTRIBUTION=pareto
 
+NS=network_sim
+NS_IF=veth1
+LOCAL_IF=veth0
+NS_IP=172.16.0.1
+LOCAL_IP=172.16.0.2
+
+
+create_network_namespace() {
+    ip netns add $NS
+    ip link add $LOCAL_IF type veth peer name $NS_IF
+    ip link set $NS_IF netns $NS
+    ip -n $NS addr add $NS_IP/24 dev $NS_IF
+    ip -n $NS link set $NS_IF up
+
+    ip addr add $LOCAL_IP/24 dev $LOCAL_IF
+    ip link set $LOCAL_IF up
+
+}
+
+reset_network_namespace() {
+    ip link delete $LOCAL_IF
+    ip netns exec $NS ip link delete $NS_IF
+    ip netns del $NS
+}
 
 start_traffic_shaping() {
-    echo " == SHAPING TRAFFIC ON INTERFACE $IF, ACCORDING TO SCENARIO $SCENARIO =="
+    echo " == SHAPING TRAFFIC ON INTERFACE $LOCAL_IF, ACCORDING TO SCENARIO $SCENARIO =="
     
-    tc qdisc add dev $IF root handle 1: prio
-    tc filter add dev $IF parent 1: protocol ip u32 match ip dport $DPORT 0xffff flowid 1:1
-    tc qdisc add dev $IF parent 1:1 netem delay $LATENCY $JITTER $CORRELATION distribution $DISTRIBUTION
-
-    tc qdisc show dev lo
+    tc qdisc add dev $LOCAL_IF root handle 1: netem delay $LATENCY $JITTER $CORRELATION distribution $DISTRIBUTION
+    tc qdisc show dev $LOCAL_IF
 }
 
 mkdir ./data/$1
 
 reset_traffic_shaping() {
-    tc qdisc del dev $IF root
+    tc qdisc del dev $LOCAL_IF root
 }
-
-## ffmpeg to port 9001 (initial) -> jitter to port 9003 (jittered) -> rist server on port 9005 -> reconstructed measure on 9006.
 
 start_measure_point() {
     ./build/main 9006 2>./data/$1/reconstructed.txt &
 }
 
 start_jittered_proxy() {
-    ./build/main 9003 9005 9004 2>./data/$1/jittered.txt &
+    ip netns exec $NS ./build/main 9003 $LOCAL_IP 9005 9004 2>./data/$1/jittered.txt &
 }
 
 start_initial_proxy() {
-    ./build/main 9001 9003 9002 2>./data/$1/initial.txt &
+    ./build/main 9001 $NS_IP 9003 9002 2>./data/$1/initial.txt &
 }
 
+reset_network_namespace
+create_network_namespace
 
 reset_traffic_shaping
 start_traffic_shaping
+
 start_initial_proxy $1
 start_jittered_proxy $1
 start_measure_point $1
