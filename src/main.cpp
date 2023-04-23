@@ -196,13 +196,14 @@ void receiver(char* from, char* via) {
     {
       previous_packet_arrival = now;
       is_first_packet = false;
-      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
+      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_timestamp() * nanos_per_90kHz);
     } else 
     {
       add_to_jitter_histogram(now, previous_packet_arrival);
-      auto transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
+      auto transit = now.time_since_epoch().count() - (header.get_timestamp() * nanos_per_90kHz);
       update_jitter_estimate(&rfc3550_jitter, transit);
       previous_packet_arrival = now;
+      // std::cerr << "inter-arrival jitter at " << header.get_sequence_number() << ": " << rfc3550_jitter.estimate << "ns\n";
     }
 
     // if (header.get_sequence_number() < previous_seqno)
@@ -222,7 +223,6 @@ void receiver(char* from, char* via) {
     auto ssq_no = header.get_sequence_number();
     if (ssq_no == 100) {
       std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
-      dump_jitter_histogram_raw(); 
       std::cerr << "inter-arrival jitter: " << rfc3550_jitter.estimate << "ns\n";
     }
 
@@ -287,11 +287,11 @@ void measurer(char* from)
     {
       previous_packet_arrival = now;
       is_first_packet = false;
-      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
+      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_timestamp() * nanos_per_90kHz);
     } else 
     {
       add_to_jitter_histogram(now, previous_packet_arrival);
-      auto transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
+      auto transit = now.time_since_epoch().count() - (header.get_timestamp() * nanos_per_90kHz);
       update_jitter_estimate(&rfc3550_jitter, transit);
       previous_packet_arrival = now;
     }
@@ -402,6 +402,7 @@ int main(int argc, char* argv[])
   }
 
   // dump_jitter_histogram_styled();
+  dump_jitter_histogram_raw(); 
 
   return 0;
 }

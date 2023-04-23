@@ -34,6 +34,7 @@ reset_network_namespace() {
 start_traffic_shaping() {
     echo " == SHAPING TRAFFIC ON INTERFACE $LOCAL_IF, ACCORDING TO SCENARIO $SCENARIO =="
     
+    # limit based on https://stackoverflow.com/questions/18792347/what-does-option-limit-in-tc-netem-mean-and-do
     tc qdisc add dev $LOCAL_IF root handle 1: netem delay $LATENCY limit 1000000
     tc qdisc show dev $LOCAL_IF
 }
