@@ -196,11 +196,11 @@ void receiver(char* from, char* via) {
     {
       previous_packet_arrival = now;
       is_first_packet = false;
-      rfc3550_jitter.previous_transit = (now.time_since_epoch().count() / nanos_per_90kHz) - (header.get_sequence_number());
+      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
     } else 
     {
       add_to_jitter_histogram(now, previous_packet_arrival);
-      auto transit = (now.time_since_epoch().count() / nanos_per_90kHz) - (header.get_sequence_number());
+      auto transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
       update_jitter_estimate(&rfc3550_jitter, transit);
       previous_packet_arrival = now;
     }
@@ -287,11 +287,11 @@ void measurer(char* from)
     {
       previous_packet_arrival = now;
       is_first_packet = false;
-      rfc3550_jitter.previous_transit = (now.time_since_epoch().count() / nanos_per_90kHz) - (header.get_sequence_number());
+      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
     } else 
     {
       add_to_jitter_histogram(now, previous_packet_arrival);
-      auto transit = (now.time_since_epoch().count() / nanos_per_90kHz) - (header.get_sequence_number());
+      auto transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
       update_jitter_estimate(&rfc3550_jitter, transit);
       previous_packet_arrival = now;
     }

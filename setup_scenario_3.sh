@@ -1,8 +1,8 @@
 #!/bin/bash
 
-SCENARIO=1
+SCENARIO=3
 LATENCY=100ms
-JITTER=0ms
+JITTER=10ms
 CORRELATION=100%
 DISTRIBUTION=pareto
 
@@ -34,7 +34,7 @@ reset_network_namespace() {
 start_traffic_shaping() {
     echo " == SHAPING TRAFFIC ON INTERFACE $LOCAL_IF, ACCORDING TO SCENARIO $SCENARIO =="
     
-    tc qdisc add dev $LOCAL_IF root handle 1: netem delay $LATENCY limit 1000000
+    tc qdisc add dev $LOCAL_IF root handle 1: netem delay $LATENCY $JITTER $CORRELATION distribution $DISTRIBUTION limit 1000000
     tc qdisc show dev $LOCAL_IF
 }
 
