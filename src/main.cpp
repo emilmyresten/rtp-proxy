@@ -154,13 +154,17 @@ void update_jitter_estimate(interarrival_jitter* j, double transit)
 }
 
 void receiver(char* from, char* via) {
-  UdpSocket receiving_socket { from, via };
+  UdpSocket receiving_socket { from };
   char buffer[MAXBUFLEN];
   std::chrono::steady_clock::time_point previous_packet_arrival {};
   bool is_first_packet = true;
 
   interarrival_jitter rfc3550_jitter{};
 
+  uint64_t packets_received = 0;
+  uint64_t reordered_packets = 0;
+  uint32_t previous_ts = 0;
+  uint16_t previous_seqno = 0;
   while (keep_server_running) {
     
     int received_bytes = recvfrom(receiving_socket.socket_fd, buffer, MAXBUFLEN, 0, nullptr, nullptr);
@@ -170,6 +174,7 @@ void receiver(char* from, char* via) {
       continue;
     }
     buffer[received_bytes] = '\0';
+    packets_received += 1;
 
     rtp_header header;
     memcpy(&header, buffer, sizeof(header));
@@ -191,18 +196,27 @@ void receiver(char* from, char* via) {
     {
       previous_packet_arrival = now;
       is_first_packet = false;
-      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
+      rfc3550_jitter.previous_transit = (now.time_since_epoch().count() / nanos_per_90kHz) - (header.get_sequence_number());
     } else 
     {
       add_to_jitter_histogram(now, previous_packet_arrival);
-      auto transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
+      auto transit = (now.time_since_epoch().count() / nanos_per_90kHz) - (header.get_sequence_number());
       update_jitter_estimate(&rfc3550_jitter, transit);
       previous_packet_arrival = now;
     }
 
+    if (header.get_sequence_number() < previous_seqno)
+    {
+      reordered_packets += 1;
+      std::cout << "reorder-ratio: " << (double) reordered_packets / packets_received << "\n";
+      std::cout << header.get_sequence_number() << " after " << previous_seqno << "\n";
+    }
+    previous_ts = header.get_timestamp();
+    previous_seqno = header.get_sequence_number();
+
     // std::cout << rfc3550_jitter.previous_transit << "\n";
 
-    // std::cout << "Received " << header.get_sequence_number() << " with ts " << header.get_timestamp() << "\n";
+    std::cout << "Received " << header.get_sequence_number() << " with ts " << header.get_timestamp() << "\n";
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
     auto ssq_no = header.get_sequence_number();
@@ -217,8 +231,8 @@ void receiver(char* from, char* via) {
   }
 }
 
-void sender(char* to, char* via) {
-  UdpSocket sending_socket { via, to };
+void sender(char* via, char* to_ip, char* to_port) {
+  UdpSocket sending_socket { via, to_ip, to_port };
 
   while (keep_server_running) {
     if (!network_queue.empty()) {
@@ -242,12 +256,17 @@ void sender(char* to, char* via) {
 }
 void measurer(char* from) 
 {
-  UdpSocket receiving_socket { from, "1234" };
+  UdpSocket receiving_socket { from };
   char buffer[MAXBUFLEN];
   std::chrono::steady_clock::time_point previous_packet_arrival {};
   bool is_first_packet = true;  
 
   interarrival_jitter rfc3550_jitter{};
+
+  uint64_t packets_received = 0;
+  uint64_t reordered_packets = 0;
+  uint32_t previous_ts = 0;
+  uint16_t previous_seqno = 0;
 
   while (keep_server_running) {
     
@@ -258,6 +277,7 @@ void measurer(char* from)
       continue;
     }
     buffer[received_bytes] = '\0';
+    packets_received += 1;
 
     rtp_header header;
     memcpy(&header, buffer, sizeof(header));
@@ -267,15 +287,23 @@ void measurer(char* from)
     {
       previous_packet_arrival = now;
       is_first_packet = false;
-      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
+      rfc3550_jitter.previous_transit = (now.time_since_epoch().count() / nanos_per_90kHz) - (header.get_sequence_number());
     } else 
     {
       add_to_jitter_histogram(now, previous_packet_arrival);
-      auto transit = now.time_since_epoch().count() - (header.get_sequence_number() * nanos_per_90kHz);
+      auto transit = (now.time_since_epoch().count() / nanos_per_90kHz) - (header.get_sequence_number());
       update_jitter_estimate(&rfc3550_jitter, transit);
       previous_packet_arrival = now;
     }
 
+    if (header.get_sequence_number() < previous_seqno)
+    {
+      reordered_packets += 1;
+      std::cout << "reorder-ratio: " << (double) reordered_packets / packets_received << "\n";
+      std::cout << header.get_sequence_number() << " after " << previous_seqno << "\n";
+    }
+    previous_ts = header.get_timestamp();
+    previous_seqno = header.get_sequence_number();
     // std::cout << "Received " << header.get_sequence_number() << " with ts " << header.get_timestamp() << "\n";
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
@@ -299,15 +327,16 @@ std::time_t get_current_date(std::chrono::system_clock::time_point tp)
 void run_as_proxy(char* argv[])
 {
   char* from { argv[1] };
-  char* to { argv[2] };
-  char* via { argv[3] };
+  char* to_ip { argv[2] };
+  char* to_port { argv[3] };
+  char* via { argv[4] };
 
   auto test_start { std::chrono::system_clock::now() };
 
   std::thread recv_thread(receiver, from, via);
-  std::thread send_thread(sender, to, via);
+  std::thread send_thread(sender, via, to_ip, to_port);
 
-  std::cout << "Started proxy: " << from << "->" << to << " via " << via
+  std::cout << "Started proxy: " << from << "-> " << to_ip << ":" << to_port << " via " << via
             << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6")
             << " with a " << constant_playout_delay.count() << " ms delay.\n";
 
@@ -356,13 +385,13 @@ void run_as_util(char* argv[])
 
 int main(int argc, char* argv[]) 
 {
-  if (argc-1 != 1 && argc-1 != 3)
+  if (argc-1 != 1 && argc-1 != 4)
   {
-    std::cout << "Supply 1 argument for measurement only, 3 arguments for proxy. ./main <from> [<to> <via>]\n";
+    std::cout << "Supply 1 argument for measurement only, 4 arguments for proxy. ./main <from> [<to_ip> <to_port> <via>]\n";
     exit(1);
   }
 
-  bool is_proxy = argc-1 == 3 ? true : false;
+  bool is_proxy = argc-1 == 4 ? true : false;
   if (is_proxy)
   {
     run_as_proxy(argv);

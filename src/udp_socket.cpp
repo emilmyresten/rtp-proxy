@@ -9,13 +9,18 @@
 
 #include "udp_socket.h"
  
-UdpSocket::UdpSocket(char* recv_port, char* dest_port) 
+UdpSocket::UdpSocket(char* recv_port)
 {
-  this->setDestination(dest_port);
-  this->socket_fd = createSocket(recv_port);  
+  this->socket_fd = createSocket(recv_port);
 }
 
-void UdpSocket::setDestination(char* port)
+UdpSocket::UdpSocket(char* via_port, char* dest_addr, char* dest_port) 
+{
+  this->setDestination(dest_addr, dest_port);
+  this->socket_fd = createSocket(via_port);  
+}
+
+void UdpSocket::setDestination(char* dest, char* port)
 {
   struct addrinfo hints;
 
@@ -24,7 +29,7 @@ void UdpSocket::setDestination(char* port)
   hints.ai_socktype = SOCKETTYPE;
   // hints.ai_flags = AI_PASSIVE;
 
-  int status = getaddrinfo(nullptr, port, &hints, &this->destaddr);
+  int status = getaddrinfo(dest, port, &hints, &this->destaddr);
   if (status < 0)
   {
     std::cerr << "getaddrinfo destination error: " << gai_strerror(status) << "\n";
