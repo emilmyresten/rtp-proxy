@@ -2,7 +2,7 @@
 
 SCENARIO=2
 LATENCY=100ms
-JITTER=5ms
+JITTER=2ms
 CORRELATION=100%
 DISTRIBUTION=pareto
 
@@ -35,7 +35,8 @@ start_traffic_shaping() {
     echo " == SHAPING TRAFFIC ON INTERFACE $LOCAL_IF, ACCORDING TO SCENARIO $SCENARIO =="
     
     # limit based on https://stackoverflow.com/questions/18792347/what-does-option-limit-in-tc-netem-mean-and-do
-    tc qdisc add dev $LOCAL_IF root handle 1: netem delay $LATENCY $JITTER $CORRELATION distribution $DISTRIBUTION limit 1000000
+    # rate based on https://lists.linuxfoundation.org/pipermail/netem/2018-May/001691.html (and it works)
+    tc qdisc add dev $LOCAL_IF root handle 1: netem delay $LATENCY $JITTER $CORRELATION distribution $DISTRIBUTION limit 1000000 rate 2gbit
     tc qdisc show dev $LOCAL_IF
 }
 
