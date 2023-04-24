@@ -312,7 +312,6 @@ void measurer(char* from)
     if (seq_no == 100) 
     {
       std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
-      dump_jitter_histogram_raw(); 
       std::cerr << "inter-arrival jitter: " << rfc3550_jitter.estimate << "ns\n";
     }
   }
