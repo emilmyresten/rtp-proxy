@@ -24,7 +24,7 @@
 
 const double nanos_per_90kHz = 11111.1111111;
 
-auto test_duration { std::chrono::hours(24) };
+auto test_duration { std::chrono::hours(12) };
 
 const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
 std::mutex network_mutex; // protect the priority queue
