@@ -3,7 +3,7 @@
 SCENARIO=3
 LATENCY=100ms
 JITTER=5ms
-CORRELATION=100%
+CORRELATION=50%
 DISTRIBUTION=pareto
 
 NS=network_sim
@@ -36,7 +36,7 @@ start_traffic_shaping() {
     
     # limit based on https://stackoverflow.com/questions/18792347/what-does-option-limit-in-tc-netem-mean-and-do
     # rate based on https://lists.linuxfoundation.org/pipermail/netem/2018-May/001691.html (and it works)
-    tc qdisc add dev $LOCAL_IF root handle 1: netem delay $LATENCY $JITTER $CORRELATION distribution $DISTRIBUTION limit 1000000 rate 2gbit
+    tc qdisc add dev $LOCAL_IF root handle 1: netem delay $LATENCY $JITTER $CORRELATION distribution $DISTRIBUTION limit 1000000 rate 2gbit # reorder 1%
     tc qdisc show dev $LOCAL_IF
 }
 
