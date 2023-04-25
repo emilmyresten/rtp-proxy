@@ -30,33 +30,6 @@ auto test_duration { std::chrono::hours(1) };
 const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
 std::mutex network_mutex; // protect the priority queue
 
-auto constant_playout_delay = std::chrono::milliseconds(0);
-using variable_playout_delay_unit = std::chrono::microseconds;
-std::default_random_engine random_generator(1); // explicitly seed the random generator for clarity.
-
-// PDV with Gaussian/Normal/Binomial probability density function. Haven't found real support in the literature for values of mean and stddev.
-std::uniform_int_distribution<int> jitter_distribution(400, 800); // jitter as 1-2% of constant delay factor.
-
-/* 
-input when doing inverse transform sampling
-*/
-std::uniform_real_distribution<> uniform_dist(0.0, 1.0);
-
-/*
-Model end-to-end delay using pareto distribution according to "Modeling End-to-End Delay Using Pareto Distribution" by Zhang et. al.
-*/
-double xm = 40;
-double k = 20;
-std::pair<uint16_t, uint16_t> end_to_end_delay()
-{  
-  auto urnd = uniform_dist(random_generator);
-  // inverse transform sampling of Pareto distribution using its CDF
-  auto res =  xm * pow((1 - urnd),(-1/k));
-  uint16_t whole_factor = (uint16_t) res;
-  uint16_t decimal_factor = (uint16_t) round((res - whole_factor) * 1'000);
-  return std::make_pair(whole_factor, decimal_factor);
-}
-
 /*
 Creates a histogram with the distribution of packet delay variation.
 Measured in microseconds (us), and stored in BUCKETS buckets. Each bucket represents BUCKET_RESOLUTION us, everything rounded down to nearest hundredth.
@@ -79,6 +52,7 @@ auto cmp = [](Packet left, Packet right)
     auto right_delta = right.send_time - now;
     return left_delta > right_delta;
 };
+
 std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cmp); 
 
 std::atomic<bool> keep_server_running{true};
@@ -186,13 +160,10 @@ void receiver(char* from, char* via) {
     memcpy(payload, &buffer, received_bytes);
 
     auto now = std::chrono::steady_clock::now();
-    // auto jitter = variable_playout_delay_unit(jitter_distribution(random_generator));
-    auto delay = end_to_end_delay();
     Packet p {
       payload,
       received_bytes,
-      // now + std::chrono::milliseconds(delay.first) + std::chrono::microseconds(delay.second)
-      now + constant_playout_delay
+      now
     };
 
     if (is_first_packet)
@@ -335,8 +306,7 @@ void run_as_proxy(char* argv[])
   std::thread send_thread(sender, via, to_ip, to_port);
 
   std::cout << "Started proxy: " << from << " -> " << to_ip << ":" << to_port << " via " << via
-            << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6")
-            << " with " << constant_playout_delay.count() << " ms added delay.\n";
+            << " over " << (IPVERSION == AF_INET ? "IPv4" : "IPv6");
 
   
   std::time_t start_date { get_current_date(test_start) };
