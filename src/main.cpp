@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <vector>
 #include <math.h>
 #include <utility>
@@ -24,7 +25,7 @@
 
 const double nanos_per_90kHz = 11111.1111111;
 
-auto test_duration { std::chrono::hours(12) };
+auto test_duration { std::chrono::hours(1) };
 
 const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
 std::mutex network_mutex; // protect the priority queue
@@ -134,12 +135,14 @@ void dump_jitter_histogram_styled()
 
 void dump_jitter_histogram_raw()
 {
-  std::cerr << "- jitter_histogram start: \n";
-  for (int bucket = 0; bucket < jitter_histogram.size(); bucket++)
+  std::ostringstream o;
+  o << "jitter_histogram: ";
+  for (auto bucket : jitter_histogram)
   {
-    std::cerr << bucket << "," << jitter_histogram[bucket] << "\n";
+    o << bucket << ',';
   }
-  std::cerr << "- jitter_histogram end\n";
+  o << '\n';
+  std::cerr << o.str();
 }
 
 /*
@@ -174,7 +177,7 @@ void receiver(char* from, char* via) {
       continue;
     }
     buffer[received_bytes] = '\0';
-    packets_received += 1;
+    packets_received++;
 
     rtp_header header;
     memcpy(&header, buffer, sizeof(header));
@@ -208,7 +211,7 @@ void receiver(char* from, char* via) {
 
     if (header.get_timestamp() < previous_ts)
     {
-      reordered_packets += 1;
+      reordered_packets++;
     }
     previous_ts = header.get_timestamp();
 
@@ -218,7 +221,7 @@ void receiver(char* from, char* via) {
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
     auto ssq_no = header.get_sequence_number();
-    if (ssq_no == 100) {
+    if (ssq_no % 2048 == 0) {
       std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
       std::cerr << "inter-arrival jitter (ns): " << rfc3550_jitter.estimate << "\n";
       std::cerr << "reorder-ratio: " << (double) reordered_packets / packets_received << "\n";
@@ -274,7 +277,7 @@ void measurer(char* from)
       continue;
     }
     buffer[received_bytes] = '\0';
-    packets_received += 1;
+    packets_received++;
 
     rtp_header header;
     memcpy(&header, buffer, sizeof(header));
@@ -295,7 +298,7 @@ void measurer(char* from)
 
     if (header.get_timestamp() < previous_ts)
     {
-      reordered_packets += 1;
+      reordered_packets++;
     }
     previous_ts = header.get_timestamp();
     
@@ -303,7 +306,7 @@ void measurer(char* from)
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
     auto seq_no = header.get_sequence_number();
-    if (seq_no == 100) 
+    if (seq_no % 2048 == 0) 
     {
       std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
       std::cerr << "inter-arrival jitter (ns): " << rfc3550_jitter.estimate << "\n";
