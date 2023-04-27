@@ -1,0 +1,3 @@
+{"jsonrpc":"2.0","method":"addChannel","id":1,"params":{"channelId":2,"description":"TV-1000","bufferDurationMs":1500}}
+{"id":2,"jsonrpc":"2.0","method":"addInputStreamRtp","params":{"channelId":2,"streamId":1,"localIp":"0.0.0.0","localPort":9005}}
+{"id":3,"jsonrpc":"2.0","method":"addOutputStreamUdp","params":{"channelId":2,"streamId":2,"localIp":"127.0.0.1","localPort":9025,"remoteIp":"127.0.0.1","remotePort":9006,"delayMs":1000,"delayMode":DELAY_MODE,"packetFormat":"rtp"}}
