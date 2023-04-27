@@ -192,7 +192,7 @@ void receiver(char* from, char* via) {
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
     auto ssq_no = header.get_sequence_number();
-    if (ssq_no % 2048 == 0) {
+    if (ssq_no % 64 == 0) {
       std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
       std::cerr << "inter-arrival jitter (ns): " << rfc3550_jitter.estimate << "\n";
       std::cerr << "reorder-ratio: " << (double) reordered_packets / packets_received << "\n";
@@ -277,7 +277,7 @@ void measurer(char* from)
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
     auto seq_no = header.get_sequence_number();
-    if (seq_no % 2048 == 0) 
+    if (seq_no % 64 == 0) 
     {
       std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
       std::cerr << "inter-arrival jitter (ns): " << rfc3550_jitter.estimate << "\n";
