@@ -2,6 +2,7 @@
 #include <sstream>
 #include <vector>
 #include <math.h>
+#include <float.h>
 #include <utility>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -130,6 +131,18 @@ void update_jitter_estimate(interarrival_jitter* j, double transit)
   j->estimate += (1.0/16.0) * ((double) d - j->estimate);
 }
 
+void update_jitter_max_min(double* min, double* max, double transit)
+{
+  if (transit < *min)
+  {
+    *min = transit;
+  }
+  if (transit > *max)
+  {
+    *max = transit;
+  }
+}
+
 void receiver(char* from, char* via) {
   UdpSocket receiving_socket { from };
   char buffer[MAXBUFLEN];
@@ -137,6 +150,9 @@ void receiver(char* from, char* via) {
   bool is_first_packet = true;
 
   interarrival_jitter rfc3550_jitter{};
+
+  double min_delay{};
+  double max_delay{};
 
   uint64_t packets_received = 0;
   uint64_t reordered_packets = 0;
@@ -160,6 +176,7 @@ void receiver(char* from, char* via) {
     memcpy(payload, &buffer, received_bytes);
 
     auto now = std::chrono::steady_clock::now();
+    auto transit = now.time_since_epoch().count() - (header.get_timestamp() * nanos_per_90kHz);
     Packet p {
       payload,
       received_bytes,
@@ -170,12 +187,14 @@ void receiver(char* from, char* via) {
     {
       previous_packet_arrival = now;
       is_first_packet = false;
-      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_timestamp() * nanos_per_90kHz);
+      rfc3550_jitter.previous_transit = transit;
+      min_delay = transit;
+      max_delay = transit;
     } else 
     {
-      add_to_jitter_histogram(now, previous_packet_arrival);
-      auto transit = now.time_since_epoch().count() - (header.get_timestamp() * nanos_per_90kHz);
+      // add_to_jitter_histogram(now, previous_packet_arrival);
       update_jitter_estimate(&rfc3550_jitter, transit);
+      update_jitter_max_min(&min_delay, &max_delay, transit);
       previous_packet_arrival = now;
       // std::cerr << "inter-arrival jitter at " << header.get_sequence_number() << ": " << rfc3550_jitter.estimate << "ns\n";
     }
@@ -195,7 +214,9 @@ void receiver(char* from, char* via) {
     if (ssq_no % 64 == 0) {
       std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
       std::cerr << "inter-arrival jitter (ns): " << rfc3550_jitter.estimate << "\n";
+      std::cerr << "maximum-jitter (ns): " << max_delay - min_delay << "\n";
       std::cerr << "reorder-ratio: " << (double) reordered_packets / packets_received << "\n";
+      max_delay = 0; min_delay = DBL_MAX; // reset to perform calculation for next section
     }
 
     std::lock_guard<std::mutex> lock(network_mutex);
@@ -235,6 +256,9 @@ void measurer(char* from)
 
   interarrival_jitter rfc3550_jitter{};
 
+  double min_delay{};
+  double max_delay{};
+
   uint64_t packets_received = 0;
   uint64_t reordered_packets = 0;
   uint32_t previous_ts = 0;
@@ -254,16 +278,19 @@ void measurer(char* from)
     memcpy(&header, buffer, sizeof(header));
     
     auto now = std::chrono::steady_clock::now();
+    auto transit = now.time_since_epoch().count() - (header.get_timestamp() * nanos_per_90kHz);
     if (is_first_packet)
     {
       previous_packet_arrival = now;
       is_first_packet = false;
-      rfc3550_jitter.previous_transit = now.time_since_epoch().count() - (header.get_timestamp() * nanos_per_90kHz);
+      rfc3550_jitter.previous_transit = transit;
+      min_delay = transit;
+      max_delay = transit;
     } else 
     {
-      add_to_jitter_histogram(now, previous_packet_arrival);
-      auto transit = now.time_since_epoch().count() - (header.get_timestamp() * nanos_per_90kHz);
+      // add_to_jitter_histogram(now, previous_packet_arrival);
       update_jitter_estimate(&rfc3550_jitter, transit);
+      update_jitter_max_min(&min_delay, &max_delay, transit);
       previous_packet_arrival = now;
     }
 
@@ -281,7 +308,9 @@ void measurer(char* from)
     {
       std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
       std::cerr << "inter-arrival jitter (ns): " << rfc3550_jitter.estimate << "\n";
+      std::cerr << "maximum-jitter (ns): " << max_delay - min_delay << "\n";
       std::cerr << "reorder-ratio: " << (double) reordered_packets / packets_received << "\n";
+      max_delay = 0; min_delay = DBL_MAX; // reset to perform calculation for next section
     }
   }
 }
@@ -369,7 +398,7 @@ int main(int argc, char* argv[])
   }
 
   // dump_jitter_histogram_styled();
-  dump_jitter_histogram_raw(); 
+  // dump_jitter_histogram_raw(); 
 
   return 0;
 }
