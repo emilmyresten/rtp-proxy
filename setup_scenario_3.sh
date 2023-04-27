@@ -47,15 +47,15 @@ reset_traffic_shaping() {
 }
 
 start_measure_point() {
-    ./build/main 9006 2>./data/$1/reconstructed.txt &
+    ./build/rtp_proxy 9006 2>./data/$1/reconstructed.txt &
 }
 
 start_jittered_proxy() {
-    ip netns exec $NS ./build/main 9003 $LOCAL_IP 9005 9004 2>./data/$1/jittered.txt &
+    ip netns exec $NS ./build/rtp_proxy 9003 $LOCAL_IP 9005 9004 2>./data/$1/jittered.txt &
 }
 
 start_initial_proxy() {
-    ./build/main 9001 $NS_IP 9003 9002 2>./data/$1/initial.txt &
+    ./build/rtp_proxy 9001 $NS_IP 9003 9002 2>./data/$1/initial.txt &
 }
 
 reset_network_namespace
