@@ -60,3 +60,5 @@ sudo tc qdisc del dev lo root
 The three scenarios are setup with the setup script. 
 Just specify the folder in which to store the data as an argument to the script. 
 Run with sudo i.e. sudo ./setup_scenario_1.sh 23-04-20.
+To run all scenarios for all playout algorithms automatically in succession
+run `sudo ./run_all.sh <destination-folder>`
