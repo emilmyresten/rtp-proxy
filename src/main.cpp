@@ -28,6 +28,8 @@ const double nanos_per_90kHz = 11111.1111111;
 
 auto test_duration { std::chrono::hours(1) };
 
+const int DATA_COLL_FREQ = 512;
+
 const int MAXBUFLEN = 1024; // max pkt_size should be specified by ffmpeg.
 std::mutex network_mutex; // protect the priority queue
 
@@ -211,7 +213,7 @@ void receiver(char* from, char* via) {
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
     auto ssq_no = header.get_sequence_number();
-    if (ssq_no % 64 == 0) {
+    if (ssq_no % DATA_COLL_FREQ == 0) {
       std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
       std::cerr << "inter-arrival jitter (ns): " << rfc3550_jitter.estimate << "\n";
       std::cerr << "maximum-jitter (ns): " << max_delay - min_delay << "\n";
@@ -304,7 +306,7 @@ void measurer(char* from)
     // std::cout << "Received " << header.get_sequence_number() << " at " << now.time_since_epoch().count() << "\n";
     
     auto seq_no = header.get_sequence_number();
-    if (seq_no % 64 == 0) 
+    if (seq_no % DATA_COLL_FREQ == 0) 
     {
       std::cerr << "drift-measure: " << now.time_since_epoch().count() << "\n";
       std::cerr << "inter-arrival jitter (ns): " << rfc3550_jitter.estimate << "\n";
