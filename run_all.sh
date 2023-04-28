@@ -6,6 +6,7 @@ delayMode["jittery_rtp_to_lc"]="-1"
 delayMode["rtp_to_lc"]="0"
 delayMode["arrival_time"]="1"
 delayMode["origin_rtp_timestamp"]="3"
+delayMode["cumulative_ratio_estimate"]="4"
 
 
 
@@ -25,7 +26,7 @@ fi
 
 mkdir "./data/$DESTINATION"
 
-for algorithm in "arrival_time" "origin_rtp_timestamp" "rtp_to_lc" "jittery_rtp_to_lc"
+for algorithm in "arrival_time" "origin_rtp_timestamp" "rtp_to_lc" "jittery_rtp_to_lc" "cumulative_ratio_estimate"
 do
     mkdir "./data/$DESTINATION/$algorithm"
     for scenario in {1..3}
