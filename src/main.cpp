@@ -371,7 +371,7 @@ void run_as_util(char* argv[])
   std::time_t start_date { get_current_date(test_start) };
   std::cerr << "Session init: " << std::put_time(std::localtime(&start_date), "%Y-%m-%d %H:%M:%S") << "\n";
 
-  std::this_thread::sleep_for(test_duration);
+  std::this_thread::sleep_for(test_duration + std::chrono::seconds(5)); // run the final data-point longer to allow all packets to be delivered.
   // signal to stop the threads
   keep_server_running = false;
 
