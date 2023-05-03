@@ -24,6 +24,17 @@ then
     exit
 fi
 
+cleanup() {
+    sudo killall ristserver
+    sudo killall rtp_proxy
+    # Your cleanup logic goes here
+    echo "Cleanup performed."
+    exit 1
+}
+
+# Register the cleanup function as a handler for SIGINT
+trap cleanup SIGINT
+
 mkdir "./data/$DESTINATION"
 
 for algorithm in "arrival_time" "origin_rtp_timestamp" "rtp_to_lc" "jittery_rtp_to_lc" "cumulative_ratio_estimate"
