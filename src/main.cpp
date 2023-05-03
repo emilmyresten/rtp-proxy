@@ -48,15 +48,7 @@ struct Packet {
   std::chrono::time_point<std::chrono::steady_clock> send_time;
 };
 
-auto cmp = [](Packet left, Packet right)
-{
-    auto now = std::chrono::steady_clock::now();
-    auto left_delta = left.send_time - now;
-    auto right_delta = right.send_time - now;
-    return left_delta > right_delta;
-};
-
-std::priority_queue<Packet, std::vector<Packet>, decltype(cmp)> network_queue(cmp); 
+std::queue<Packet> network_queue{}; 
 
 std::atomic<bool> keep_server_running{true};
 
@@ -231,7 +223,7 @@ void sender(char* via, char* to_ip, char* to_port) {
 
   while (keep_server_running) {
     if (!network_queue.empty()) {
-      Packet p = network_queue.top(); // .top() doesn't mutate, no need to lock.
+      Packet p = network_queue.front();
       if ((p.send_time - std::chrono::steady_clock::now()).count() <= 0) {
         std::unique_lock<std::mutex> lock(network_mutex);
         network_queue.pop();
