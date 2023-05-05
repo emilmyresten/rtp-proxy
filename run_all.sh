@@ -7,7 +7,9 @@ delayMode["rtp_to_lc"]="0"
 delayMode["arrival_time"]="1"
 delayMode["origin_rtp_timestamp"]="3"
 delayMode["cumulative_ratio_estimate"]="4"
-
+delayMode["cumulative_ratio_estimate_skip_transient"]="5"
+delayMode["fuzzy_filtering_estimate_incautious"]="6"
+delayMode["fuzzy_filtering_estimate_cautious"]="7"
 
 
 DESTINATION=$1
@@ -27,7 +29,6 @@ fi
 cleanup() {
     sudo killall ristserver
     sudo killall rtp_proxy
-    # Your cleanup logic goes here
     echo "Cleanup performed."
     exit 1
 }
@@ -37,7 +38,7 @@ trap cleanup SIGINT
 
 mkdir "./data/$DESTINATION"
 
-for algorithm in "arrival_time" "origin_rtp_timestamp" "rtp_to_lc" "jittery_rtp_to_lc" "cumulative_ratio_estimate"
+for algorithm in "arrival_time" "origin_rtp_timestamp" "rtp_to_lc" "jittery_rtp_to_lc" "cumulative_ratio_estimate" "cumulative_ratio_estimate_skip_transient" "fuzzy_filtering_estimate_incautious" "fuzzy_filtering_estimate_cautious"
 do
     mkdir "./data/$DESTINATION/$algorithm"
     for scenario in {1..3}

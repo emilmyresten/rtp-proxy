@@ -1,0 +1,4914 @@
+Session init: 2023-05-05 03:44:10
+drift-measure: 550057621407553
+inter-arrival jitter (ns): 669133
+maximum-jitter (ns): 1.01438e+08
+reorder-ratio: 0
+drift-measure: 550060498291349
+inter-arrival jitter (ns): 560914
+maximum-jitter (ns): 4.85927e+06
+reorder-ratio: 0
+drift-measure: 550063367843275
+inter-arrival jitter (ns): 741928
+maximum-jitter (ns): 4.82592e+06
+reorder-ratio: 0
+drift-measure: 550066239652408
+inter-arrival jitter (ns): 585768
+maximum-jitter (ns): 4.86052e+06
+reorder-ratio: 0
+drift-measure: 550069111210754
+inter-arrival jitter (ns): 586292
+maximum-jitter (ns): 4.82501e+06
+reorder-ratio: 0
+drift-measure: 550072012006756
+inter-arrival jitter (ns): 618962
+maximum-jitter (ns): 4.8126e+06
+reorder-ratio: 0
+drift-measure: 550075016257843
+inter-arrival jitter (ns): 542314
+maximum-jitter (ns): 4.78532e+06
+reorder-ratio: 0
+drift-measure: 550077957362273
+inter-arrival jitter (ns): 464157
+maximum-jitter (ns): 4.7188e+06
+reorder-ratio: 0
+drift-measure: 550080877583038
+inter-arrival jitter (ns): 724423
+maximum-jitter (ns): 4.82154e+06
+reorder-ratio: 0
+drift-measure: 550083829536899
+inter-arrival jitter (ns): 552747
+maximum-jitter (ns): 4.81774e+06
+reorder-ratio: 0
+drift-measure: 550086830639612
+inter-arrival jitter (ns): 595111
+maximum-jitter (ns): 4.76278e+06
+reorder-ratio: 0
+drift-measure: 550089697615439
+inter-arrival jitter (ns): 450368
+maximum-jitter (ns): 4.77559e+06
+reorder-ratio: 0
+drift-measure: 550092663035745
+inter-arrival jitter (ns): 492427
+maximum-jitter (ns): 4.805e+06
+reorder-ratio: 0
+drift-measure: 550095666691215
+inter-arrival jitter (ns): 357250
+maximum-jitter (ns): 4.83907e+06
+reorder-ratio: 0
+drift-measure: 550098676306274
+inter-arrival jitter (ns): 549507
+maximum-jitter (ns): 4.82095e+06
+reorder-ratio: 0
+drift-measure: 550101661429941
+inter-arrival jitter (ns): 601117
+maximum-jitter (ns): 4.73628e+06
+reorder-ratio: 0
+drift-measure: 550104683253498
+inter-arrival jitter (ns): 719241
+maximum-jitter (ns): 4.82452e+06
+reorder-ratio: 0
+drift-measure: 550107635604467
+inter-arrival jitter (ns): 785592
+maximum-jitter (ns): 4.8175e+06
+reorder-ratio: 0
+drift-measure: 550110547468085
+inter-arrival jitter (ns): 612327
+maximum-jitter (ns): 4.86896e+06
+reorder-ratio: 0
+drift-measure: 550113548913335
+inter-arrival jitter (ns): 809157
+maximum-jitter (ns): 4.95079e+06
+reorder-ratio: 0
+drift-measure: 550116550014386
+inter-arrival jitter (ns): 370498
+maximum-jitter (ns): 4.73992e+06
+reorder-ratio: 0
+drift-measure: 550119513962575
+inter-arrival jitter (ns): 746946
+maximum-jitter (ns): 4.77483e+06
+reorder-ratio: 0
+drift-measure: 550122405488333
+inter-arrival jitter (ns): 786492
+maximum-jitter (ns): 4.79086e+06
+reorder-ratio: 0
+drift-measure: 550125317660425
+inter-arrival jitter (ns): 590689
+maximum-jitter (ns): 4.83374e+06
+reorder-ratio: 0
+drift-measure: 550128301405048
+inter-arrival jitter (ns): 686340
+maximum-jitter (ns): 4.84382e+06
+reorder-ratio: 0
+drift-measure: 550131187769250
+inter-arrival jitter (ns): 719841
+maximum-jitter (ns): 4.75886e+06
+reorder-ratio: 0
+drift-measure: 550134056702475
+inter-arrival jitter (ns): 506198
+maximum-jitter (ns): 4.77719e+06
+reorder-ratio: 0
+drift-measure: 550136945710823
+inter-arrival jitter (ns): 520115
+maximum-jitter (ns): 4.77694e+06
+reorder-ratio: 0
+drift-measure: 550139836711635
+inter-arrival jitter (ns): 640832
+maximum-jitter (ns): 4.88515e+06
+reorder-ratio: 0
+drift-measure: 550142735896732
+inter-arrival jitter (ns): 721439
+maximum-jitter (ns): 4.80421e+06
+reorder-ratio: 0
+drift-measure: 550145692316545
+inter-arrival jitter (ns): 428776
+maximum-jitter (ns): 4.82363e+06
+reorder-ratio: 0
+drift-measure: 550148703605266
+inter-arrival jitter (ns): 418450
+maximum-jitter (ns): 4.83934e+06
+reorder-ratio: 0
+drift-measure: 550151697092171
+inter-arrival jitter (ns): 355560
+maximum-jitter (ns): 4.85873e+06
+reorder-ratio: 0
+drift-measure: 550154643059733
+inter-arrival jitter (ns): 778460
+maximum-jitter (ns): 4.68384e+06
+reorder-ratio: 0
+drift-measure: 550157530783352
+inter-arrival jitter (ns): 398680
+maximum-jitter (ns): 4.84718e+06
+reorder-ratio: 0
+drift-measure: 550160433367548
+inter-arrival jitter (ns): 611397
+maximum-jitter (ns): 4.86728e+06
+reorder-ratio: 0
+drift-measure: 550163308091440
+inter-arrival jitter (ns): 412975
+maximum-jitter (ns): 4.79116e+06
+reorder-ratio: 0
+drift-measure: 550166184087436
+inter-arrival jitter (ns): 604638
+maximum-jitter (ns): 4.8319e+06
+reorder-ratio: 0
+drift-measure: 550169095321223
+inter-arrival jitter (ns): 715638
+maximum-jitter (ns): 4.88225e+06
+reorder-ratio: 0
+drift-measure: 550172035423219
+inter-arrival jitter (ns): 835869
+maximum-jitter (ns): 4.80833e+06
+reorder-ratio: 0
+drift-measure: 550174981660482
+inter-arrival jitter (ns): 506827
+maximum-jitter (ns): 4.76111e+06
+reorder-ratio: 0
+drift-measure: 550177931844192
+inter-arrival jitter (ns): 456379
+maximum-jitter (ns): 4.86673e+06
+reorder-ratio: 0
+drift-measure: 550180988362780
+inter-arrival jitter (ns): 723130
+maximum-jitter (ns): 4.7449e+06
+reorder-ratio: 0
+drift-measure: 550183861369489
+inter-arrival jitter (ns): 884363
+maximum-jitter (ns): 4.73826e+06
+reorder-ratio: 0
+drift-measure: 550186746324701
+inter-arrival jitter (ns): 357853
+maximum-jitter (ns): 4.83703e+06
+reorder-ratio: 0
+drift-measure: 550189624316878
+inter-arrival jitter (ns): 988058
+maximum-jitter (ns): 4.85773e+06
+reorder-ratio: 0
+drift-measure: 550192486772331
+inter-arrival jitter (ns): 554961
+maximum-jitter (ns): 4.82693e+06
+reorder-ratio: 0
+drift-measure: 550195367296205
+inter-arrival jitter (ns): 524413
+maximum-jitter (ns): 4.72831e+06
+reorder-ratio: 0
+drift-measure: 550198240775101
+inter-arrival jitter (ns): 429537
+maximum-jitter (ns): 4.70379e+06
+reorder-ratio: 0
+drift-measure: 550201141144490
+inter-arrival jitter (ns): 857197
+maximum-jitter (ns): 4.86573e+06
+reorder-ratio: 0
+drift-measure: 550204038599622
+inter-arrival jitter (ns): 257527
+maximum-jitter (ns): 4.78513e+06
+reorder-ratio: 0
+drift-measure: 550206961123198
+inter-arrival jitter (ns): 320123
+maximum-jitter (ns): 9.69505e+06
+reorder-ratio: 0
+drift-measure: 550209841337356
+inter-arrival jitter (ns): 309717
+maximum-jitter (ns): 4.85458e+06
+reorder-ratio: 0
+drift-measure: 550212904322607
+inter-arrival jitter (ns): 419197
+maximum-jitter (ns): 4.83398e+06
+reorder-ratio: 0
+drift-measure: 550215854336932
+inter-arrival jitter (ns): 436594
+maximum-jitter (ns): 4.76302e+06
+reorder-ratio: 0
+drift-measure: 550218815332712
+inter-arrival jitter (ns): 850181
+maximum-jitter (ns): 8.92409e+06
+reorder-ratio: 0
+drift-measure: 550221805412523
+inter-arrival jitter (ns): 620049
+maximum-jitter (ns): 4.83245e+06
+reorder-ratio: 0
+drift-measure: 550224785067162
+inter-arrival jitter (ns): 708724
+maximum-jitter (ns): 4.97386e+06
+reorder-ratio: 0
+drift-measure: 550227744649966
+inter-arrival jitter (ns): 409606
+maximum-jitter (ns): 4.78687e+06
+reorder-ratio: 0
+drift-measure: 550230718065115
+inter-arrival jitter (ns): 910745
+maximum-jitter (ns): 4.9438e+06
+reorder-ratio: 0
+drift-measure: 550233751885104
+inter-arrival jitter (ns): 577875
+maximum-jitter (ns): 4.77429e+06
+reorder-ratio: 0
+drift-measure: 550236637548804
+inter-arrival jitter (ns): 536456
+maximum-jitter (ns): 4.86711e+06
+reorder-ratio: 0
+drift-measure: 550239670557966
+inter-arrival jitter (ns): 441854
+maximum-jitter (ns): 4.87893e+06
+reorder-ratio: 0
+drift-measure: 550242749816420
+inter-arrival jitter (ns): 741217
+maximum-jitter (ns): 4.73698e+06
+reorder-ratio: 0
+drift-measure: 550245850115140
+inter-arrival jitter (ns): 585306
+maximum-jitter (ns): 4.82473e+06
+reorder-ratio: 0
+drift-measure: 550248927190707
+inter-arrival jitter (ns): 612970
+maximum-jitter (ns): 9.62766e+06
+reorder-ratio: 0
+drift-measure: 550251934640410
+inter-arrival jitter (ns): 389121
+maximum-jitter (ns): 4.73015e+06
+reorder-ratio: 0
+drift-measure: 550254908306717
+inter-arrival jitter (ns): 749898
+maximum-jitter (ns): 4.82937e+06
+reorder-ratio: 0
+drift-measure: 550257775307790
+inter-arrival jitter (ns): 692902
+maximum-jitter (ns): 4.89277e+06
+reorder-ratio: 0
+drift-measure: 550260643577322
+inter-arrival jitter (ns): 648582
+maximum-jitter (ns): 4.81118e+06
+reorder-ratio: 0
+drift-measure: 550263587350864
+inter-arrival jitter (ns): 545225
+maximum-jitter (ns): 4.77294e+06
+reorder-ratio: 0
+drift-measure: 550266680306994
+inter-arrival jitter (ns): 683215
+maximum-jitter (ns): 4.75e+06
+reorder-ratio: 0
+drift-measure: 550269747053698
+inter-arrival jitter (ns): 533122
+maximum-jitter (ns): 4.73573e+06
+reorder-ratio: 0
+drift-measure: 550272768497237
+inter-arrival jitter (ns): 456546
+maximum-jitter (ns): 4.79317e+06
+reorder-ratio: 0
+drift-measure: 550275805815681
+inter-arrival jitter (ns): 270628
+maximum-jitter (ns): 4.77943e+06
+reorder-ratio: 0
+drift-measure: 550278830848724
+inter-arrival jitter (ns): 390445
+maximum-jitter (ns): 4.85102e+06
+reorder-ratio: 0
+drift-measure: 550281810010667
+inter-arrival jitter (ns): 300820
+maximum-jitter (ns): 4.67441e+06
+reorder-ratio: 0
+drift-measure: 550284905473787
+inter-arrival jitter (ns): 573840
+maximum-jitter (ns): 4.81164e+06
+reorder-ratio: 0
+drift-measure: 550287992662986
+inter-arrival jitter (ns): 357415
+maximum-jitter (ns): 4.81963e+06
+reorder-ratio: 0
+drift-measure: 550290966426253
+inter-arrival jitter (ns): 361140
+maximum-jitter (ns): 4.78633e+06
+reorder-ratio: 0
+drift-measure: 550293874078762
+inter-arrival jitter (ns): 549162
+maximum-jitter (ns): 4.73175e+06
+reorder-ratio: 0
+drift-measure: 550296772394643
+inter-arrival jitter (ns): 808951
+maximum-jitter (ns): 4.86133e+06
+reorder-ratio: 0
+drift-measure: 550299712448491
+inter-arrival jitter (ns): 404578
+maximum-jitter (ns): 4.80335e+06
+reorder-ratio: 0
+drift-measure: 550302747698308
+inter-arrival jitter (ns): 469766
+maximum-jitter (ns): 4.71606e+06
+reorder-ratio: 0
+drift-measure: 550305837740230
+inter-arrival jitter (ns): 520956
+maximum-jitter (ns): 4.78239e+06
+reorder-ratio: 0
+drift-measure: 550308929528158
+inter-arrival jitter (ns): 542643
+maximum-jitter (ns): 4.86285e+06
+reorder-ratio: 0
+drift-measure: 550311927006323
+inter-arrival jitter (ns): 713520
+maximum-jitter (ns): 4.75704e+06
+reorder-ratio: 0
+drift-measure: 550314867345761
+inter-arrival jitter (ns): 441283
+maximum-jitter (ns): 4.76661e+06
+reorder-ratio: 0
+drift-measure: 550317809956522
+inter-arrival jitter (ns): 677469
+maximum-jitter (ns): 4.7981e+06
+reorder-ratio: 0
+drift-measure: 550320810698114
+inter-arrival jitter (ns): 836931
+maximum-jitter (ns): 4.72658e+06
+reorder-ratio: 0
+drift-measure: 550323897652356
+inter-arrival jitter (ns): 480880
+maximum-jitter (ns): 4.78634e+06
+reorder-ratio: 0
+drift-measure: 550326947921566
+inter-arrival jitter (ns): 526492
+maximum-jitter (ns): 4.77256e+06
+reorder-ratio: 0
+drift-measure: 550329809400593
+inter-arrival jitter (ns): 530396
+maximum-jitter (ns): 4.81871e+06
+reorder-ratio: 0
+drift-measure: 550332699031047
+inter-arrival jitter (ns): 592810
+maximum-jitter (ns): 4.82407e+06
+reorder-ratio: 0
+drift-measure: 550335560151659
+inter-arrival jitter (ns): 635407
+maximum-jitter (ns): 4.77321e+06
+reorder-ratio: 0
+drift-measure: 550338417875294
+inter-arrival jitter (ns): 592201
+maximum-jitter (ns): 4.68883e+06
+reorder-ratio: 0
+drift-measure: 550341296382179
+inter-arrival jitter (ns): 592797
+maximum-jitter (ns): 4.79264e+06
+reorder-ratio: 0
+drift-measure: 550344159170540
+inter-arrival jitter (ns): 543291
+maximum-jitter (ns): 4.74387e+06
+reorder-ratio: 0
+drift-measure: 550347223336155
+inter-arrival jitter (ns): 921035
+maximum-jitter (ns): 4.84096e+06
+reorder-ratio: 0
+drift-measure: 550350263647993
+inter-arrival jitter (ns): 392410
+maximum-jitter (ns): 4.79588e+06
+reorder-ratio: 0
+drift-measure: 550353196385919
+inter-arrival jitter (ns): 631986
+maximum-jitter (ns): 4.84262e+06
+reorder-ratio: 0
+drift-measure: 550356101795709
+inter-arrival jitter (ns): 911359
+maximum-jitter (ns): 4.75843e+06
+reorder-ratio: 0
+drift-measure: 550359002463853
+inter-arrival jitter (ns): 771749
+maximum-jitter (ns): 7.32983e+06
+reorder-ratio: 0
+drift-measure: 550361869068500
+inter-arrival jitter (ns): 477172
+maximum-jitter (ns): 4.79456e+06
+reorder-ratio: 0
+drift-measure: 550364744278365
+inter-arrival jitter (ns): 601580
+maximum-jitter (ns): 4.79108e+06
+reorder-ratio: 0
+drift-measure: 550367625702462
+inter-arrival jitter (ns): 646118
+maximum-jitter (ns): 4.96024e+06
+reorder-ratio: 0
+drift-measure: 550370500020118
+inter-arrival jitter (ns): 557175
+maximum-jitter (ns): 4.96486e+06
+reorder-ratio: 0
+drift-measure: 550373374180601
+inter-arrival jitter (ns): 723964
+maximum-jitter (ns): 4.87431e+06
+reorder-ratio: 0
+drift-measure: 550376244920366
+inter-arrival jitter (ns): 615412
+maximum-jitter (ns): 4.71332e+06
+reorder-ratio: 0
+drift-measure: 550379123590493
+inter-arrival jitter (ns): 428372
+maximum-jitter (ns): 4.98236e+06
+reorder-ratio: 0
+drift-measure: 550382001036565
+inter-arrival jitter (ns): 351995
+maximum-jitter (ns): 4.97155e+06
+reorder-ratio: 0
+drift-measure: 550384933744225
+inter-arrival jitter (ns): 968136
+maximum-jitter (ns): 4.92055e+06
+reorder-ratio: 0
+drift-measure: 550387864188547
+inter-arrival jitter (ns): 811270
+maximum-jitter (ns): 4.9586e+06
+reorder-ratio: 0
+drift-measure: 550390778719404
+inter-arrival jitter (ns): 542414
+maximum-jitter (ns): 4.95261e+06
+reorder-ratio: 0
+drift-measure: 550393709505521
+inter-arrival jitter (ns): 433716
+maximum-jitter (ns): 7.136e+06
+reorder-ratio: 0
+drift-measure: 550396601642765
+inter-arrival jitter (ns): 507332
+maximum-jitter (ns): 4.77728e+06
+reorder-ratio: 0
+drift-measure: 550399530580677
+inter-arrival jitter (ns): 616537
+maximum-jitter (ns): 4.94833e+06
+reorder-ratio: 0
+drift-measure: 550402474538492
+inter-arrival jitter (ns): 700599
+maximum-jitter (ns): 4.84147e+06
+reorder-ratio: 0
+drift-measure: 550405391577051
+inter-arrival jitter (ns): 818228
+maximum-jitter (ns): 4.97785e+06
+reorder-ratio: 0
+drift-measure: 550408425779761
+inter-arrival jitter (ns): 707059
+maximum-jitter (ns): 4.90623e+06
+reorder-ratio: 0
+drift-measure: 550411370326781
+inter-arrival jitter (ns): 439258
+maximum-jitter (ns): 4.84674e+06
+reorder-ratio: 0
+drift-measure: 550414255069098
+inter-arrival jitter (ns): 741694
+maximum-jitter (ns): 4.83613e+06
+reorder-ratio: 0
+drift-measure: 550417160696572
+inter-arrival jitter (ns): 832833
+maximum-jitter (ns): 4.86622e+06
+reorder-ratio: 0
+drift-measure: 550420065403937
+inter-arrival jitter (ns): 462576
+maximum-jitter (ns): 4.7572e+06
+reorder-ratio: 0
+drift-measure: 550422956368281
+inter-arrival jitter (ns): 297304
+maximum-jitter (ns): 4.8918e+06
+reorder-ratio: 0
+drift-measure: 550425864547940
+inter-arrival jitter (ns): 590784
+maximum-jitter (ns): 4.86709e+06
+reorder-ratio: 0
+drift-measure: 550428766172252
+inter-arrival jitter (ns): 1.49199e+06
+maximum-jitter (ns): 1.09106e+07
+reorder-ratio: 0
+drift-measure: 550431649341804
+inter-arrival jitter (ns): 878694
+maximum-jitter (ns): 1.27186e+07
+reorder-ratio: 0
+drift-measure: 550434535563251
+inter-arrival jitter (ns): 630563
+maximum-jitter (ns): 4.84062e+06
+reorder-ratio: 0
+drift-measure: 550437448744018
+inter-arrival jitter (ns): 637529
+maximum-jitter (ns): 4.83075e+06
+reorder-ratio: 0
+drift-measure: 550440333544362
+inter-arrival jitter (ns): 665819
+maximum-jitter (ns): 4.89966e+06
+reorder-ratio: 0
+drift-measure: 550443219625468
+inter-arrival jitter (ns): 545578
+maximum-jitter (ns): 8.97694e+06
+reorder-ratio: 0
+drift-measure: 550446109131190
+inter-arrival jitter (ns): 649392
+maximum-jitter (ns): 4.88514e+06
+reorder-ratio: 0
+drift-measure: 550448996058198
+inter-arrival jitter (ns): 483527
+maximum-jitter (ns): 4.89145e+06
+reorder-ratio: 0
+drift-measure: 550451883874410
+inter-arrival jitter (ns): 865832
+maximum-jitter (ns): 4.95277e+06
+reorder-ratio: 0
+drift-measure: 550454773056681
+inter-arrival jitter (ns): 924176
+maximum-jitter (ns): 4.91537e+06
+reorder-ratio: 0
+drift-measure: 550457660051835
+inter-arrival jitter (ns): 643146
+maximum-jitter (ns): 4.94373e+06
+reorder-ratio: 0
+drift-measure: 550460548561446
+inter-arrival jitter (ns): 459130
+maximum-jitter (ns): 4.89183e+06
+reorder-ratio: 0
+drift-measure: 550463430771444
+inter-arrival jitter (ns): 827070
+maximum-jitter (ns): 4.90751e+06
+reorder-ratio: 0
+drift-measure: 550466342289861
+inter-arrival jitter (ns): 389631
+maximum-jitter (ns): 4.80936e+06
+reorder-ratio: 0
+drift-measure: 550469288714632
+inter-arrival jitter (ns): 617859
+maximum-jitter (ns): 4.87584e+06
+reorder-ratio: 0
+drift-measure: 550472192063901
+inter-arrival jitter (ns): 505903
+maximum-jitter (ns): 4.85264e+06
+reorder-ratio: 0
+drift-measure: 550475070530080
+inter-arrival jitter (ns): 744201
+maximum-jitter (ns): 4.77753e+06
+reorder-ratio: 0
+drift-measure: 550477944817069
+inter-arrival jitter (ns): 573328
+maximum-jitter (ns): 4.77596e+06
+reorder-ratio: 0
+drift-measure: 550480836390395
+inter-arrival jitter (ns): 437431
+maximum-jitter (ns): 4.87653e+06
+reorder-ratio: 0
+drift-measure: 550483744637008
+inter-arrival jitter (ns): 778818
+maximum-jitter (ns): 4.6553e+06
+reorder-ratio: 0
+drift-measure: 550486650800259
+inter-arrival jitter (ns): 465428
+maximum-jitter (ns): 4.76718e+06
+reorder-ratio: 0
+drift-measure: 550489559916399
+inter-arrival jitter (ns): 678986
+maximum-jitter (ns): 4.72146e+06
+reorder-ratio: 0
+drift-measure: 550492473368020
+inter-arrival jitter (ns): 631731
+maximum-jitter (ns): 4.87288e+06
+reorder-ratio: 0
+drift-measure: 550495382113711
+inter-arrival jitter (ns): 590665
+maximum-jitter (ns): 4.73462e+06
+reorder-ratio: 0
+drift-measure: 550498281960629
+inter-arrival jitter (ns): 876324
+maximum-jitter (ns): 4.76893e+06
+reorder-ratio: 0
+drift-measure: 550501181625879
+inter-arrival jitter (ns): 690522
+maximum-jitter (ns): 4.87321e+06
+reorder-ratio: 0
+drift-measure: 550504086344464
+inter-arrival jitter (ns): 1.5543e+06
+maximum-jitter (ns): 1.07717e+07
+reorder-ratio: 0
+drift-measure: 550506974703053
+inter-arrival jitter (ns): 622299
+maximum-jitter (ns): 4.79671e+06
+reorder-ratio: 0
+drift-measure: 550509881703740
+inter-arrival jitter (ns): 754920
+maximum-jitter (ns): 4.73828e+06
+reorder-ratio: 0
+drift-measure: 550512780505525
+inter-arrival jitter (ns): 486319
+maximum-jitter (ns): 4.82711e+06
+reorder-ratio: 0
+drift-measure: 550515680770690
+inter-arrival jitter (ns): 416288
+maximum-jitter (ns): 4.77308e+06
+reorder-ratio: 0
+drift-measure: 550518580010510
+inter-arrival jitter (ns): 464178
+maximum-jitter (ns): 4.76025e+06
+reorder-ratio: 0
+drift-measure: 550521479935683
+inter-arrival jitter (ns): 597236
+maximum-jitter (ns): 4.82391e+06
+reorder-ratio: 0
+drift-measure: 550524377595104
+inter-arrival jitter (ns): 533759
+maximum-jitter (ns): 4.87133e+06
+reorder-ratio: 0
+drift-measure: 550527275150702
+inter-arrival jitter (ns): 698866
+maximum-jitter (ns): 4.82451e+06
+reorder-ratio: 0
+drift-measure: 550530174962835
+inter-arrival jitter (ns): 598270
+maximum-jitter (ns): 4.77755e+06
+reorder-ratio: 0
+drift-measure: 550533097158241
+inter-arrival jitter (ns): 419688
+maximum-jitter (ns): 4.80746e+06
+reorder-ratio: 0
+drift-measure: 550535991872506
+inter-arrival jitter (ns): 825527
+maximum-jitter (ns): 4.8004e+06
+reorder-ratio: 0
+drift-measure: 550538865764761
+inter-arrival jitter (ns): 1.00352e+06
+maximum-jitter (ns): 4.87029e+06
+reorder-ratio: 0
+drift-measure: 550541747152491
+inter-arrival jitter (ns): 453638
+maximum-jitter (ns): 4.90304e+06
+reorder-ratio: 0
+drift-measure: 550544813839624
+inter-arrival jitter (ns): 587818
+maximum-jitter (ns): 4.89099e+06
+reorder-ratio: 0
+drift-measure: 550547770246263
+inter-arrival jitter (ns): 486293
+maximum-jitter (ns): 4.78805e+06
+reorder-ratio: 0
+drift-measure: 550550799062029
+inter-arrival jitter (ns): 742705
+maximum-jitter (ns): 9.47286e+06
+reorder-ratio: 0
+drift-measure: 550553821268307
+inter-arrival jitter (ns): 730105
+maximum-jitter (ns): 4.73439e+06
+reorder-ratio: 0
+drift-measure: 550556786525429
+inter-arrival jitter (ns): 895207
+maximum-jitter (ns): 4.78918e+06
+reorder-ratio: 0
+drift-measure: 550559671200430
+inter-arrival jitter (ns): 826151
+maximum-jitter (ns): 4.81249e+06
+reorder-ratio: 0
+drift-measure: 550562557269273
+inter-arrival jitter (ns): 381544
+maximum-jitter (ns): 4.81927e+06
+reorder-ratio: 0
+drift-measure: 550565442559518
+inter-arrival jitter (ns): 373796
+maximum-jitter (ns): 4.87501e+06
+reorder-ratio: 0
+drift-measure: 550568335512990
+inter-arrival jitter (ns): 815936
+maximum-jitter (ns): 4.85738e+06
+reorder-ratio: 0
+drift-measure: 550571219356306
+inter-arrival jitter (ns): 880846
+maximum-jitter (ns): 4.82994e+06
+reorder-ratio: 0
+drift-measure: 550574117795987
+inter-arrival jitter (ns): 515870
+maximum-jitter (ns): 4.85922e+06
+reorder-ratio: 0
+drift-measure: 550577004650220
+inter-arrival jitter (ns): 475236
+maximum-jitter (ns): 4.84779e+06
+reorder-ratio: 0
+drift-measure: 550579900963027
+inter-arrival jitter (ns): 400567
+maximum-jitter (ns): 4.89492e+06
+reorder-ratio: 0
+drift-measure: 550582812444826
+inter-arrival jitter (ns): 464187
+maximum-jitter (ns): 1.11192e+07
+reorder-ratio: 0
+drift-measure: 550585778883565
+inter-arrival jitter (ns): 454284
+maximum-jitter (ns): 4.87255e+06
+reorder-ratio: 0
+drift-measure: 550588761350062
+inter-arrival jitter (ns): 380612
+maximum-jitter (ns): 4.74478e+06
+reorder-ratio: 0
+drift-measure: 550591729407391
+inter-arrival jitter (ns): 585060
+maximum-jitter (ns): 5.02937e+06
+reorder-ratio: 0
+drift-measure: 550594753318929
+inter-arrival jitter (ns): 512059
+maximum-jitter (ns): 4.74761e+06
+reorder-ratio: 0
+drift-measure: 550597763868506
+inter-arrival jitter (ns): 634728
+maximum-jitter (ns): 4.79975e+06
+reorder-ratio: 0
+drift-measure: 550600712656761
+inter-arrival jitter (ns): 401129
+maximum-jitter (ns): 4.79374e+06
+reorder-ratio: 0
+drift-measure: 550603700423963
+inter-arrival jitter (ns): 909357
+maximum-jitter (ns): 4.86724e+06
+reorder-ratio: 0
+drift-measure: 550606667255102
+inter-arrival jitter (ns): 1.25773e+06
+maximum-jitter (ns): 4.90052e+06
+reorder-ratio: 0
+drift-measure: 550609683143173
+inter-arrival jitter (ns): 942473
+maximum-jitter (ns): 4.91054e+06
+reorder-ratio: 0
+drift-measure: 550612588566087
+inter-arrival jitter (ns): 1.07226e+06
+maximum-jitter (ns): 4.84057e+06
+reorder-ratio: 0
+drift-measure: 550615478324079
+inter-arrival jitter (ns): 765356
+maximum-jitter (ns): 4.80864e+06
+reorder-ratio: 0
+drift-measure: 550618357912563
+inter-arrival jitter (ns): 462632
+maximum-jitter (ns): 4.87983e+06
+reorder-ratio: 0
+drift-measure: 550621236753799
+inter-arrival jitter (ns): 658145
+maximum-jitter (ns): 4.89183e+06
+reorder-ratio: 0
+drift-measure: 550624133914423
+inter-arrival jitter (ns): 415191
+maximum-jitter (ns): 4.8371e+06
+reorder-ratio: 0
+drift-measure: 550627026955508
+inter-arrival jitter (ns): 507482
+maximum-jitter (ns): 4.89214e+06
+reorder-ratio: 0
+drift-measure: 550629914004733
+inter-arrival jitter (ns): 412871
+maximum-jitter (ns): 4.83253e+06
+reorder-ratio: 0
+drift-measure: 550632797378936
+inter-arrival jitter (ns): 501237
+maximum-jitter (ns): 4.86251e+06
+reorder-ratio: 0
+drift-measure: 550635708282400
+inter-arrival jitter (ns): 514376
+maximum-jitter (ns): 4.86785e+06
+reorder-ratio: 0
+drift-measure: 550638631955292
+inter-arrival jitter (ns): 864381
+maximum-jitter (ns): 4.78146e+06
+reorder-ratio: 0
+drift-measure: 550641509830492
+inter-arrival jitter (ns): 520465
+maximum-jitter (ns): 4.79437e+06
+reorder-ratio: 0
+drift-measure: 550644410491964
+inter-arrival jitter (ns): 244174
+maximum-jitter (ns): 4.86058e+06
+reorder-ratio: 0
+drift-measure: 550647361440075
+inter-arrival jitter (ns): 644590
+maximum-jitter (ns): 4.83353e+06
+reorder-ratio: 0
+drift-measure: 550650357286617
+inter-arrival jitter (ns): 729176
+maximum-jitter (ns): 4.78734e+06
+reorder-ratio: 0
+drift-measure: 550653510285343
+inter-arrival jitter (ns): 496113
+maximum-jitter (ns): 4.82258e+06
+reorder-ratio: 0
+drift-measure: 550656588142812
+inter-arrival jitter (ns): 352277
+maximum-jitter (ns): 9.27883e+06
+reorder-ratio: 0
+drift-measure: 550659562101973
+inter-arrival jitter (ns): 361470
+maximum-jitter (ns): 4.83746e+06
+reorder-ratio: 0
+drift-measure: 550662471545853
+inter-arrival jitter (ns): 971376
+maximum-jitter (ns): 4.83172e+06
+reorder-ratio: 0
+drift-measure: 550665373512972
+inter-arrival jitter (ns): 641458
+maximum-jitter (ns): 4.75376e+06
+reorder-ratio: 0
+drift-measure: 550668261322090
+inter-arrival jitter (ns): 765403
+maximum-jitter (ns): 4.74514e+06
+reorder-ratio: 0
+drift-measure: 550671144008745
+inter-arrival jitter (ns): 509054
+maximum-jitter (ns): 4.86484e+06
+reorder-ratio: 0
+drift-measure: 550674037198046
+inter-arrival jitter (ns): 383056
+maximum-jitter (ns): 4.85465e+06
+reorder-ratio: 0
+drift-measure: 550677035142448
+inter-arrival jitter (ns): 298615
+maximum-jitter (ns): 4.79126e+06
+reorder-ratio: 0
+drift-measure: 550679957079233
+inter-arrival jitter (ns): 886120
+maximum-jitter (ns): 4.86537e+06
+reorder-ratio: 0
+drift-measure: 550683014865088
+inter-arrival jitter (ns): 473564
+maximum-jitter (ns): 4.87717e+06
+reorder-ratio: 0
+drift-measure: 550686055755672
+inter-arrival jitter (ns): 747410
+maximum-jitter (ns): 4.99899e+06
+reorder-ratio: 0
+drift-measure: 550689090531999
+inter-arrival jitter (ns): 451255
+maximum-jitter (ns): 4.7695e+06
+reorder-ratio: 0
+drift-measure: 550692127729747
+inter-arrival jitter (ns): 486022
+maximum-jitter (ns): 4.79856e+06
+reorder-ratio: 0
+drift-measure: 550695177686416
+inter-arrival jitter (ns): 640476
+maximum-jitter (ns): 4.80494e+06
+reorder-ratio: 0
+drift-measure: 550698236580922
+inter-arrival jitter (ns): 288465
+maximum-jitter (ns): 4.8689e+06
+reorder-ratio: 0
+drift-measure: 550701325796878
+inter-arrival jitter (ns): 547367
+maximum-jitter (ns): 4.85938e+06
+reorder-ratio: 0
+drift-measure: 550704326856702
+inter-arrival jitter (ns): 381272
+maximum-jitter (ns): 4.82983e+06
+reorder-ratio: 0
+drift-measure: 550707258098477
+inter-arrival jitter (ns): 322330
+maximum-jitter (ns): 4.89873e+06
+reorder-ratio: 0
+drift-measure: 550710305697312
+inter-arrival jitter (ns): 461201
+maximum-jitter (ns): 4.79665e+06
+reorder-ratio: 0
+drift-measure: 550713232996607
+inter-arrival jitter (ns): 660842
+maximum-jitter (ns): 4.78395e+06
+reorder-ratio: 0
+drift-measure: 550716108526086
+inter-arrival jitter (ns): 487462
+maximum-jitter (ns): 4.86381e+06
+reorder-ratio: 0
+drift-measure: 550718979527657
+inter-arrival jitter (ns): 506962
+maximum-jitter (ns): 4.943e+06
+reorder-ratio: 0
+drift-measure: 550721859059667
+inter-arrival jitter (ns): 670538
+maximum-jitter (ns): 4.7811e+06
+reorder-ratio: 0
+drift-measure: 550724898425867
+inter-arrival jitter (ns): 858397
+maximum-jitter (ns): 4.83256e+06
+reorder-ratio: 0
+drift-measure: 550727897305598
+inter-arrival jitter (ns): 497609
+maximum-jitter (ns): 4.7373e+06
+reorder-ratio: 0
+drift-measure: 550730785036370
+inter-arrival jitter (ns): 664805
+maximum-jitter (ns): 4.90248e+06
+reorder-ratio: 0
+drift-measure: 550733706835920
+inter-arrival jitter (ns): 456237
+maximum-jitter (ns): 4.90578e+06
+reorder-ratio: 0
+drift-measure: 550736678623314
+inter-arrival jitter (ns): 799288
+maximum-jitter (ns): 4.79892e+06
+reorder-ratio: 0
+drift-measure: 550739657867310
+inter-arrival jitter (ns): 696902
+maximum-jitter (ns): 4.87475e+06
+reorder-ratio: 0
+drift-measure: 550742622170018
+inter-arrival jitter (ns): 592423
+maximum-jitter (ns): 4.70005e+06
+reorder-ratio: 0
+drift-measure: 550745595351103
+inter-arrival jitter (ns): 519948
+maximum-jitter (ns): 4.87624e+06
+reorder-ratio: 0
+drift-measure: 550748602479549
+inter-arrival jitter (ns): 703559
+maximum-jitter (ns): 4.76857e+06
+reorder-ratio: 0
+drift-measure: 550751535587412
+inter-arrival jitter (ns): 725390
+maximum-jitter (ns): 8.9201e+06
+reorder-ratio: 0
+drift-measure: 550754446341438
+inter-arrival jitter (ns): 291180
+maximum-jitter (ns): 4.86586e+06
+reorder-ratio: 0
+drift-measure: 550757422578864
+inter-arrival jitter (ns): 628512
+maximum-jitter (ns): 4.88416e+06
+reorder-ratio: 0
+drift-measure: 550760469159948
+inter-arrival jitter (ns): 556347
+maximum-jitter (ns): 4.75593e+06
+reorder-ratio: 0
+drift-measure: 550763565692597
+inter-arrival jitter (ns): 408788
+maximum-jitter (ns): 4.81232e+06
+reorder-ratio: 0
+drift-measure: 550766573131180
+inter-arrival jitter (ns): 386709
+maximum-jitter (ns): 9.32399e+06
+reorder-ratio: 0
+drift-measure: 550769502171461
+inter-arrival jitter (ns): 610989
+maximum-jitter (ns): 4.84494e+06
+reorder-ratio: 0
+drift-measure: 550772449996897
+inter-arrival jitter (ns): 810183
+maximum-jitter (ns): 4.7888e+06
+reorder-ratio: 0
+drift-measure: 550775330250278
+inter-arrival jitter (ns): 565517
+maximum-jitter (ns): 4.94009e+06
+reorder-ratio: 0
+drift-measure: 550778338734905
+inter-arrival jitter (ns): 401202
+maximum-jitter (ns): 4.7689e+06
+reorder-ratio: 0
+drift-measure: 550781260495774
+inter-arrival jitter (ns): 711986
+maximum-jitter (ns): 4.83427e+06
+reorder-ratio: 0
+drift-measure: 550784130743132
+inter-arrival jitter (ns): 425587
+maximum-jitter (ns): 4.72123e+06
+reorder-ratio: 0
+drift-measure: 550787007355144
+inter-arrival jitter (ns): 492640
+maximum-jitter (ns): 4.86696e+06
+reorder-ratio: 0
+drift-measure: 550789998532074
+inter-arrival jitter (ns): 538849
+maximum-jitter (ns): 4.8187e+06
+reorder-ratio: 0
+drift-measure: 550793025280978
+inter-arrival jitter (ns): 667860
+maximum-jitter (ns): 4.78592e+06
+reorder-ratio: 0
+drift-measure: 550795993411642
+inter-arrival jitter (ns): 638366
+maximum-jitter (ns): 4.86053e+06
+reorder-ratio: 0
+drift-measure: 550798986476813
+inter-arrival jitter (ns): 1.09611e+06
+maximum-jitter (ns): 4.71909e+06
+reorder-ratio: 0
+drift-measure: 550802032861322
+inter-arrival jitter (ns): 324233
+maximum-jitter (ns): 4.77671e+06
+reorder-ratio: 0
+drift-measure: 550804939490919
+inter-arrival jitter (ns): 661502
+maximum-jitter (ns): 4.83414e+06
+reorder-ratio: 0
+drift-measure: 550807856727145
+inter-arrival jitter (ns): 444265
+maximum-jitter (ns): 4.75008e+06
+reorder-ratio: 0
+drift-measure: 550810733044950
+inter-arrival jitter (ns): 515721
+maximum-jitter (ns): 9.91271e+06
+reorder-ratio: 0
+drift-measure: 550813615061098
+inter-arrival jitter (ns): 739506
+maximum-jitter (ns): 4.85804e+06
+reorder-ratio: 0
+drift-measure: 550816493696191
+inter-arrival jitter (ns): 377864
+maximum-jitter (ns): 4.85029e+06
+reorder-ratio: 0
+drift-measure: 550819397946765
+inter-arrival jitter (ns): 908371
+maximum-jitter (ns): 4.87593e+06
+reorder-ratio: 0
+drift-measure: 550822282723275
+inter-arrival jitter (ns): 517217
+maximum-jitter (ns): 9.29679e+06
+reorder-ratio: 0
+drift-measure: 550825151511912
+inter-arrival jitter (ns): 623384
+maximum-jitter (ns): 4.82968e+06
+reorder-ratio: 0
+drift-measure: 550828026298420
+inter-arrival jitter (ns): 606201
+maximum-jitter (ns): 4.87506e+06
+reorder-ratio: 0
+drift-measure: 550830922215111
+inter-arrival jitter (ns): 623988
+maximum-jitter (ns): 4.92806e+06
+reorder-ratio: 0
+drift-measure: 550833807610141
+inter-arrival jitter (ns): 534174
+maximum-jitter (ns): 4.80448e+06
+reorder-ratio: 0
+drift-measure: 550836666252755
+inter-arrival jitter (ns): 467708
+maximum-jitter (ns): 9.67874e+06
+reorder-ratio: 0
+drift-measure: 550839539840654
+inter-arrival jitter (ns): 432212
+maximum-jitter (ns): 4.69506e+06
+reorder-ratio: 0
+drift-measure: 550842423721018
+inter-arrival jitter (ns): 834676
+maximum-jitter (ns): 5.15305e+06
+reorder-ratio: 0
+drift-measure: 550845335060793
+inter-arrival jitter (ns): 477834
+maximum-jitter (ns): 4.76964e+06
+reorder-ratio: 0
+drift-measure: 550848235796813
+inter-arrival jitter (ns): 529471
+maximum-jitter (ns): 4.81938e+06
+reorder-ratio: 0
+drift-measure: 550851135992720
+inter-arrival jitter (ns): 723711
+maximum-jitter (ns): 4.90953e+06
+reorder-ratio: 0
+drift-measure: 550854011188288
+inter-arrival jitter (ns): 379741
+maximum-jitter (ns): 4.78331e+06
+reorder-ratio: 0
+drift-measure: 550856889428466
+inter-arrival jitter (ns): 544470
+maximum-jitter (ns): 4.81261e+06
+reorder-ratio: 0
+drift-measure: 550859764204514
+inter-arrival jitter (ns): 603350
+maximum-jitter (ns): 4.75452e+06
+reorder-ratio: 0
+drift-measure: 550862634032623
+inter-arrival jitter (ns): 667174
+maximum-jitter (ns): 4.83812e+06
+reorder-ratio: 0
+drift-measure: 550865549041098
+inter-arrival jitter (ns): 762792
+maximum-jitter (ns): 4.80553e+06
+reorder-ratio: 0
+drift-measure: 550868455136833
+inter-arrival jitter (ns): 528560
+maximum-jitter (ns): 4.80814e+06
+reorder-ratio: 0
+drift-measure: 550871387987909
+inter-arrival jitter (ns): 719823
+maximum-jitter (ns): 4.84553e+06
+reorder-ratio: 0
+drift-measure: 550874262998153
+inter-arrival jitter (ns): 698757
+maximum-jitter (ns): 4.74163e+06
+reorder-ratio: 0
+drift-measure: 550877140851021
+inter-arrival jitter (ns): 542851
+maximum-jitter (ns): 4.80963e+06
+reorder-ratio: 0
+drift-measure: 550880018820627
+inter-arrival jitter (ns): 527290
+maximum-jitter (ns): 4.7981e+06
+reorder-ratio: 0
+drift-measure: 550882908099858
+inter-arrival jitter (ns): 567019
+maximum-jitter (ns): 4.85215e+06
+reorder-ratio: 0
+drift-measure: 550885784234081
+inter-arrival jitter (ns): 359126
+maximum-jitter (ns): 4.83845e+06
+reorder-ratio: 0
+drift-measure: 550888653844285
+inter-arrival jitter (ns): 339490
+maximum-jitter (ns): 5.07375e+06
+reorder-ratio: 0
+drift-measure: 550891542046153
+inter-arrival jitter (ns): 764459
+maximum-jitter (ns): 4.85009e+06
+reorder-ratio: 0
+drift-measure: 550894582817666
+inter-arrival jitter (ns): 707665
+maximum-jitter (ns): 4.68944e+06
+reorder-ratio: 0
+drift-measure: 550897529670954
+inter-arrival jitter (ns): 620757
+maximum-jitter (ns): 4.75664e+06
+reorder-ratio: 0
+drift-measure: 550900454111123
+inter-arrival jitter (ns): 502740
+maximum-jitter (ns): 4.86379e+06
+reorder-ratio: 0
+drift-measure: 550903376425581
+inter-arrival jitter (ns): 759788
+maximum-jitter (ns): 4.8663e+06
+reorder-ratio: 0
+drift-measure: 550906293138805
+inter-arrival jitter (ns): 451675
+maximum-jitter (ns): 4.76791e+06
+reorder-ratio: 0
+drift-measure: 550909195692114
+inter-arrival jitter (ns): 504660
+maximum-jitter (ns): 4.78613e+06
+reorder-ratio: 0
+drift-measure: 550912097864215
+inter-arrival jitter (ns): 427957
+maximum-jitter (ns): 4.89007e+06
+reorder-ratio: 0
+drift-measure: 550914984154970
+inter-arrival jitter (ns): 719853
+maximum-jitter (ns): 4.82834e+06
+reorder-ratio: 0
+drift-measure: 550917860130288
+inter-arrival jitter (ns): 746228
+maximum-jitter (ns): 4.78619e+06
+reorder-ratio: 0
+drift-measure: 550920766218699
+inter-arrival jitter (ns): 1.15839e+06
+maximum-jitter (ns): 4.78665e+06
+reorder-ratio: 0
+drift-measure: 550923652589583
+inter-arrival jitter (ns): 569021
+maximum-jitter (ns): 9.53972e+06
+reorder-ratio: 0
+drift-measure: 550926540314335
+inter-arrival jitter (ns): 472817
+maximum-jitter (ns): 4.85202e+06
+reorder-ratio: 0
+drift-measure: 550929436279937
+inter-arrival jitter (ns): 421076
+maximum-jitter (ns): 4.81913e+06
+reorder-ratio: 0
+drift-measure: 550932346517331
+inter-arrival jitter (ns): 803275
+maximum-jitter (ns): 4.77437e+06
+reorder-ratio: 0
+drift-measure: 550935284230737
+inter-arrival jitter (ns): 494709
+maximum-jitter (ns): 4.82097e+06
+reorder-ratio: 0
+drift-measure: 550938205196708
+inter-arrival jitter (ns): 725349
+maximum-jitter (ns): 4.80129e+06
+reorder-ratio: 0
+drift-measure: 550941141770344
+inter-arrival jitter (ns): 1.84439e+06
+maximum-jitter (ns): 2.05211e+07
+reorder-ratio: 0
+drift-measure: 550944012143126
+inter-arrival jitter (ns): 564431
+maximum-jitter (ns): 2.19266e+07
+reorder-ratio: 0
+drift-measure: 550946926689452
+inter-arrival jitter (ns): 3.09619e+06
+maximum-jitter (ns): 3.99544e+07
+reorder-ratio: 0
+drift-measure: 550949749473521
+inter-arrival jitter (ns): 476209
+maximum-jitter (ns): 4.0044e+07
+reorder-ratio: 0
+drift-measure: 550952618499990
+inter-arrival jitter (ns): 617527
+maximum-jitter (ns): 4.96578e+06
+reorder-ratio: 0
+drift-measure: 550955478882609
+inter-arrival jitter (ns): 398874
+maximum-jitter (ns): 4.87403e+06
+reorder-ratio: 0
+drift-measure: 550958338485098
+inter-arrival jitter (ns): 387012
+maximum-jitter (ns): 4.74045e+06
+reorder-ratio: 0
+drift-measure: 550961199660321
+inter-arrival jitter (ns): 505604
+maximum-jitter (ns): 4.7651e+06
+reorder-ratio: 0
+drift-measure: 550964062733772
+inter-arrival jitter (ns): 636897
+maximum-jitter (ns): 4.80715e+06
+reorder-ratio: 0
+drift-measure: 550966924113224
+inter-arrival jitter (ns): 1.1207e+06
+maximum-jitter (ns): 4.76569e+06
+reorder-ratio: 0
+drift-measure: 550969814280406
+inter-arrival jitter (ns): 821798
+maximum-jitter (ns): 4.79761e+06
+reorder-ratio: 0
+drift-measure: 550972710218086
+inter-arrival jitter (ns): 425116
+maximum-jitter (ns): 4.73501e+06
+reorder-ratio: 0
+drift-measure: 550975604584235
+inter-arrival jitter (ns): 577567
+maximum-jitter (ns): 4.84893e+06
+reorder-ratio: 0
+drift-measure: 550978505994419
+inter-arrival jitter (ns): 265013
+maximum-jitter (ns): 4.83501e+06
+reorder-ratio: 0
+drift-measure: 550981412851229
+inter-arrival jitter (ns): 903542
+maximum-jitter (ns): 4.83478e+06
+reorder-ratio: 0
+drift-measure: 550984319347478
+inter-arrival jitter (ns): 862541
+maximum-jitter (ns): 4.81792e+06
+reorder-ratio: 0
+drift-measure: 550987222539685
+inter-arrival jitter (ns): 587969
+maximum-jitter (ns): 5.05759e+06
+reorder-ratio: 0
+drift-measure: 550990091811541
+inter-arrival jitter (ns): 816401
+maximum-jitter (ns): 5.56183e+06
+reorder-ratio: 0
+drift-measure: 550992976734192
+inter-arrival jitter (ns): 859830
+maximum-jitter (ns): 4.83033e+06
+reorder-ratio: 0
+drift-measure: 550995853962449
+inter-arrival jitter (ns): 436651
+maximum-jitter (ns): 4.86028e+06
+reorder-ratio: 0
+drift-measure: 550998708299910
+inter-arrival jitter (ns): 547067
+maximum-jitter (ns): 4.80876e+06
+reorder-ratio: 0
+drift-measure: 551001575776096
+inter-arrival jitter (ns): 566024
+maximum-jitter (ns): 4.80589e+06
+reorder-ratio: 0
+drift-measure: 551004438032199
+inter-arrival jitter (ns): 692371
+maximum-jitter (ns): 4.85062e+06
+reorder-ratio: 0
+drift-measure: 551007336778430
+inter-arrival jitter (ns): 490574
+maximum-jitter (ns): 4.80531e+06
+reorder-ratio: 0
+drift-measure: 551010262033485
+inter-arrival jitter (ns): 840631
+maximum-jitter (ns): 1.03435e+07
+reorder-ratio: 0
+drift-measure: 551013144009558
+inter-arrival jitter (ns): 519101
+maximum-jitter (ns): 9.14764e+06
+reorder-ratio: 0
+drift-measure: 551016033170079
+inter-arrival jitter (ns): 534818
+maximum-jitter (ns): 4.76944e+06
+reorder-ratio: 0
+drift-measure: 551018917613570
+inter-arrival jitter (ns): 300156
+maximum-jitter (ns): 4.87827e+06
+reorder-ratio: 0
+drift-measure: 551021806256878
+inter-arrival jitter (ns): 1.02419e+06
+maximum-jitter (ns): 4.84749e+06
+reorder-ratio: 0
+drift-measure: 551024675370039
+inter-arrival jitter (ns): 349301
+maximum-jitter (ns): 4.78249e+06
+reorder-ratio: 0
+drift-measure: 551027521903731
+inter-arrival jitter (ns): 577922
+maximum-jitter (ns): 4.83832e+06
+reorder-ratio: 0
+drift-measure: 551030503152204
+inter-arrival jitter (ns): 910921
+maximum-jitter (ns): 4.86068e+06
+reorder-ratio: 0
+drift-measure: 551033401042273
+inter-arrival jitter (ns): 653850
+maximum-jitter (ns): 9.12287e+06
+reorder-ratio: 0
+drift-measure: 551036300688418
+inter-arrival jitter (ns): 325117
+maximum-jitter (ns): 4.82012e+06
+reorder-ratio: 0
+drift-measure: 551039196479846
+inter-arrival jitter (ns): 645027
+maximum-jitter (ns): 4.83218e+06
+reorder-ratio: 0
+drift-measure: 551042118088561
+inter-arrival jitter (ns): 380951
+maximum-jitter (ns): 1.38251e+07
+reorder-ratio: 0
+drift-measure: 551045167985109
+inter-arrival jitter (ns): 628310
+maximum-jitter (ns): 4.83755e+06
+reorder-ratio: 0
+drift-measure: 551048074433950
+inter-arrival jitter (ns): 485745
+maximum-jitter (ns): 4.82543e+06
+reorder-ratio: 0
+drift-measure: 551050981612799
+inter-arrival jitter (ns): 502887
+maximum-jitter (ns): 4.77896e+06
+reorder-ratio: 0
+drift-measure: 551053959831408
+inter-arrival jitter (ns): 629118
+maximum-jitter (ns): 4.84257e+06
+reorder-ratio: 0
+drift-measure: 551056870987301
+inter-arrival jitter (ns): 427833
+maximum-jitter (ns): 4.78724e+06
+reorder-ratio: 0
+drift-measure: 551059761079894
+inter-arrival jitter (ns): 653532
+maximum-jitter (ns): 4.92232e+06
+reorder-ratio: 0
+drift-measure: 551062653129205
+inter-arrival jitter (ns): 1.04723e+06
+maximum-jitter (ns): 4.72004e+06
+reorder-ratio: 0
+drift-measure: 551065531649705
+inter-arrival jitter (ns): 429303
+maximum-jitter (ns): 4.85011e+06
+reorder-ratio: 0
+drift-measure: 551068383928077
+inter-arrival jitter (ns): 750488
+maximum-jitter (ns): 4.81146e+06
+reorder-ratio: 0
+drift-measure: 551071290056513
+inter-arrival jitter (ns): 835129
+maximum-jitter (ns): 4.84303e+06
+reorder-ratio: 0
+drift-measure: 551074139854193
+inter-arrival jitter (ns): 453193
+maximum-jitter (ns): 4.86129e+06
+reorder-ratio: 0
+drift-measure: 551077089619866
+inter-arrival jitter (ns): 203457
+maximum-jitter (ns): 4.82895e+06
+reorder-ratio: 0
+drift-measure: 551080011562091
+inter-arrival jitter (ns): 438010
+maximum-jitter (ns): 4.78603e+06
+reorder-ratio: 0
+drift-measure: 551082900882118
+inter-arrival jitter (ns): 529227
+maximum-jitter (ns): 4.7827e+06
+reorder-ratio: 0
+drift-measure: 551085753328613
+inter-arrival jitter (ns): 669665
+maximum-jitter (ns): 4.87947e+06
+reorder-ratio: 0
+drift-measure: 551088638923855
+inter-arrival jitter (ns): 644742
+maximum-jitter (ns): 4.88311e+06
+reorder-ratio: 0
+drift-measure: 551091521478715
+inter-arrival jitter (ns): 557921
+maximum-jitter (ns): 4.81983e+06
+reorder-ratio: 0
+drift-measure: 551094374233052
+inter-arrival jitter (ns): 532106
+maximum-jitter (ns): 4.85473e+06
+reorder-ratio: 0
+drift-measure: 551097249804389
+inter-arrival jitter (ns): 554397
+maximum-jitter (ns): 4.80093e+06
+reorder-ratio: 0
+drift-measure: 551100174498320
+inter-arrival jitter (ns): 575570
+maximum-jitter (ns): 4.87054e+06
+reorder-ratio: 0
+drift-measure: 551103190897492
+inter-arrival jitter (ns): 2.26237e+06
+maximum-jitter (ns): 2.19858e+07
+reorder-ratio: 0
+drift-measure: 551106059248936
+inter-arrival jitter (ns): 340987
+maximum-jitter (ns): 2.21591e+07
+reorder-ratio: 0
+drift-measure: 551108950388035
+inter-arrival jitter (ns): 615896
+maximum-jitter (ns): 4.76727e+06
+reorder-ratio: 0
+drift-measure: 551111820412730
+inter-arrival jitter (ns): 760078
+maximum-jitter (ns): 4.8257e+06
+reorder-ratio: 0
+drift-measure: 551114688847859
+inter-arrival jitter (ns): 634167
+maximum-jitter (ns): 4.89078e+06
+reorder-ratio: 0
+drift-measure: 551117607549941
+inter-arrival jitter (ns): 733623
+maximum-jitter (ns): 4.72618e+06
+reorder-ratio: 0
+drift-measure: 551120481950040
+inter-arrival jitter (ns): 612159
+maximum-jitter (ns): 4.73059e+06
+reorder-ratio: 0
+drift-measure: 551123338901891
+inter-arrival jitter (ns): 690311
+maximum-jitter (ns): 4.78666e+06
+reorder-ratio: 0
+drift-measure: 551126232089458
+inter-arrival jitter (ns): 2.82286e+06
+maximum-jitter (ns): 3.7977e+07
+reorder-ratio: 0
+drift-measure: 551129274731699
+inter-arrival jitter (ns): 827225
+maximum-jitter (ns): 2.90453e+07
+reorder-ratio: 0
+drift-measure: 551132273107904
+inter-arrival jitter (ns): 341210
+maximum-jitter (ns): 4.87646e+06
+reorder-ratio: 0
+drift-measure: 551135170440367
+inter-arrival jitter (ns): 814823
+maximum-jitter (ns): 9.55986e+06
+reorder-ratio: 0
+drift-measure: 551138062870295
+inter-arrival jitter (ns): 537730
+maximum-jitter (ns): 4.83109e+06
+reorder-ratio: 0
+drift-measure: 551140934858300
+inter-arrival jitter (ns): 788329
+maximum-jitter (ns): 4.86812e+06
+reorder-ratio: 0
+drift-measure: 551144098194294
+inter-arrival jitter (ns): 2.81787e+06
+maximum-jitter (ns): 3.77932e+07
+reorder-ratio: 0
+drift-measure: 551147152173902
+inter-arrival jitter (ns): 473963
+maximum-jitter (ns): 2.91834e+07
+reorder-ratio: 0
+drift-measure: 551150145581510
+inter-arrival jitter (ns): 567443
+maximum-jitter (ns): 4.78518e+06
+reorder-ratio: 0
+drift-measure: 551153183916072
+inter-arrival jitter (ns): 574287
+maximum-jitter (ns): 1.34287e+07
+reorder-ratio: 0
+drift-measure: 551156141847235
+inter-arrival jitter (ns): 308433
+maximum-jitter (ns): 9.27936e+06
+reorder-ratio: 0
+drift-measure: 551159282407697
+inter-arrival jitter (ns): 307459
+maximum-jitter (ns): 4.84375e+06
+reorder-ratio: 0
+drift-measure: 551162424655396
+inter-arrival jitter (ns): 453606
+maximum-jitter (ns): 4.83698e+06
+reorder-ratio: 0
+drift-measure: 551165471389443
+inter-arrival jitter (ns): 426319
+maximum-jitter (ns): 4.90881e+06
+reorder-ratio: 0
+drift-measure: 551168499611055
+inter-arrival jitter (ns): 1.00962e+06
+maximum-jitter (ns): 4.77707e+06
+reorder-ratio: 0
+drift-measure: 551171457428426
+inter-arrival jitter (ns): 765737
+maximum-jitter (ns): 4.74295e+06
+reorder-ratio: 0
+drift-measure: 551174390800952
+inter-arrival jitter (ns): 522741
+maximum-jitter (ns): 4.89428e+06
+reorder-ratio: 0
+drift-measure: 551177373464164
+inter-arrival jitter (ns): 532852
+maximum-jitter (ns): 4.74882e+06
+reorder-ratio: 0
+drift-measure: 551180453656475
+inter-arrival jitter (ns): 440324
+maximum-jitter (ns): 4.81406e+06
+reorder-ratio: 0
+drift-measure: 551183476528480
+inter-arrival jitter (ns): 779110
+maximum-jitter (ns): 4.89583e+06
+reorder-ratio: 0
+drift-measure: 551186533269793
+inter-arrival jitter (ns): 360895
+maximum-jitter (ns): 4.77271e+06
+reorder-ratio: 0
+drift-measure: 551189567903554
+inter-arrival jitter (ns): 498326
+maximum-jitter (ns): 4.79913e+06
+reorder-ratio: 0
+drift-measure: 551192603654573
+inter-arrival jitter (ns): 747626
+maximum-jitter (ns): 4.75183e+06
+reorder-ratio: 0
+drift-measure: 551195749201125
+inter-arrival jitter (ns): 393312
+maximum-jitter (ns): 4.72729e+06
+reorder-ratio: 0
+drift-measure: 551198840311694
+inter-arrival jitter (ns): 437120
+maximum-jitter (ns): 9.42463e+06
+reorder-ratio: 0
+drift-measure: 551201859162473
+inter-arrival jitter (ns): 556497
+maximum-jitter (ns): 4.80385e+06
+reorder-ratio: 0
+drift-measure: 551204867283134
+inter-arrival jitter (ns): 571729
+maximum-jitter (ns): 4.81153e+06
+reorder-ratio: 0
+drift-measure: 551207873792890
+inter-arrival jitter (ns): 831515
+maximum-jitter (ns): 4.70306e+06
+reorder-ratio: 0
+drift-measure: 551210864751154
+inter-arrival jitter (ns): 762155
+maximum-jitter (ns): 4.70407e+06
+reorder-ratio: 0
+drift-measure: 551213776793205
+inter-arrival jitter (ns): 421319
+maximum-jitter (ns): 4.82289e+06
+reorder-ratio: 0
+drift-measure: 551216646892828
+inter-arrival jitter (ns): 412473
+maximum-jitter (ns): 4.66742e+06
+reorder-ratio: 0
+drift-measure: 551219668572377
+inter-arrival jitter (ns): 669399
+maximum-jitter (ns): 4.69549e+06
+reorder-ratio: 0
+drift-measure: 551222644404770
+inter-arrival jitter (ns): 1.02305e+06
+maximum-jitter (ns): 4.83865e+06
+reorder-ratio: 0
+drift-measure: 551225564686840
+inter-arrival jitter (ns): 647147
+maximum-jitter (ns): 4.80353e+06
+reorder-ratio: 0
+drift-measure: 551228500386141
+inter-arrival jitter (ns): 425775
+maximum-jitter (ns): 4.83967e+06
+reorder-ratio: 0
+drift-measure: 551231375154635
+inter-arrival jitter (ns): 571532
+maximum-jitter (ns): 8.982e+06
+reorder-ratio: 0
+drift-measure: 551234263163284
+inter-arrival jitter (ns): 3.09543e+06
+maximum-jitter (ns): 3.57986e+07
+reorder-ratio: 0
+drift-measure: 551237106553292
+inter-arrival jitter (ns): 808248
+maximum-jitter (ns): 2.72593e+07
+reorder-ratio: 0
+drift-measure: 551240150161759
+inter-arrival jitter (ns): 2.83347e+06
+maximum-jitter (ns): 3.46234e+07
+reorder-ratio: 0
+drift-measure: 551243234174973
+inter-arrival jitter (ns): 524253
+maximum-jitter (ns): 2.59603e+07
+reorder-ratio: 0
+drift-measure: 551246271992364
+inter-arrival jitter (ns): 362497
+maximum-jitter (ns): 4.82359e+06
+reorder-ratio: 0
+drift-measure: 551249289973376
+inter-arrival jitter (ns): 751512
+maximum-jitter (ns): 4.83462e+06
+reorder-ratio: 0
+drift-measure: 551252325472246
+inter-arrival jitter (ns): 248202
+maximum-jitter (ns): 4.88012e+06
+reorder-ratio: 0
+drift-measure: 551255245471750
+inter-arrival jitter (ns): 619082
+maximum-jitter (ns): 4.84956e+06
+reorder-ratio: 0
+drift-measure: 551258155945715
+inter-arrival jitter (ns): 274049
+maximum-jitter (ns): 4.83294e+06
+reorder-ratio: 0
+drift-measure: 551261078293243
+inter-arrival jitter (ns): 496827
+maximum-jitter (ns): 4.88755e+06
+reorder-ratio: 0
+drift-measure: 551263995657057
+inter-arrival jitter (ns): 300519
+maximum-jitter (ns): 4.87337e+06
+reorder-ratio: 0
+drift-measure: 551266965210157
+inter-arrival jitter (ns): 345025
+maximum-jitter (ns): 4.78638e+06
+reorder-ratio: 0
+drift-measure: 551269957377909
+inter-arrival jitter (ns): 502348
+maximum-jitter (ns): 4.70305e+06
+reorder-ratio: 0
+drift-measure: 551272864478833
+inter-arrival jitter (ns): 508273
+maximum-jitter (ns): 4.78321e+06
+reorder-ratio: 0
+drift-measure: 551275702284790
+inter-arrival jitter (ns): 422634
+maximum-jitter (ns): 4.84115e+06
+reorder-ratio: 0
+drift-measure: 551278575183608
+inter-arrival jitter (ns): 437911
+maximum-jitter (ns): 4.80985e+06
+reorder-ratio: 0
+drift-measure: 551281560906909
+inter-arrival jitter (ns): 643744
+maximum-jitter (ns): 4.82986e+06
+reorder-ratio: 0
+drift-measure: 551284610956461
+inter-arrival jitter (ns): 955524
+maximum-jitter (ns): 4.80409e+06
+reorder-ratio: 0
+drift-measure: 551287598727931
+inter-arrival jitter (ns): 664139
+maximum-jitter (ns): 4.81282e+06
+reorder-ratio: 0
+drift-measure: 551290501172157
+inter-arrival jitter (ns): 551873
+maximum-jitter (ns): 4.80539e+06
+reorder-ratio: 0
+drift-measure: 551293472432000
+inter-arrival jitter (ns): 523266
+maximum-jitter (ns): 4.7544e+06
+reorder-ratio: 0
+drift-measure: 551296440625081
+inter-arrival jitter (ns): 627172
+maximum-jitter (ns): 4.84327e+06
+reorder-ratio: 0
+drift-measure: 551299439424623
+inter-arrival jitter (ns): 560265
+maximum-jitter (ns): 4.74504e+06
+reorder-ratio: 0
+drift-measure: 551302367897239
+inter-arrival jitter (ns): 620243
+maximum-jitter (ns): 4.78419e+06
+reorder-ratio: 0
+drift-measure: 551305382964224
+inter-arrival jitter (ns): 413113
+maximum-jitter (ns): 4.79169e+06
+reorder-ratio: 0
+drift-measure: 551308451706247
+inter-arrival jitter (ns): 566071
+maximum-jitter (ns): 4.77913e+06
+reorder-ratio: 0
+drift-measure: 551311555684268
+inter-arrival jitter (ns): 679730
+maximum-jitter (ns): 4.84214e+06
+reorder-ratio: 0
+drift-measure: 551314477976253
+inter-arrival jitter (ns): 583950
+maximum-jitter (ns): 4.81813e+06
+reorder-ratio: 0
+drift-measure: 551317394599771
+inter-arrival jitter (ns): 354061
+maximum-jitter (ns): 4.83034e+06
+reorder-ratio: 0
+drift-measure: 551320348355471
+inter-arrival jitter (ns): 992357
+maximum-jitter (ns): 4.82012e+06
+reorder-ratio: 0
+drift-measure: 551323275931260
+inter-arrival jitter (ns): 532314
+maximum-jitter (ns): 4.85295e+06
+reorder-ratio: 0
+drift-measure: 551326228073150
+inter-arrival jitter (ns): 498915
+maximum-jitter (ns): 4.84413e+06
+reorder-ratio: 0
+drift-measure: 551329173938822
+inter-arrival jitter (ns): 825354
+maximum-jitter (ns): 9.28145e+06
+reorder-ratio: 0
+drift-measure: 551332055920536
+inter-arrival jitter (ns): 870512
+maximum-jitter (ns): 4.87295e+06
+reorder-ratio: 0
+drift-measure: 551334938795441
+inter-arrival jitter (ns): 503982
+maximum-jitter (ns): 4.80054e+06
+reorder-ratio: 0
+drift-measure: 551337929455551
+inter-arrival jitter (ns): 398418
+maximum-jitter (ns): 4.88981e+06
+reorder-ratio: 0
+drift-measure: 551340944094220
+inter-arrival jitter (ns): 659436
+maximum-jitter (ns): 4.77555e+06
+reorder-ratio: 0
+drift-measure: 551343966819563
+inter-arrival jitter (ns): 552955
+maximum-jitter (ns): 4.81077e+06
+reorder-ratio: 0
+drift-measure: 551346976999722
+inter-arrival jitter (ns): 605363
+maximum-jitter (ns): 4.84848e+06
+reorder-ratio: 0
+drift-measure: 551349883657282
+inter-arrival jitter (ns): 521676
+maximum-jitter (ns): 7.26692e+06
+reorder-ratio: 0
+drift-measure: 551352769034248
+inter-arrival jitter (ns): 698435
+maximum-jitter (ns): 4.90855e+06
+reorder-ratio: 0
+drift-measure: 551355683899457
+inter-arrival jitter (ns): 615350
+maximum-jitter (ns): 4.82164e+06
+reorder-ratio: 0
+drift-measure: 551358568713507
+inter-arrival jitter (ns): 539777
+maximum-jitter (ns): 4.78836e+06
+reorder-ratio: 0
+drift-measure: 551361461553958
+inter-arrival jitter (ns): 715492
+maximum-jitter (ns): 4.86976e+06
+reorder-ratio: 0
+drift-measure: 551364356333606
+inter-arrival jitter (ns): 806551
+maximum-jitter (ns): 4.89609e+06
+reorder-ratio: 0
+drift-measure: 551367248191611
+inter-arrival jitter (ns): 389152
+maximum-jitter (ns): 4.86831e+06
+reorder-ratio: 0
+drift-measure: 551370088021721
+inter-arrival jitter (ns): 966693
+maximum-jitter (ns): 4.82348e+06
+reorder-ratio: 0
+drift-measure: 551373046120145
+inter-arrival jitter (ns): 812562
+maximum-jitter (ns): 4.8733e+06
+reorder-ratio: 0
+drift-measure: 551376157330902
+inter-arrival jitter (ns): 469019
+maximum-jitter (ns): 4.74621e+06
+reorder-ratio: 0
+drift-measure: 551379207855898
+inter-arrival jitter (ns): 1.02698e+06
+maximum-jitter (ns): 4.83135e+06
+reorder-ratio: 0
+drift-measure: 551382316901670
+inter-arrival jitter (ns): 906856
+maximum-jitter (ns): 4.84542e+06
+reorder-ratio: 0
+drift-measure: 551385425390377
+inter-arrival jitter (ns): 355965
+maximum-jitter (ns): 4.70445e+06
+reorder-ratio: 0
+drift-measure: 551388518864390
+inter-arrival jitter (ns): 473909
+maximum-jitter (ns): 4.76581e+06
+reorder-ratio: 0
+drift-measure: 551391609925306
+inter-arrival jitter (ns): 454475
+maximum-jitter (ns): 4.7026e+06
+reorder-ratio: 0
+drift-measure: 551394652627108
+inter-arrival jitter (ns): 756319
+maximum-jitter (ns): 1.13822e+07
+reorder-ratio: 0
+drift-measure: 551397699838493
+inter-arrival jitter (ns): 919303
+maximum-jitter (ns): 4.78679e+06
+reorder-ratio: 0
+drift-measure: 551400815604399
+inter-arrival jitter (ns): 692125
+maximum-jitter (ns): 4.78834e+06
+reorder-ratio: 0
+drift-measure: 551403876135456
+inter-arrival jitter (ns): 740290
+maximum-jitter (ns): 4.74196e+06
+reorder-ratio: 0
+drift-measure: 551406923901563
+inter-arrival jitter (ns): 301626
+maximum-jitter (ns): 4.7823e+06
+reorder-ratio: 0
+drift-measure: 551409958535786
+inter-arrival jitter (ns): 612015
+maximum-jitter (ns): 4.77602e+06
+reorder-ratio: 0
+drift-measure: 551412865966883
+inter-arrival jitter (ns): 683607
+maximum-jitter (ns): 4.84193e+06
+reorder-ratio: 0
+drift-measure: 551415818026521
+inter-arrival jitter (ns): 424279
+maximum-jitter (ns): 4.89973e+06
+reorder-ratio: 0
+drift-measure: 551418852082248
+inter-arrival jitter (ns): 852435
+maximum-jitter (ns): 4.76762e+06
+reorder-ratio: 0
+drift-measure: 551421751630380
+inter-arrival jitter (ns): 849172
+maximum-jitter (ns): 4.81575e+06
+reorder-ratio: 0
+drift-measure: 551424768898397
+inter-arrival jitter (ns): 547009
+maximum-jitter (ns): 4.91325e+06
+reorder-ratio: 0
+drift-measure: 551427845758793
+inter-arrival jitter (ns): 522865
+maximum-jitter (ns): 4.80909e+06
+reorder-ratio: 0
+drift-measure: 551430877961325
+inter-arrival jitter (ns): 360088
+maximum-jitter (ns): 4.81923e+06
+reorder-ratio: 0
+drift-measure: 551433793251073
+inter-arrival jitter (ns): 948289
+maximum-jitter (ns): 4.76979e+06
+reorder-ratio: 0
+drift-measure: 551436813585871
+inter-arrival jitter (ns): 869696
+maximum-jitter (ns): 4.84777e+06
+reorder-ratio: 0
+drift-measure: 551439784956500
+inter-arrival jitter (ns): 944931
+maximum-jitter (ns): 4.8265e+06
+reorder-ratio: 0
+drift-measure: 551442738688757
+inter-arrival jitter (ns): 857068
+maximum-jitter (ns): 4.88254e+06
+reorder-ratio: 0
+drift-measure: 551445759251930
+inter-arrival jitter (ns): 977957
+maximum-jitter (ns): 4.81016e+06
+reorder-ratio: 0
+drift-measure: 551448843525498
+inter-arrival jitter (ns): 526114
+maximum-jitter (ns): 4.79285e+06
+reorder-ratio: 0
+drift-measure: 551451897579213
+inter-arrival jitter (ns): 385181
+maximum-jitter (ns): 4.79466e+06
+reorder-ratio: 0
+drift-measure: 551454946375054
+inter-arrival jitter (ns): 845922
+maximum-jitter (ns): 4.71923e+06
+reorder-ratio: 0
+drift-measure: 551457921348891
+inter-arrival jitter (ns): 462875
+maximum-jitter (ns): 4.86682e+06
+reorder-ratio: 0
+drift-measure: 551460905618691
+inter-arrival jitter (ns): 465875
+maximum-jitter (ns): 4.75668e+06
+reorder-ratio: 0
+drift-measure: 551463806414863
+inter-arrival jitter (ns): 412568
+maximum-jitter (ns): 4.74972e+06
+reorder-ratio: 0
+drift-measure: 551466764356777
+inter-arrival jitter (ns): 684043
+maximum-jitter (ns): 4.80471e+06
+reorder-ratio: 0
+drift-measure: 551469710576867
+inter-arrival jitter (ns): 665177
+maximum-jitter (ns): 4.73467e+06
+reorder-ratio: 0
+drift-measure: 551472636216837
+inter-arrival jitter (ns): 1.10373e+06
+maximum-jitter (ns): 4.88608e+06
+reorder-ratio: 0
+drift-measure: 551475607925995
+inter-arrival jitter (ns): 593372
+maximum-jitter (ns): 4.67922e+06
+reorder-ratio: 0
+drift-measure: 551478536633959
+inter-arrival jitter (ns): 911511
+maximum-jitter (ns): 4.85883e+06
+reorder-ratio: 0
+drift-measure: 551481443980319
+inter-arrival jitter (ns): 293060
+maximum-jitter (ns): 4.88979e+06
+reorder-ratio: 0
+drift-measure: 551484400948632
+inter-arrival jitter (ns): 579696
+maximum-jitter (ns): 4.75703e+06
+reorder-ratio: 0
+drift-measure: 551487319244048
+inter-arrival jitter (ns): 551780
+maximum-jitter (ns): 4.73146e+06
+reorder-ratio: 0
+drift-measure: 551490209947897
+inter-arrival jitter (ns): 484697
+maximum-jitter (ns): 4.79034e+06
+reorder-ratio: 0
+drift-measure: 551493097708595
+inter-arrival jitter (ns): 724781
+maximum-jitter (ns): 4.85339e+06
+reorder-ratio: 0
+drift-measure: 551495978123116
+inter-arrival jitter (ns): 597578
+maximum-jitter (ns): 4.76718e+06
+reorder-ratio: 0
+drift-measure: 551498866647834
+inter-arrival jitter (ns): 645715
+maximum-jitter (ns): 4.82036e+06
+reorder-ratio: 0
+drift-measure: 551501745433307
+inter-arrival jitter (ns): 304231
+maximum-jitter (ns): 4.88801e+06
+reorder-ratio: 0
+drift-measure: 551504633919704
+inter-arrival jitter (ns): 421394
+maximum-jitter (ns): 4.85237e+06
+reorder-ratio: 0
+drift-measure: 551507537903212
+inter-arrival jitter (ns): 652822
+maximum-jitter (ns): 4.90784e+06
+reorder-ratio: 0
+drift-measure: 551510514471984
+inter-arrival jitter (ns): 561648
+maximum-jitter (ns): 4.80651e+06
+reorder-ratio: 0
+drift-measure: 551513550123398
+inter-arrival jitter (ns): 805452
+maximum-jitter (ns): 4.79446e+06
+reorder-ratio: 0
+drift-measure: 551516500672367
+inter-arrival jitter (ns): 422414
+maximum-jitter (ns): 4.72954e+06
+reorder-ratio: 0
+drift-measure: 551519418378046
+inter-arrival jitter (ns): 453381
+maximum-jitter (ns): 4.89943e+06
+reorder-ratio: 0
+drift-measure: 551522343199164
+inter-arrival jitter (ns): 795735
+maximum-jitter (ns): 4.87219e+06
+reorder-ratio: 0
+drift-measure: 551525228232511
+inter-arrival jitter (ns): 658909
+maximum-jitter (ns): 4.85126e+06
+reorder-ratio: 0
+drift-measure: 551528102140085
+inter-arrival jitter (ns): 514715
+maximum-jitter (ns): 4.79249e+06
+reorder-ratio: 0
+drift-measure: 551530987577564
+inter-arrival jitter (ns): 760402
+maximum-jitter (ns): 4.79882e+06
+reorder-ratio: 0
+drift-measure: 551533938194038
+inter-arrival jitter (ns): 1.03941e+06
+maximum-jitter (ns): 4.7679e+06
+reorder-ratio: 0
+drift-measure: 551536991583629
+inter-arrival jitter (ns): 397552
+maximum-jitter (ns): 4.75849e+06
+reorder-ratio: 0
+drift-measure: 551540043841756
+inter-arrival jitter (ns): 484081
+maximum-jitter (ns): 4.82399e+06
+reorder-ratio: 0
+drift-measure: 551543160834543
+inter-arrival jitter (ns): 499970
+maximum-jitter (ns): 4.84539e+06
+reorder-ratio: 0
+drift-measure: 551546236101427
+inter-arrival jitter (ns): 510147
+maximum-jitter (ns): 4.84208e+06
+reorder-ratio: 0
+drift-measure: 551549376279959
+inter-arrival jitter (ns): 593972
+maximum-jitter (ns): 4.8833e+06
+reorder-ratio: 0
+drift-measure: 551552404755752
+inter-arrival jitter (ns): 563773
+maximum-jitter (ns): 4.86273e+06
+reorder-ratio: 0
+drift-measure: 551555452309764
+inter-arrival jitter (ns): 274147
+maximum-jitter (ns): 4.79897e+06
+reorder-ratio: 0
+drift-measure: 551558497176811
+inter-arrival jitter (ns): 654211
+maximum-jitter (ns): 4.7503e+06
+reorder-ratio: 0
+drift-measure: 551561530407013
+inter-arrival jitter (ns): 783713
+maximum-jitter (ns): 4.75032e+06
+reorder-ratio: 0
+drift-measure: 551564621993317
+inter-arrival jitter (ns): 792120
+maximum-jitter (ns): 4.80875e+06
+reorder-ratio: 0
+drift-measure: 551567660849168
+inter-arrival jitter (ns): 797234
+maximum-jitter (ns): 4.83033e+06
+reorder-ratio: 0
+drift-measure: 551570686554050
+inter-arrival jitter (ns): 741968
+maximum-jitter (ns): 4.75302e+06
+reorder-ratio: 0
+drift-measure: 551573744029407
+inter-arrival jitter (ns): 587378
+maximum-jitter (ns): 4.76146e+06
+reorder-ratio: 0
+drift-measure: 551576842085208
+inter-arrival jitter (ns): 368800
+maximum-jitter (ns): 4.886e+06
+reorder-ratio: 0
+drift-measure: 551579952306486
+inter-arrival jitter (ns): 348711
+maximum-jitter (ns): 4.75646e+06
+reorder-ratio: 0
+drift-measure: 551583018151272
+inter-arrival jitter (ns): 1.0772e+06
+maximum-jitter (ns): 4.79224e+06
+reorder-ratio: 0
+drift-measure: 551586103068788
+inter-arrival jitter (ns): 570805
+maximum-jitter (ns): 4.78766e+06
+reorder-ratio: 0
+drift-measure: 551589184906668
+inter-arrival jitter (ns): 481012
+maximum-jitter (ns): 4.75775e+06
+reorder-ratio: 0
+drift-measure: 551592291625895
+inter-arrival jitter (ns): 637418
+maximum-jitter (ns): 4.76183e+06
+reorder-ratio: 0
+drift-measure: 551595351118462
+inter-arrival jitter (ns): 741722
+maximum-jitter (ns): 4.86545e+06
+reorder-ratio: 0
+drift-measure: 551598407741214
+inter-arrival jitter (ns): 472546
+maximum-jitter (ns): 4.77934e+06
+reorder-ratio: 0
+drift-measure: 551601466858002
+inter-arrival jitter (ns): 535854
+maximum-jitter (ns): 1.08048e+07
+reorder-ratio: 0
+drift-measure: 551604487959396
+inter-arrival jitter (ns): 718745
+maximum-jitter (ns): 4.76127e+06
+reorder-ratio: 0
+drift-measure: 551607513479004
+inter-arrival jitter (ns): 496647
+maximum-jitter (ns): 4.84119e+06
+reorder-ratio: 0
+drift-measure: 551610690469684
+inter-arrival jitter (ns): 270263
+maximum-jitter (ns): 4.72364e+06
+reorder-ratio: 0
+drift-measure: 551613842615273
+inter-arrival jitter (ns): 672344
+maximum-jitter (ns): 4.7428e+06
+reorder-ratio: 0
+drift-measure: 551616782143223
+inter-arrival jitter (ns): 375553
+maximum-jitter (ns): 4.74719e+06
+reorder-ratio: 0
+drift-measure: 551619718646118
+inter-arrival jitter (ns): 474529
+maximum-jitter (ns): 4.85988e+06
+reorder-ratio: 0
+drift-measure: 551622626747061
+inter-arrival jitter (ns): 662106
+maximum-jitter (ns): 4.79062e+06
+reorder-ratio: 0
+drift-measure: 551625532072594
+inter-arrival jitter (ns): 446236
+maximum-jitter (ns): 4.84002e+06
+reorder-ratio: 0
+drift-measure: 551628415511878
+inter-arrival jitter (ns): 766800
+maximum-jitter (ns): 4.8913e+06
+reorder-ratio: 0
+drift-measure: 551631318533899
+inter-arrival jitter (ns): 975772
+maximum-jitter (ns): 4.83614e+06
+reorder-ratio: 0
+drift-measure: 551634206084667
+inter-arrival jitter (ns): 617771
+maximum-jitter (ns): 4.79337e+06
+reorder-ratio: 0
+drift-measure: 551637173399946
+inter-arrival jitter (ns): 1.28879e+06
+maximum-jitter (ns): 1.17952e+07
+reorder-ratio: 0
+drift-measure: 551640070170815
+inter-arrival jitter (ns): 564375
+maximum-jitter (ns): 4.84424e+06
+reorder-ratio: 0
+drift-measure: 551642946715060
+inter-arrival jitter (ns): 622541
+maximum-jitter (ns): 4.84456e+06
+reorder-ratio: 0
+drift-measure: 551645892596602
+inter-arrival jitter (ns): 553083
+maximum-jitter (ns): 4.77596e+06
+reorder-ratio: 0
+drift-measure: 551648821664975
+inter-arrival jitter (ns): 820255
+maximum-jitter (ns): 4.84753e+06
+reorder-ratio: 0
+drift-measure: 551651710185025
+inter-arrival jitter (ns): 447728
+maximum-jitter (ns): 4.90636e+06
+reorder-ratio: 0
+drift-measure: 551654590095278
+inter-arrival jitter (ns): 391380
+maximum-jitter (ns): 4.763e+06
+reorder-ratio: 0
+drift-measure: 551657461024765
+inter-arrival jitter (ns): 531088
+maximum-jitter (ns): 4.87331e+06
+reorder-ratio: 0
+drift-measure: 551660344973807
+inter-arrival jitter (ns): 340363
+maximum-jitter (ns): 4.76749e+06
+reorder-ratio: 0
+drift-measure: 551663211005058
+inter-arrival jitter (ns): 665050
+maximum-jitter (ns): 4.75897e+06
+reorder-ratio: 0
+drift-measure: 551666105155946
+inter-arrival jitter (ns): 847339
+maximum-jitter (ns): 4.76063e+06
+reorder-ratio: 0
+drift-measure: 551668982691484
+inter-arrival jitter (ns): 479782
+maximum-jitter (ns): 4.7929e+06
+reorder-ratio: 0
+drift-measure: 551671921891093
+inter-arrival jitter (ns): 517205
+maximum-jitter (ns): 4.8251e+06
+reorder-ratio: 0
+drift-measure: 551674807823462
+inter-arrival jitter (ns): 510547
+maximum-jitter (ns): 4.7532e+06
+reorder-ratio: 0
+drift-measure: 551677702838757
+inter-arrival jitter (ns): 988226
+maximum-jitter (ns): 4.80391e+06
+reorder-ratio: 0
+drift-measure: 551680589840454
+inter-arrival jitter (ns): 1.24064e+06
+maximum-jitter (ns): 4.77414e+06
+reorder-ratio: 0
+drift-measure: 551683485572161
+inter-arrival jitter (ns): 544084
+maximum-jitter (ns): 4.81623e+06
+reorder-ratio: 0
+drift-measure: 551686377273335
+inter-arrival jitter (ns): 757266
+maximum-jitter (ns): 4.76476e+06
+reorder-ratio: 0
+drift-measure: 551689255954553
+inter-arrival jitter (ns): 680407
+maximum-jitter (ns): 4.7724e+06
+reorder-ratio: 0
+drift-measure: 551692122452962
+inter-arrival jitter (ns): 455500
+maximum-jitter (ns): 4.77656e+06
+reorder-ratio: 0
+drift-measure: 551695064527506
+inter-arrival jitter (ns): 936254
+maximum-jitter (ns): 4.93145e+06
+reorder-ratio: 0
+drift-measure: 551698108265233
+inter-arrival jitter (ns): 448282
+maximum-jitter (ns): 4.83021e+06
+reorder-ratio: 0
+drift-measure: 551700934720748
+inter-arrival jitter (ns): 913539
+maximum-jitter (ns): 4.79474e+06
+reorder-ratio: 0
+drift-measure: 551703847604072
+inter-arrival jitter (ns): 886222
+maximum-jitter (ns): 4.88392e+06
+reorder-ratio: 0
+drift-measure: 551706936358239
+inter-arrival jitter (ns): 477173
+maximum-jitter (ns): 4.79805e+06
+reorder-ratio: 0
+drift-measure: 551709835359314
+inter-arrival jitter (ns): 669405
+maximum-jitter (ns): 4.9299e+06
+reorder-ratio: 0
+drift-measure: 551712718084781
+inter-arrival jitter (ns): 429072
+maximum-jitter (ns): 4.86785e+06
+reorder-ratio: 0
+drift-measure: 551715601438997
+inter-arrival jitter (ns): 545576
+maximum-jitter (ns): 4.74903e+06
+reorder-ratio: 0
+drift-measure: 551718491994090
+inter-arrival jitter (ns): 1.05014e+06
+maximum-jitter (ns): 4.9055e+06
+reorder-ratio: 0
+drift-measure: 551721350517904
+inter-arrival jitter (ns): 455140
+maximum-jitter (ns): 4.75509e+06
+reorder-ratio: 0
+drift-measure: 551724333505019
+inter-arrival jitter (ns): 352653
+maximum-jitter (ns): 4.86093e+06
+reorder-ratio: 0
+drift-measure: 551727320286478
+inter-arrival jitter (ns): 1.27885e+06
+maximum-jitter (ns): 4.82208e+06
+reorder-ratio: 0
+drift-measure: 551730306812672
+inter-arrival jitter (ns): 523136
+maximum-jitter (ns): 4.79336e+06
+reorder-ratio: 0
+drift-measure: 551733387566116
+inter-arrival jitter (ns): 454269
+maximum-jitter (ns): 4.87256e+06
+reorder-ratio: 0
+drift-measure: 551736515835477
+inter-arrival jitter (ns): 526638
+maximum-jitter (ns): 4.79338e+06
+reorder-ratio: 0
+drift-measure: 551739517652348
+inter-arrival jitter (ns): 1.20068e+06
+maximum-jitter (ns): 4.76136e+06
+reorder-ratio: 0
+drift-measure: 551742524714862
+inter-arrival jitter (ns): 572022
+maximum-jitter (ns): 4.7248e+06
+reorder-ratio: 0
+drift-measure: 551745453862824
+inter-arrival jitter (ns): 433914
+maximum-jitter (ns): 4.79537e+06
+reorder-ratio: 0
+drift-measure: 551748303376887
+inter-arrival jitter (ns): 270711
+maximum-jitter (ns): 4.78579e+06
+reorder-ratio: 0
+drift-measure: 551751226901194
+inter-arrival jitter (ns): 499309
+maximum-jitter (ns): 4.95125e+06
+reorder-ratio: 0
+drift-measure: 551754237763101
+inter-arrival jitter (ns): 427565
+maximum-jitter (ns): 4.72689e+06
+reorder-ratio: 0
+drift-measure: 551757305207742
+inter-arrival jitter (ns): 1.16633e+06
+maximum-jitter (ns): 4.77363e+06
+reorder-ratio: 0
+drift-measure: 551760218891725
+inter-arrival jitter (ns): 370244
+maximum-jitter (ns): 4.83821e+06
+reorder-ratio: 0
+drift-measure: 551763178855717
+inter-arrival jitter (ns): 785399
+maximum-jitter (ns): 4.77468e+06
+reorder-ratio: 0
+drift-measure: 551766076724417
+inter-arrival jitter (ns): 632170
+maximum-jitter (ns): 4.79878e+06
+reorder-ratio: 0
+drift-measure: 551768985727247
+inter-arrival jitter (ns): 864584
+maximum-jitter (ns): 4.81872e+06
+reorder-ratio: 0
+drift-measure: 551771840335100
+inter-arrival jitter (ns): 695787
+maximum-jitter (ns): 4.97919e+06
+reorder-ratio: 0
+drift-measure: 551774731477244
+inter-arrival jitter (ns): 648223
+maximum-jitter (ns): 4.79861e+06
+reorder-ratio: 0
+drift-measure: 551777617556296
+inter-arrival jitter (ns): 443602
+maximum-jitter (ns): 4.82537e+06
+reorder-ratio: 0
+drift-measure: 551780510294147
+inter-arrival jitter (ns): 459296
+maximum-jitter (ns): 4.84736e+06
+reorder-ratio: 0
+drift-measure: 551783389859870
+inter-arrival jitter (ns): 373076
+maximum-jitter (ns): 4.79545e+06
+reorder-ratio: 0
+drift-measure: 551786273471655
+inter-arrival jitter (ns): 378458
+maximum-jitter (ns): 4.77771e+06
+reorder-ratio: 0
+drift-measure: 551789154353133
+inter-arrival jitter (ns): 368721
+maximum-jitter (ns): 4.70863e+06
+reorder-ratio: 0
+drift-measure: 551792041422737
+inter-arrival jitter (ns): 332245
+maximum-jitter (ns): 4.73984e+06
+reorder-ratio: 0
+drift-measure: 551794922544923
+inter-arrival jitter (ns): 373091
+maximum-jitter (ns): 4.82678e+06
+reorder-ratio: 0
+drift-measure: 551797867303918
+inter-arrival jitter (ns): 560902
+maximum-jitter (ns): 4.85208e+06
+reorder-ratio: 0
+drift-measure: 551800904376113
+inter-arrival jitter (ns): 461284
+maximum-jitter (ns): 4.81547e+06
+reorder-ratio: 0
+drift-measure: 551803938562423
+inter-arrival jitter (ns): 531154
+maximum-jitter (ns): 4.81872e+06
+reorder-ratio: 0
+drift-measure: 551807007654457
+inter-arrival jitter (ns): 595920
+maximum-jitter (ns): 4.77334e+06
+reorder-ratio: 0
+drift-measure: 551810094410900
+inter-arrival jitter (ns): 571534
+maximum-jitter (ns): 4.77085e+06
+reorder-ratio: 0
+drift-measure: 551813130594985
+inter-arrival jitter (ns): 752805
+maximum-jitter (ns): 4.77086e+06
+reorder-ratio: 0
+drift-measure: 551816226085056
+inter-arrival jitter (ns): 482075
+maximum-jitter (ns): 4.84655e+06
+reorder-ratio: 0
+drift-measure: 551819366913435
+inter-arrival jitter (ns): 320861
+maximum-jitter (ns): 4.76882e+06
+reorder-ratio: 0
+drift-measure: 551822528159093
+inter-arrival jitter (ns): 586154
+maximum-jitter (ns): 4.73868e+06
+reorder-ratio: 0
+drift-measure: 551825624888809
+inter-arrival jitter (ns): 587035
+maximum-jitter (ns): 4.74935e+06
+reorder-ratio: 0
+drift-measure: 551828691485493
+inter-arrival jitter (ns): 603220
+maximum-jitter (ns): 4.81521e+06
+reorder-ratio: 0
+drift-measure: 551831596128828
+inter-arrival jitter (ns): 317049
+maximum-jitter (ns): 4.80191e+06
+reorder-ratio: 0
+drift-measure: 551834543360790
+inter-arrival jitter (ns): 554724
+maximum-jitter (ns): 4.73364e+06
+reorder-ratio: 0
+drift-measure: 551837484969909
+inter-arrival jitter (ns): 278629
+maximum-jitter (ns): 4.81527e+06
+reorder-ratio: 0
+drift-measure: 551840474084375
+inter-arrival jitter (ns): 425104
+maximum-jitter (ns): 4.75893e+06
+reorder-ratio: 0
+drift-measure: 551843418673523
+inter-arrival jitter (ns): 490994
+maximum-jitter (ns): 4.85559e+06
+reorder-ratio: 0
+drift-measure: 551846435605075
+inter-arrival jitter (ns): 778238
+maximum-jitter (ns): 4.78416e+06
+reorder-ratio: 0
+drift-measure: 551849412043355
+inter-arrival jitter (ns): 947908
+maximum-jitter (ns): 4.73402e+06
+reorder-ratio: 0
+drift-measure: 551852357592137
+inter-arrival jitter (ns): 859551
+maximum-jitter (ns): 4.79179e+06
+reorder-ratio: 0
+drift-measure: 551855184051880
+inter-arrival jitter (ns): 711810
+maximum-jitter (ns): 4.72854e+06
+reorder-ratio: 0
+drift-measure: 551858043429531
+inter-arrival jitter (ns): 567758
+maximum-jitter (ns): 4.76269e+06
+reorder-ratio: 0
+drift-measure: 551860952787421
+inter-arrival jitter (ns): 305828
+maximum-jitter (ns): 4.85378e+06
+reorder-ratio: 0
+drift-measure: 551863933852823
+inter-arrival jitter (ns): 1.5374e+06
+maximum-jitter (ns): 1.23097e+07
+reorder-ratio: 0
+drift-measure: 551867014092842
+inter-arrival jitter (ns): 849349
+maximum-jitter (ns): 4.77267e+06
+reorder-ratio: 0
+drift-measure: 551870067315994
+inter-arrival jitter (ns): 727828
+maximum-jitter (ns): 4.87365e+06
+reorder-ratio: 0
+drift-measure: 551872957158192
+inter-arrival jitter (ns): 492575
+maximum-jitter (ns): 4.78596e+06
+reorder-ratio: 0
+drift-measure: 551875985897194
+inter-arrival jitter (ns): 449446
+maximum-jitter (ns): 4.88758e+06
+reorder-ratio: 0
+drift-measure: 551879031191615
+inter-arrival jitter (ns): 478965
+maximum-jitter (ns): 4.8405e+06
+reorder-ratio: 0
+drift-measure: 551882131259647
+inter-arrival jitter (ns): 475374
+maximum-jitter (ns): 4.70753e+06
+reorder-ratio: 0
+drift-measure: 551885052781922
+inter-arrival jitter (ns): 932956
+maximum-jitter (ns): 4.87991e+06
+reorder-ratio: 0
+drift-measure: 551888045978848
+inter-arrival jitter (ns): 797729
+maximum-jitter (ns): 4.71811e+06
+reorder-ratio: 0
+drift-measure: 551891041773343
+inter-arrival jitter (ns): 480174
+maximum-jitter (ns): 4.78803e+06
+reorder-ratio: 0
+drift-measure: 551893943568252
+inter-arrival jitter (ns): 438174
+maximum-jitter (ns): 4.71989e+06
+reorder-ratio: 0
+drift-measure: 551896913364324
+inter-arrival jitter (ns): 865089
+maximum-jitter (ns): 4.76971e+06
+reorder-ratio: 0
+drift-measure: 551899968239858
+inter-arrival jitter (ns): 317739
+maximum-jitter (ns): 4.80014e+06
+reorder-ratio: 0
+drift-measure: 551902937295532
+inter-arrival jitter (ns): 492249
+maximum-jitter (ns): 4.8132e+06
+reorder-ratio: 0
+drift-measure: 551906086634965
+inter-arrival jitter (ns): 581181
+maximum-jitter (ns): 4.76192e+06
+reorder-ratio: 0
+drift-measure: 551909163117970
+inter-arrival jitter (ns): 451753
+maximum-jitter (ns): 4.79305e+06
+reorder-ratio: 0
+drift-measure: 551912196936305
+inter-arrival jitter (ns): 732094
+maximum-jitter (ns): 4.87654e+06
+reorder-ratio: 0
+drift-measure: 551915108866518
+inter-arrival jitter (ns): 497055
+maximum-jitter (ns): 4.76796e+06
+reorder-ratio: 0
+drift-measure: 551918054227701
+inter-arrival jitter (ns): 1.14382e+06
+maximum-jitter (ns): 1.13128e+07
+reorder-ratio: 0
+drift-measure: 551920953724548
+inter-arrival jitter (ns): 729527
+maximum-jitter (ns): 4.80265e+06
+reorder-ratio: 0
+drift-measure: 551923936028583
+inter-arrival jitter (ns): 446937
+maximum-jitter (ns): 4.75569e+06
+reorder-ratio: 0
+drift-measure: 551926817537919
+inter-arrival jitter (ns): 600213
+maximum-jitter (ns): 4.67051e+06
+reorder-ratio: 0
+drift-measure: 551929698119571
+inter-arrival jitter (ns): 415052
+maximum-jitter (ns): 4.7408e+06
+reorder-ratio: 0
+drift-measure: 551932567642373
+inter-arrival jitter (ns): 387806
+maximum-jitter (ns): 4.70116e+06
+reorder-ratio: 0
+drift-measure: 551935433172772
+inter-arrival jitter (ns): 895326
+maximum-jitter (ns): 4.83428e+06
+reorder-ratio: 0
+drift-measure: 551938279513115
+inter-arrival jitter (ns): 534417
+maximum-jitter (ns): 4.71636e+06
+reorder-ratio: 0
+drift-measure: 551941135760756
+inter-arrival jitter (ns): 728959
+maximum-jitter (ns): 4.8386e+06
+reorder-ratio: 0
+drift-measure: 551943983844771
+inter-arrival jitter (ns): 565598
+maximum-jitter (ns): 4.83262e+06
+reorder-ratio: 0
+drift-measure: 551946864106267
+inter-arrival jitter (ns): 823944
+maximum-jitter (ns): 4.80668e+06
+reorder-ratio: 0
+drift-measure: 551949764888434
+inter-arrival jitter (ns): 912203
+maximum-jitter (ns): 4.73477e+06
+reorder-ratio: 0
+drift-measure: 551952625021549
+inter-arrival jitter (ns): 863540
+maximum-jitter (ns): 4.78773e+06
+reorder-ratio: 0
+drift-measure: 551955510924052
+inter-arrival jitter (ns): 433204
+maximum-jitter (ns): 4.72454e+06
+reorder-ratio: 0
+drift-measure: 551958386423145
+inter-arrival jitter (ns): 941681
+maximum-jitter (ns): 4.8733e+06
+reorder-ratio: 0
+drift-measure: 551961261877243
+inter-arrival jitter (ns): 905668
+maximum-jitter (ns): 4.78827e+06
+reorder-ratio: 0
+drift-measure: 551964191275681
+inter-arrival jitter (ns): 1.08309e+06
+maximum-jitter (ns): 4.83745e+06
+reorder-ratio: 0
+drift-measure: 551967208395102
+inter-arrival jitter (ns): 566703
+maximum-jitter (ns): 4.7577e+06
+reorder-ratio: 0
+drift-measure: 551970249515974
+inter-arrival jitter (ns): 638037
+maximum-jitter (ns): 4.78276e+06
+reorder-ratio: 0
+drift-measure: 551973203953872
+inter-arrival jitter (ns): 995054
+maximum-jitter (ns): 4.70077e+06
+reorder-ratio: 0
+drift-measure: 551976045155882
+inter-arrival jitter (ns): 625771
+maximum-jitter (ns): 4.68958e+06
+reorder-ratio: 0
+drift-measure: 551978904143368
+inter-arrival jitter (ns): 2.79467e+06
+maximum-jitter (ns): 3.83967e+07
+reorder-ratio: 0
+drift-measure: 551981725287117
+inter-arrival jitter (ns): 686021
+maximum-jitter (ns): 2.97729e+07
+reorder-ratio: 0
+drift-measure: 551984593345937
+inter-arrival jitter (ns): 524617
+maximum-jitter (ns): 4.78212e+06
+reorder-ratio: 0
+drift-measure: 551987464306873
+inter-arrival jitter (ns): 323762
+maximum-jitter (ns): 4.72901e+06
+reorder-ratio: 0
+drift-measure: 551990340029541
+inter-arrival jitter (ns): 651683
+maximum-jitter (ns): 4.79965e+06
+reorder-ratio: 0
+drift-measure: 551993214720751
+inter-arrival jitter (ns): 254062
+maximum-jitter (ns): 4.83674e+06
+reorder-ratio: 0
+drift-measure: 551996118124231
+inter-arrival jitter (ns): 2.12734e+06
+maximum-jitter (ns): 3.06492e+07
+reorder-ratio: 0
+drift-measure: 551998981563593
+inter-arrival jitter (ns): 526974
+maximum-jitter (ns): 3.0818e+07
+reorder-ratio: 0
+drift-measure: 552001853663766
+inter-arrival jitter (ns): 628294
+maximum-jitter (ns): 4.77613e+06
+reorder-ratio: 0
+drift-measure: 552004724930079
+inter-arrival jitter (ns): 953796
+maximum-jitter (ns): 4.76833e+06
+reorder-ratio: 0
+drift-measure: 552007587190790
+inter-arrival jitter (ns): 764931
+maximum-jitter (ns): 4.73206e+06
+reorder-ratio: 0
+drift-measure: 552010486256104
+inter-arrival jitter (ns): 641667
+maximum-jitter (ns): 4.85655e+06
+reorder-ratio: 0
+drift-measure: 552013328603855
+inter-arrival jitter (ns): 1.00596e+06
+maximum-jitter (ns): 4.70673e+06
+reorder-ratio: 0
+drift-measure: 552016224469060
+inter-arrival jitter (ns): 755515
+maximum-jitter (ns): 4.83842e+06
+reorder-ratio: 0
+drift-measure: 552019094233371
+inter-arrival jitter (ns): 349548
+maximum-jitter (ns): 4.76018e+06
+reorder-ratio: 0
+drift-measure: 552021956307975
+inter-arrival jitter (ns): 322992
+maximum-jitter (ns): 4.80735e+06
+reorder-ratio: 0
+drift-measure: 552024867474908
+inter-arrival jitter (ns): 492622
+maximum-jitter (ns): 4.78776e+06
+reorder-ratio: 0
+drift-measure: 552027768635388
+inter-arrival jitter (ns): 562340
+maximum-jitter (ns): 4.86889e+06
+reorder-ratio: 0
+drift-measure: 552030803155118
+inter-arrival jitter (ns): 753403
+maximum-jitter (ns): 4.86019e+06
+reorder-ratio: 0
+drift-measure: 552033722361958
+inter-arrival jitter (ns): 507977
+maximum-jitter (ns): 4.78582e+06
+reorder-ratio: 0
+drift-measure: 552036558530260
+inter-arrival jitter (ns): 539327
+maximum-jitter (ns): 4.77126e+06
+reorder-ratio: 0
+drift-measure: 552039400368303
+inter-arrival jitter (ns): 523067
+maximum-jitter (ns): 4.858e+06
+reorder-ratio: 0
+drift-measure: 552042296969476
+inter-arrival jitter (ns): 374267
+maximum-jitter (ns): 4.77994e+06
+reorder-ratio: 0
+drift-measure: 552045220004583
+inter-arrival jitter (ns): 614440
+maximum-jitter (ns): 4.84896e+06
+reorder-ratio: 0
+drift-measure: 552048100797738
+inter-arrival jitter (ns): 608940
+maximum-jitter (ns): 4.84529e+06
+reorder-ratio: 0
+drift-measure: 552051028237313
+inter-arrival jitter (ns): 473067
+maximum-jitter (ns): 4.82515e+06
+reorder-ratio: 0
+drift-measure: 552053942822501
+inter-arrival jitter (ns): 537130
+maximum-jitter (ns): 4.79059e+06
+reorder-ratio: 0
+drift-measure: 552056830677896
+inter-arrival jitter (ns): 774971
+maximum-jitter (ns): 4.74997e+06
+reorder-ratio: 0
+drift-measure: 552059749546517
+inter-arrival jitter (ns): 736346
+maximum-jitter (ns): 4.81992e+06
+reorder-ratio: 0
+drift-measure: 552062686185074
+inter-arrival jitter (ns): 475049
+maximum-jitter (ns): 4.71235e+06
+reorder-ratio: 0
+drift-measure: 552065689871311
+inter-arrival jitter (ns): 552621
+maximum-jitter (ns): 4.74402e+06
+reorder-ratio: 0
+drift-measure: 552068533190768
+inter-arrival jitter (ns): 931036
+maximum-jitter (ns): 4.73432e+06
+reorder-ratio: 0
+drift-measure: 552071395067385
+inter-arrival jitter (ns): 810944
+maximum-jitter (ns): 4.80539e+06
+reorder-ratio: 0
+drift-measure: 552074265547206
+inter-arrival jitter (ns): 419136
+maximum-jitter (ns): 4.81871e+06
+reorder-ratio: 0
+drift-measure: 552077205085634
+inter-arrival jitter (ns): 804322
+maximum-jitter (ns): 4.8166e+06
+reorder-ratio: 0
+drift-measure: 552080096407994
+inter-arrival jitter (ns): 384703
+maximum-jitter (ns): 4.88946e+06
+reorder-ratio: 0
+drift-measure: 552082959396447
+inter-arrival jitter (ns): 564431
+maximum-jitter (ns): 5.06903e+06
+reorder-ratio: 0
+drift-measure: 552085985211615
+inter-arrival jitter (ns): 1.25357e+06
+maximum-jitter (ns): 1.06669e+07
+reorder-ratio: 0
+drift-measure: 552088998966510
+inter-arrival jitter (ns): 475221
+maximum-jitter (ns): 4.81448e+06
+reorder-ratio: 0
+drift-measure: 552091952027970
+inter-arrival jitter (ns): 1.00375e+06
+maximum-jitter (ns): 4.88085e+06
+reorder-ratio: 0
+drift-measure: 552094876619280
+inter-arrival jitter (ns): 972881
+maximum-jitter (ns): 4.79807e+06
+reorder-ratio: 0
+drift-measure: 552097875891180
+inter-arrival jitter (ns): 833380
+maximum-jitter (ns): 4.85048e+06
+reorder-ratio: 0
+drift-measure: 552100862135180
+inter-arrival jitter (ns): 741191
+maximum-jitter (ns): 4.76194e+06
+reorder-ratio: 0
+drift-measure: 552103838480137
+inter-arrival jitter (ns): 304834
+maximum-jitter (ns): 4.78274e+06
+reorder-ratio: 0
+drift-measure: 552106815946488
+inter-arrival jitter (ns): 357187
+maximum-jitter (ns): 4.80162e+06
+reorder-ratio: 0
+drift-measure: 552109806411064
+inter-arrival jitter (ns): 437039
+maximum-jitter (ns): 4.83425e+06
+reorder-ratio: 0
+drift-measure: 552112827519551
+inter-arrival jitter (ns): 685826
+maximum-jitter (ns): 4.74244e+06
+reorder-ratio: 0
+drift-measure: 552115773911982
+inter-arrival jitter (ns): 381037
+maximum-jitter (ns): 4.7217e+06
+reorder-ratio: 0
+drift-measure: 552118659704611
+inter-arrival jitter (ns): 678072
+maximum-jitter (ns): 4.91239e+06
+reorder-ratio: 0
+drift-measure: 552121504060375
+inter-arrival jitter (ns): 570082
+maximum-jitter (ns): 4.83289e+06
+reorder-ratio: 0
+drift-measure: 552124431863817
+inter-arrival jitter (ns): 325179
+maximum-jitter (ns): 4.82742e+06
+reorder-ratio: 0
+drift-measure: 552127444082316
+inter-arrival jitter (ns): 401221
+maximum-jitter (ns): 4.72291e+06
+reorder-ratio: 0
+drift-measure: 552130270695354
+inter-arrival jitter (ns): 580093
+maximum-jitter (ns): 4.82471e+06
+reorder-ratio: 0
+drift-measure: 552133291111564
+inter-arrival jitter (ns): 849411
+maximum-jitter (ns): 4.85868e+06
+reorder-ratio: 0
+drift-measure: 552136185685568
+inter-arrival jitter (ns): 724475
+maximum-jitter (ns): 4.80013e+06
+reorder-ratio: 0
+drift-measure: 552139177624135
+inter-arrival jitter (ns): 476054
+maximum-jitter (ns): 4.90388e+06
+reorder-ratio: 0
+drift-measure: 552142216037554
+inter-arrival jitter (ns): 775720
+maximum-jitter (ns): 4.75022e+06
+reorder-ratio: 0
+drift-measure: 552145109996445
+inter-arrival jitter (ns): 1.73773e+06
+maximum-jitter (ns): 2.04602e+07
+reorder-ratio: 0
+drift-measure: 552147962423163
+inter-arrival jitter (ns): 592576
+maximum-jitter (ns): 2.24829e+07
+reorder-ratio: 0
+drift-measure: 552150821579272
+inter-arrival jitter (ns): 869198
+maximum-jitter (ns): 4.77371e+06
+reorder-ratio: 0
+drift-measure: 552153756734532
+inter-arrival jitter (ns): 771774
+maximum-jitter (ns): 4.80769e+06
+reorder-ratio: 0
+drift-measure: 552156637517127
+inter-arrival jitter (ns): 331551
+maximum-jitter (ns): 4.81647e+06
+reorder-ratio: 0
+drift-measure: 552159496916358
+inter-arrival jitter (ns): 936663
+maximum-jitter (ns): 4.94597e+06
+reorder-ratio: 0
+drift-measure: 552162414959785
+inter-arrival jitter (ns): 478619
+maximum-jitter (ns): 4.70076e+06
+reorder-ratio: 0
+drift-measure: 552165308097780
+inter-arrival jitter (ns): 423305
+maximum-jitter (ns): 4.76709e+06
+reorder-ratio: 0
+drift-measure: 552168148869410
+inter-arrival jitter (ns): 505527
+maximum-jitter (ns): 4.81668e+06
+reorder-ratio: 0
+drift-measure: 552170979338306
+inter-arrival jitter (ns): 622130
+maximum-jitter (ns): 4.76432e+06
+reorder-ratio: 0
+drift-measure: 552173882181043
+inter-arrival jitter (ns): 2.86198e+06
+maximum-jitter (ns): 3.80031e+07
+reorder-ratio: 0
+drift-measure: 552176810050849
+inter-arrival jitter (ns): 498541
+maximum-jitter (ns): 2.94009e+07
+reorder-ratio: 0
+drift-measure: 552179869522407
+inter-arrival jitter (ns): 654033
+maximum-jitter (ns): 4.77638e+06
+reorder-ratio: 0
+drift-measure: 552182909040369
+inter-arrival jitter (ns): 577735
+maximum-jitter (ns): 4.79185e+06
+reorder-ratio: 0
+drift-measure: 552185877499755
+inter-arrival jitter (ns): 599418
+maximum-jitter (ns): 4.80886e+06
+reorder-ratio: 0
+drift-measure: 552188935720849
+inter-arrival jitter (ns): 582640
+maximum-jitter (ns): 4.74961e+06
+reorder-ratio: 0
+drift-measure: 552192052562064
+inter-arrival jitter (ns): 410836
+maximum-jitter (ns): 4.81171e+06
+reorder-ratio: 0
+drift-measure: 552195052383716
+inter-arrival jitter (ns): 630280
+maximum-jitter (ns): 4.82505e+06
+reorder-ratio: 0
+drift-measure: 552198114028705
+inter-arrival jitter (ns): 427791
+maximum-jitter (ns): 4.77084e+06
+reorder-ratio: 0
+drift-measure: 552201174400627
+inter-arrival jitter (ns): 2.46647e+06
+maximum-jitter (ns): 3.42448e+07
+reorder-ratio: 0
+drift-measure: 552204136579477
+inter-arrival jitter (ns): 351620
+maximum-jitter (ns): 2.54195e+07
+reorder-ratio: 0
+drift-measure: 552207023082938
+inter-arrival jitter (ns): 788544
+maximum-jitter (ns): 4.86452e+06
+reorder-ratio: 0
+drift-measure: 552209858233708
+inter-arrival jitter (ns): 527446
+maximum-jitter (ns): 4.76116e+06
+reorder-ratio: 0
+drift-measure: 552212769121632
+inter-arrival jitter (ns): 519185
+maximum-jitter (ns): 4.7355e+06
+reorder-ratio: 0
+drift-measure: 552215733737803
+inter-arrival jitter (ns): 530503
+maximum-jitter (ns): 4.88353e+06
+reorder-ratio: 0
+drift-measure: 552218708062173
+inter-arrival jitter (ns): 481534
+maximum-jitter (ns): 4.77444e+06
+reorder-ratio: 0
+drift-measure: 552221593219130
+inter-arrival jitter (ns): 621327
+maximum-jitter (ns): 4.70893e+06
+reorder-ratio: 0
+drift-measure: 552224458555800
+inter-arrival jitter (ns): 763166
+maximum-jitter (ns): 4.81677e+06
+reorder-ratio: 0
+drift-measure: 552227315387187
+inter-arrival jitter (ns): 582331
+maximum-jitter (ns): 4.78398e+06
+reorder-ratio: 0
+drift-measure: 552230187005454
+inter-arrival jitter (ns): 420799
+maximum-jitter (ns): 4.87737e+06
+reorder-ratio: 0
+drift-measure: 552233042789884
+inter-arrival jitter (ns): 502935
+maximum-jitter (ns): 4.74958e+06
+reorder-ratio: 0
+drift-measure: 552235945998632
+inter-arrival jitter (ns): 463715
+maximum-jitter (ns): 4.78788e+06
+reorder-ratio: 0
+drift-measure: 552238812661647
+inter-arrival jitter (ns): 344145
+maximum-jitter (ns): 4.77899e+06
+reorder-ratio: 0
+drift-measure: 552241808970138
+inter-arrival jitter (ns): 606774
+maximum-jitter (ns): 4.97203e+06
+reorder-ratio: 0
+drift-measure: 552244811835138
+inter-arrival jitter (ns): 554656
+maximum-jitter (ns): 4.78228e+06
+reorder-ratio: 0
+drift-measure: 552247645997621
+inter-arrival jitter (ns): 313200
+maximum-jitter (ns): 4.8207e+06
+reorder-ratio: 0
+drift-measure: 552250648021959
+inter-arrival jitter (ns): 575592
+maximum-jitter (ns): 4.90435e+06
+reorder-ratio: 0
+drift-measure: 552253676917953
+inter-arrival jitter (ns): 418095
+maximum-jitter (ns): 4.73369e+06
+reorder-ratio: 0
+drift-measure: 552256723408608
+inter-arrival jitter (ns): 828505
+maximum-jitter (ns): 4.76135e+06
+reorder-ratio: 0
+drift-measure: 552259666654069
+inter-arrival jitter (ns): 836048
+maximum-jitter (ns): 4.71114e+06
+reorder-ratio: 0
+drift-measure: 552262545099229
+inter-arrival jitter (ns): 626196
+maximum-jitter (ns): 4.73543e+06
+reorder-ratio: 0
+drift-measure: 552265480717128
+inter-arrival jitter (ns): 600398
+maximum-jitter (ns): 4.83024e+06
+reorder-ratio: 0
+drift-measure: 552268505954411
+inter-arrival jitter (ns): 582820
+maximum-jitter (ns): 4.78567e+06
+reorder-ratio: 0
+drift-measure: 552271437450789
+inter-arrival jitter (ns): 598457
+maximum-jitter (ns): 4.83081e+06
+reorder-ratio: 0
+drift-measure: 552274400199769
+inter-arrival jitter (ns): 648056
+maximum-jitter (ns): 4.77184e+06
+reorder-ratio: 0
+drift-measure: 552277292589994
+inter-arrival jitter (ns): 435649
+maximum-jitter (ns): 4.87455e+06
+reorder-ratio: 0
+drift-measure: 552280202650881
+inter-arrival jitter (ns): 602615
+maximum-jitter (ns): 4.87935e+06
+reorder-ratio: 0
+drift-measure: 552283106181306
+inter-arrival jitter (ns): 522216
+maximum-jitter (ns): 4.88143e+06
+reorder-ratio: 0
+drift-measure: 552286012889119
+inter-arrival jitter (ns): 569901
+maximum-jitter (ns): 4.84e+06
+reorder-ratio: 0
+drift-measure: 552288918205635
+inter-arrival jitter (ns): 621881
+maximum-jitter (ns): 4.83443e+06
+reorder-ratio: 0
+drift-measure: 552291827321425
+inter-arrival jitter (ns): 409039
+maximum-jitter (ns): 4.71174e+06
+reorder-ratio: 0
+drift-measure: 552294715794487
+inter-arrival jitter (ns): 636078
+maximum-jitter (ns): 4.75498e+06
+reorder-ratio: 0
+drift-measure: 552297600859514
+inter-arrival jitter (ns): 445245
+maximum-jitter (ns): 4.86121e+06
+reorder-ratio: 0
+drift-measure: 552300512667338
+inter-arrival jitter (ns): 554611
+maximum-jitter (ns): 4.68068e+06
+reorder-ratio: 0
+drift-measure: 552303453610950
+inter-arrival jitter (ns): 496091
+maximum-jitter (ns): 4.79039e+06
+reorder-ratio: 0
+drift-measure: 552306448427086
+inter-arrival jitter (ns): 481719
+maximum-jitter (ns): 4.78776e+06
+reorder-ratio: 0
+drift-measure: 552309385024928
+inter-arrival jitter (ns): 552102
+maximum-jitter (ns): 7.00215e+06
+reorder-ratio: 0
+drift-measure: 552312275006555
+inter-arrival jitter (ns): 489176
+maximum-jitter (ns): 4.80662e+06
+reorder-ratio: 0
+drift-measure: 552315201921966
+inter-arrival jitter (ns): 659289
+maximum-jitter (ns): 4.76898e+06
+reorder-ratio: 0
+drift-measure: 552318178141499
+inter-arrival jitter (ns): 470381
+maximum-jitter (ns): 4.86563e+06
+reorder-ratio: 0
+drift-measure: 552321063945660
+inter-arrival jitter (ns): 855094
+maximum-jitter (ns): 4.83099e+06
+reorder-ratio: 0
+drift-measure: 552323922286613
+inter-arrival jitter (ns): 1.1562e+06
+maximum-jitter (ns): 4.76384e+06
+reorder-ratio: 0
+drift-measure: 552326860236549
+inter-arrival jitter (ns): 910468
+maximum-jitter (ns): 4.85254e+06
+reorder-ratio: 0
+drift-measure: 552329759970707
+inter-arrival jitter (ns): 683741
+maximum-jitter (ns): 4.81343e+06
+reorder-ratio: 0
+drift-measure: 552332702298271
+inter-arrival jitter (ns): 911291
+maximum-jitter (ns): 4.8188e+06
+reorder-ratio: 0
+drift-measure: 552335580710589
+inter-arrival jitter (ns): 514120
+maximum-jitter (ns): 4.81285e+06
+reorder-ratio: 0
+drift-measure: 552338450753298
+inter-arrival jitter (ns): 840056
+maximum-jitter (ns): 4.70448e+06
+reorder-ratio: 0
+drift-measure: 552341356580313
+inter-arrival jitter (ns): 692186
+maximum-jitter (ns): 4.84681e+06
+reorder-ratio: 0
+drift-measure: 552344227581654
+inter-arrival jitter (ns): 617552
+maximum-jitter (ns): 4.74259e+06
+reorder-ratio: 0
+drift-measure: 552347098624181
+inter-arrival jitter (ns): 348521
+maximum-jitter (ns): 4.80598e+06
+reorder-ratio: 0
+drift-measure: 552349971788172
+inter-arrival jitter (ns): 484677
+maximum-jitter (ns): 4.70859e+06
+reorder-ratio: 0
+drift-measure: 552352855592485
+inter-arrival jitter (ns): 669113
+maximum-jitter (ns): 4.76396e+06
+reorder-ratio: 0
+drift-measure: 552355806565231
+inter-arrival jitter (ns): 604333
+maximum-jitter (ns): 4.76844e+06
+reorder-ratio: 0
+drift-measure: 552358721394102
+inter-arrival jitter (ns): 763716
+maximum-jitter (ns): 4.87561e+06
+reorder-ratio: 0
+drift-measure: 552361668735557
+inter-arrival jitter (ns): 640183
+maximum-jitter (ns): 4.88395e+06
+reorder-ratio: 0
+drift-measure: 552364720844698
+inter-arrival jitter (ns): 499208
+maximum-jitter (ns): 4.80193e+06
+reorder-ratio: 0
+drift-measure: 552367603462004
+inter-arrival jitter (ns): 414080
+maximum-jitter (ns): 4.74035e+06
+reorder-ratio: 0
+drift-measure: 552370616506499
+inter-arrival jitter (ns): 929049
+maximum-jitter (ns): 4.76494e+06
+reorder-ratio: 0
+drift-measure: 552373718798595
+inter-arrival jitter (ns): 419945
+maximum-jitter (ns): 4.75539e+06
+reorder-ratio: 0
+drift-measure: 552376833532092
+inter-arrival jitter (ns): 701137
+maximum-jitter (ns): 4.75246e+06
+reorder-ratio: 0
+drift-measure: 552379821454933
+inter-arrival jitter (ns): 653661
+maximum-jitter (ns): 4.79313e+06
+reorder-ratio: 0
+drift-measure: 552382659166935
+inter-arrival jitter (ns): 631740
+maximum-jitter (ns): 4.74914e+06
+reorder-ratio: 0
+drift-measure: 552385445211912
+inter-arrival jitter (ns): 496387
+maximum-jitter (ns): 4.73247e+06
+reorder-ratio: 0
+drift-measure: 552388250052652
+inter-arrival jitter (ns): 560333
+maximum-jitter (ns): 4.83743e+06
+reorder-ratio: 0
+drift-measure: 552391112738653
+inter-arrival jitter (ns): 714022
+maximum-jitter (ns): 4.88655e+06
+reorder-ratio: 0
+drift-measure: 552394054915166
+inter-arrival jitter (ns): 794438
+maximum-jitter (ns): 4.71788e+06
+reorder-ratio: 0
+drift-measure: 552397044750543
+inter-arrival jitter (ns): 567911
+maximum-jitter (ns): 4.85985e+06
+reorder-ratio: 0
+drift-measure: 552399977797594
+inter-arrival jitter (ns): 517600
+maximum-jitter (ns): 4.78829e+06
+reorder-ratio: 0
+drift-measure: 552402992221083
+inter-arrival jitter (ns): 606968
+maximum-jitter (ns): 4.78816e+06
+reorder-ratio: 0
+drift-measure: 552406068488125
+inter-arrival jitter (ns): 958900
+maximum-jitter (ns): 4.83039e+06
+reorder-ratio: 0
+drift-measure: 552409097346661
+inter-arrival jitter (ns): 510207
+maximum-jitter (ns): 4.79215e+06
+reorder-ratio: 0
+drift-measure: 552412102492030
+inter-arrival jitter (ns): 508557
+maximum-jitter (ns): 4.75333e+06
+reorder-ratio: 0
+drift-measure: 552415139775709
+inter-arrival jitter (ns): 735180
+maximum-jitter (ns): 4.85391e+06
+reorder-ratio: 0
+drift-measure: 552418126278399
+inter-arrival jitter (ns): 360795
+maximum-jitter (ns): 4.7708e+06
+reorder-ratio: 0
+drift-measure: 552421064067356
+inter-arrival jitter (ns): 726759
+maximum-jitter (ns): 4.75035e+06
+reorder-ratio: 0
+drift-measure: 552423955096500
+inter-arrival jitter (ns): 419072
+maximum-jitter (ns): 4.75234e+06
+reorder-ratio: 0
+drift-measure: 552426847418047
+inter-arrival jitter (ns): 533907
+maximum-jitter (ns): 4.82899e+06
+reorder-ratio: 0
+drift-measure: 552429742494967
+inter-arrival jitter (ns): 856771
+maximum-jitter (ns): 4.80671e+06
+reorder-ratio: 0
+drift-measure: 552432637468695
+inter-arrival jitter (ns): 556428
+maximum-jitter (ns): 4.82438e+06
+reorder-ratio: 0
+drift-measure: 552435509916655
+inter-arrival jitter (ns): 422837
+maximum-jitter (ns): 4.74661e+06
+reorder-ratio: 0
+drift-measure: 552438403644356
+inter-arrival jitter (ns): 429801
+maximum-jitter (ns): 4.78857e+06
+reorder-ratio: 0
+drift-measure: 552441400444822
+inter-arrival jitter (ns): 472767
+maximum-jitter (ns): 4.70013e+06
+reorder-ratio: 0
+drift-measure: 552444416190298
+inter-arrival jitter (ns): 788777
+maximum-jitter (ns): 4.81244e+06
+reorder-ratio: 0
+drift-measure: 552447293064838
+inter-arrival jitter (ns): 389818
+maximum-jitter (ns): 5.02301e+06
+reorder-ratio: 0
+drift-measure: 552450154603726
+inter-arrival jitter (ns): 258392
+maximum-jitter (ns): 4.75934e+06
+reorder-ratio: 0
+drift-measure: 552453050934968
+inter-arrival jitter (ns): 1.12315e+06
+maximum-jitter (ns): 1.00304e+07
+reorder-ratio: 0
+drift-measure: 552455920256676
+inter-arrival jitter (ns): 507590
+maximum-jitter (ns): 4.79521e+06
+reorder-ratio: 0
+drift-measure: 552458758890291
+inter-arrival jitter (ns): 839972
+maximum-jitter (ns): 4.76463e+06
+reorder-ratio: 0
+drift-measure: 552461611794166
+inter-arrival jitter (ns): 850431
+maximum-jitter (ns): 4.88514e+06
+reorder-ratio: 0
+drift-measure: 552464482076530
+inter-arrival jitter (ns): 536571
+maximum-jitter (ns): 4.83171e+06
+reorder-ratio: 0
+drift-measure: 552467321277751
+inter-arrival jitter (ns): 426312
+maximum-jitter (ns): 4.83344e+06
+reorder-ratio: 0
+drift-measure: 552470224237806
+inter-arrival jitter (ns): 620827
+maximum-jitter (ns): 4.77462e+06
+reorder-ratio: 0
+drift-measure: 552473150514379
+inter-arrival jitter (ns): 374897
+maximum-jitter (ns): 4.92383e+06
+reorder-ratio: 0
+drift-measure: 552475957769418
+inter-arrival jitter (ns): 385233
+maximum-jitter (ns): 4.67219e+06
+reorder-ratio: 0
+drift-measure: 552478795665142
+inter-arrival jitter (ns): 438909
+maximum-jitter (ns): 4.8175e+06
+reorder-ratio: 0
+drift-measure: 552481764243519
+inter-arrival jitter (ns): 772312
+maximum-jitter (ns): 4.68679e+06
+reorder-ratio: 0
+drift-measure: 552484744911543
+inter-arrival jitter (ns): 518665
+maximum-jitter (ns): 4.70685e+06
+reorder-ratio: 0
+drift-measure: 552487755345484
+inter-arrival jitter (ns): 752779
+maximum-jitter (ns): 4.71308e+06
+reorder-ratio: 0
+drift-measure: 552490767428632
+inter-arrival jitter (ns): 535536
+maximum-jitter (ns): 4.73562e+06
+reorder-ratio: 0
+drift-measure: 552493654387640
+inter-arrival jitter (ns): 732136
+maximum-jitter (ns): 4.78859e+06
+reorder-ratio: 0
+drift-measure: 552496559886735
+inter-arrival jitter (ns): 450822
+maximum-jitter (ns): 4.80962e+06
+reorder-ratio: 0
+drift-measure: 552499496823928
+inter-arrival jitter (ns): 574182
+maximum-jitter (ns): 4.82606e+06
+reorder-ratio: 0
+drift-measure: 552502407021188
+inter-arrival jitter (ns): 621204
+maximum-jitter (ns): 4.8377e+06
+reorder-ratio: 0
+drift-measure: 552505365104354
+inter-arrival jitter (ns): 600528
+maximum-jitter (ns): 4.85179e+06
+reorder-ratio: 0
+drift-measure: 552508426198779
+inter-arrival jitter (ns): 620394
+maximum-jitter (ns): 4.7554e+06
+reorder-ratio: 0
+drift-measure: 552511461781305
+inter-arrival jitter (ns): 366023
+maximum-jitter (ns): 4.76567e+06
+reorder-ratio: 0
+drift-measure: 552514535192208
+inter-arrival jitter (ns): 610966
+maximum-jitter (ns): 4.74075e+06
+reorder-ratio: 0
+drift-measure: 552517626962894
+inter-arrival jitter (ns): 379335
+maximum-jitter (ns): 4.73551e+06
+reorder-ratio: 0
+drift-measure: 552520674617533
+inter-arrival jitter (ns): 1.07639e+06
+maximum-jitter (ns): 4.85095e+06
+reorder-ratio: 0
+drift-measure: 552523718427986
+inter-arrival jitter (ns): 756162
+maximum-jitter (ns): 4.75447e+06
+reorder-ratio: 0
+drift-measure: 552526816168220
+inter-arrival jitter (ns): 521048
+maximum-jitter (ns): 4.85477e+06
+reorder-ratio: 0
+drift-measure: 552529862057377
+inter-arrival jitter (ns): 637373
+maximum-jitter (ns): 4.7582e+06
+reorder-ratio: 0
+drift-measure: 552532724533027
+inter-arrival jitter (ns): 402330
+maximum-jitter (ns): 4.75782e+06
+reorder-ratio: 0
+drift-measure: 552535856286455
+inter-arrival jitter (ns): 415655
+maximum-jitter (ns): 4.81327e+06
+reorder-ratio: 0
+drift-measure: 552538924238220
+inter-arrival jitter (ns): 877214
+maximum-jitter (ns): 4.76291e+06
+reorder-ratio: 0
+drift-measure: 552541968629542
+inter-arrival jitter (ns): 1.15881e+06
+maximum-jitter (ns): 4.81457e+06
+reorder-ratio: 0
+drift-measure: 552544931573033
+inter-arrival jitter (ns): 885072
+maximum-jitter (ns): 4.79262e+06
+reorder-ratio: 0
+drift-measure: 552547849475428
+inter-arrival jitter (ns): 2.85054e+06
+maximum-jitter (ns): 3.75963e+07
+reorder-ratio: 0
+drift-measure: 552550610678912
+inter-arrival jitter (ns): 574078
+maximum-jitter (ns): 3.81089e+07
+reorder-ratio: 0
+drift-measure: 552553545153206
+inter-arrival jitter (ns): 595798
+maximum-jitter (ns): 4.82167e+06
+reorder-ratio: 0
+drift-measure: 552556617162263
+inter-arrival jitter (ns): 420816
+maximum-jitter (ns): 4.7621e+06
+reorder-ratio: 0
+drift-measure: 552559644296993
+inter-arrival jitter (ns): 409729
+maximum-jitter (ns): 4.77254e+06
+reorder-ratio: 0
+drift-measure: 552562791420025
+inter-arrival jitter (ns): 600423
+maximum-jitter (ns): 4.70584e+06
+reorder-ratio: 0
+drift-measure: 552565812603091
+inter-arrival jitter (ns): 905068
+maximum-jitter (ns): 4.70641e+06
+reorder-ratio: 0
+drift-measure: 552568894475745
+inter-arrival jitter (ns): 586472
+maximum-jitter (ns): 4.76147e+06
+reorder-ratio: 0
+drift-measure: 552571942955990
+inter-arrival jitter (ns): 395739
+maximum-jitter (ns): 4.71487e+06
+reorder-ratio: 0
+drift-measure: 552575052604793
+inter-arrival jitter (ns): 435349
+maximum-jitter (ns): 4.8065e+06
+reorder-ratio: 0
+drift-measure: 552578135987735
+inter-arrival jitter (ns): 483109
+maximum-jitter (ns): 4.7831e+06
+reorder-ratio: 0
+drift-measure: 552581184511861
+inter-arrival jitter (ns): 383327
+maximum-jitter (ns): 4.73008e+06
+reorder-ratio: 0
+drift-measure: 552584272111252
+inter-arrival jitter (ns): 394561
+maximum-jitter (ns): 4.7381e+06
+reorder-ratio: 0
+drift-measure: 552587343032727
+inter-arrival jitter (ns): 439570
+maximum-jitter (ns): 4.80675e+06
+reorder-ratio: 0
+drift-measure: 552590222011388
+inter-arrival jitter (ns): 374793
+maximum-jitter (ns): 4.7478e+06
+reorder-ratio: 0
+drift-measure: 552593296275938
+inter-arrival jitter (ns): 430684
+maximum-jitter (ns): 4.71548e+06
+reorder-ratio: 0
+drift-measure: 552596275310855
+inter-arrival jitter (ns): 584738
+maximum-jitter (ns): 4.76183e+06
+reorder-ratio: 0
+drift-measure: 552599308571765
+inter-arrival jitter (ns): 745792
+maximum-jitter (ns): 4.78704e+06
+reorder-ratio: 0
+drift-measure: 552602275477212
+inter-arrival jitter (ns): 652469
+maximum-jitter (ns): 4.77767e+06
+reorder-ratio: 0
+drift-measure: 552605327891821
+inter-arrival jitter (ns): 449998
+maximum-jitter (ns): 4.79293e+06
+reorder-ratio: 0
+drift-measure: 552608171866556
+inter-arrival jitter (ns): 475947
+maximum-jitter (ns): 4.72162e+06
+reorder-ratio: 0
+drift-measure: 552611067441191
+inter-arrival jitter (ns): 441240
+maximum-jitter (ns): 4.73498e+06
+reorder-ratio: 0
+drift-measure: 552614061246298
+inter-arrival jitter (ns): 523493
+maximum-jitter (ns): 4.75388e+06
+reorder-ratio: 0
+drift-measure: 552616867871455
+inter-arrival jitter (ns): 432698
+maximum-jitter (ns): 4.81385e+06
+reorder-ratio: 0
+drift-measure: 552619741682269
+inter-arrival jitter (ns): 1.00734e+06
+maximum-jitter (ns): 4.68245e+06
+reorder-ratio: 0
+drift-measure: 552622641726564
+inter-arrival jitter (ns): 596446
+maximum-jitter (ns): 4.79733e+06
+reorder-ratio: 0
+drift-measure: 552625451107976
+inter-arrival jitter (ns): 319668
+maximum-jitter (ns): 4.8267e+06
+reorder-ratio: 0
+drift-measure: 552628366512487
+inter-arrival jitter (ns): 718321
+maximum-jitter (ns): 4.81464e+06
+reorder-ratio: 0
+drift-measure: 552631288480350
+inter-arrival jitter (ns): 810280
+maximum-jitter (ns): 4.86665e+06
+reorder-ratio: 0
+drift-measure: 552634155580878
+inter-arrival jitter (ns): 433181
+maximum-jitter (ns): 4.83876e+06
+reorder-ratio: 0
+drift-measure: 552637044484211
+inter-arrival jitter (ns): 308952
+maximum-jitter (ns): 4.8263e+06
+reorder-ratio: 0
+drift-measure: 552639889801622
+inter-arrival jitter (ns): 474377
+maximum-jitter (ns): 4.80985e+06
+reorder-ratio: 0
+drift-measure: 552642736402960
+inter-arrival jitter (ns): 494535
+maximum-jitter (ns): 4.83243e+06
+reorder-ratio: 0
+drift-measure: 552645666698355
+inter-arrival jitter (ns): 679825
+maximum-jitter (ns): 4.75189e+06
+reorder-ratio: 0
+drift-measure: 552648670878180
+inter-arrival jitter (ns): 558700
+maximum-jitter (ns): 4.79042e+06
+reorder-ratio: 0
+drift-measure: 552651680189704
+inter-arrival jitter (ns): 671591
+maximum-jitter (ns): 4.7785e+06
+reorder-ratio: 0
+drift-measure: 552654517896717
+inter-arrival jitter (ns): 509380
+maximum-jitter (ns): 4.89541e+06
+reorder-ratio: 0
+drift-measure: 552657483778741
+inter-arrival jitter (ns): 434409
+maximum-jitter (ns): 4.90679e+06
+reorder-ratio: 0
+drift-measure: 552660486210697
+inter-arrival jitter (ns): 284512
+maximum-jitter (ns): 4.85071e+06
+reorder-ratio: 0
+drift-measure: 552663387124979
+inter-arrival jitter (ns): 562143
+maximum-jitter (ns): 4.72742e+06
+reorder-ratio: 0
+drift-measure: 552666306139762
+inter-arrival jitter (ns): 810496
+maximum-jitter (ns): 4.83676e+06
+reorder-ratio: 0
+drift-measure: 552669200070881
+inter-arrival jitter (ns): 434464
+maximum-jitter (ns): 4.85972e+06
+reorder-ratio: 0
+drift-measure: 552672077354341
+inter-arrival jitter (ns): 564050
+maximum-jitter (ns): 4.83851e+06
+reorder-ratio: 0
+drift-measure: 552675084918968
+inter-arrival jitter (ns): 588891
+maximum-jitter (ns): 4.83711e+06
+reorder-ratio: 0
+drift-measure: 552677948005775
+inter-arrival jitter (ns): 272769
+maximum-jitter (ns): 4.81143e+06
+reorder-ratio: 0
+drift-measure: 552680755380777
+inter-arrival jitter (ns): 799155
+maximum-jitter (ns): 4.8134e+06
+reorder-ratio: 0
+drift-measure: 552683630435683
+inter-arrival jitter (ns): 728845
+maximum-jitter (ns): 4.76633e+06
+reorder-ratio: 0
+drift-measure: 552686500845413
+inter-arrival jitter (ns): 414193
+maximum-jitter (ns): 4.76223e+06
+reorder-ratio: 0
+drift-measure: 552689361479260
+inter-arrival jitter (ns): 424952
+maximum-jitter (ns): 4.70965e+06
+reorder-ratio: 0
+drift-measure: 552692241746587
+inter-arrival jitter (ns): 849988
+maximum-jitter (ns): 4.77442e+06
+reorder-ratio: 0
+drift-measure: 552695167895272
+inter-arrival jitter (ns): 402504
+maximum-jitter (ns): 4.83637e+06
+reorder-ratio: 0
+drift-measure: 552698076843571
+inter-arrival jitter (ns): 352118
+maximum-jitter (ns): 4.8141e+06
+reorder-ratio: 0
+drift-measure: 552701003492466
+inter-arrival jitter (ns): 865351
+maximum-jitter (ns): 4.93569e+06
+reorder-ratio: 0
+drift-measure: 552703930703507
+inter-arrival jitter (ns): 857398
+maximum-jitter (ns): 6.98797e+06
+reorder-ratio: 0
+drift-measure: 552706808348569
+inter-arrival jitter (ns): 532779
+maximum-jitter (ns): 4.83549e+06
+reorder-ratio: 0
+drift-measure: 552709677248793
+inter-arrival jitter (ns): 655721
+maximum-jitter (ns): 4.87101e+06
+reorder-ratio: 0
+drift-measure: 552712543529037
+inter-arrival jitter (ns): 795924
+maximum-jitter (ns): 4.83067e+06
+reorder-ratio: 0
+drift-measure: 552715367281326
+inter-arrival jitter (ns): 797754
+maximum-jitter (ns): 4.88436e+06
+reorder-ratio: 0
+drift-measure: 552718184827117
+inter-arrival jitter (ns): 463938
+maximum-jitter (ns): 4.8266e+06
+reorder-ratio: 0
+drift-measure: 552721046501627
+inter-arrival jitter (ns): 525387
+maximum-jitter (ns): 4.74629e+06
+reorder-ratio: 0
+drift-measure: 552723870817504
+inter-arrival jitter (ns): 342875
+maximum-jitter (ns): 4.77243e+06
+reorder-ratio: 0
+drift-measure: 552726701178670
+inter-arrival jitter (ns): 416382
+maximum-jitter (ns): 4.69561e+06
+reorder-ratio: 0
+drift-measure: 552729544854569
+inter-arrival jitter (ns): 639551
+maximum-jitter (ns): 4.8048e+06
+reorder-ratio: 0
+drift-measure: 552732333870459
+inter-arrival jitter (ns): 273845
+maximum-jitter (ns): 4.8261e+06
+reorder-ratio: 0
+drift-measure: 552735142014161
+inter-arrival jitter (ns): 594353
+maximum-jitter (ns): 4.7935e+06
+reorder-ratio: 0
+drift-measure: 552737975485548
+inter-arrival jitter (ns): 489991
+maximum-jitter (ns): 4.84894e+06
+reorder-ratio: 0
+drift-measure: 552740848518746
+inter-arrival jitter (ns): 889976
+maximum-jitter (ns): 4.81359e+06
+reorder-ratio: 0
+drift-measure: 552743649452854
+inter-arrival jitter (ns): 631729
+maximum-jitter (ns): 4.78985e+06
+reorder-ratio: 0
+drift-measure: 552746534489257
+inter-arrival jitter (ns): 878490
+maximum-jitter (ns): 4.80648e+06
+reorder-ratio: 0
+drift-measure: 552749365904563
+inter-arrival jitter (ns): 494376
+maximum-jitter (ns): 4.82012e+06
+reorder-ratio: 0
+drift-measure: 552752231196018
+inter-arrival jitter (ns): 1.00477e+06
+maximum-jitter (ns): 4.77501e+06
+reorder-ratio: 0
+drift-measure: 552755075280477
+inter-arrival jitter (ns): 500214
+maximum-jitter (ns): 4.72434e+06
+reorder-ratio: 0
+drift-measure: 552758052822549
+inter-arrival jitter (ns): 518804
+maximum-jitter (ns): 4.77368e+06
+reorder-ratio: 0
+drift-measure: 552760893693072
+inter-arrival jitter (ns): 427260
+maximum-jitter (ns): 4.82255e+06
+reorder-ratio: 0
+drift-measure: 552763791145749
+inter-arrival jitter (ns): 623107
+maximum-jitter (ns): 4.8675e+06
+reorder-ratio: 0
+drift-measure: 552766706879743
+inter-arrival jitter (ns): 617443
+maximum-jitter (ns): 4.78224e+06
+reorder-ratio: 0
+drift-measure: 552769594917245
+inter-arrival jitter (ns): 738644
+maximum-jitter (ns): 4.88303e+06
+reorder-ratio: 0
+drift-measure: 552772517503318
+inter-arrival jitter (ns): 847494
+maximum-jitter (ns): 4.82883e+06
+reorder-ratio: 0
+drift-measure: 552775452549695
+inter-arrival jitter (ns): 407225
+maximum-jitter (ns): 4.80403e+06
+reorder-ratio: 0
+drift-measure: 552778337359217
+inter-arrival jitter (ns): 506834
+maximum-jitter (ns): 4.75302e+06
+reorder-ratio: 0
+drift-measure: 552781211192272
+inter-arrival jitter (ns): 796154
+maximum-jitter (ns): 4.73566e+06
+reorder-ratio: 0
+drift-measure: 552784108539753
+inter-arrival jitter (ns): 322521
+maximum-jitter (ns): 4.70911e+06
+reorder-ratio: 0
+drift-measure: 552787078299536
+inter-arrival jitter (ns): 484742
+maximum-jitter (ns): 4.75208e+06
+reorder-ratio: 0
+drift-measure: 552790017751545
+inter-arrival jitter (ns): 693713
+maximum-jitter (ns): 4.78777e+06
+reorder-ratio: 0
+drift-measure: 552793046255511
+inter-arrival jitter (ns): 1.72885e+06
+maximum-jitter (ns): 1.44193e+07
+reorder-ratio: 0
+drift-measure: 552795976580070
+inter-arrival jitter (ns): 459869
+maximum-jitter (ns): 5.93367e+06
+reorder-ratio: 0
+drift-measure: 552798872826554
+inter-arrival jitter (ns): 474658
+maximum-jitter (ns): 4.81858e+06
+reorder-ratio: 0
+drift-measure: 552801797715367
+inter-arrival jitter (ns): 450249
+maximum-jitter (ns): 4.81947e+06
+reorder-ratio: 0
+drift-measure: 552804722449674
+inter-arrival jitter (ns): 595675
+maximum-jitter (ns): 4.77913e+06
+reorder-ratio: 0
+drift-measure: 552807718110831
+inter-arrival jitter (ns): 640551
+maximum-jitter (ns): 4.93195e+06
+reorder-ratio: 0
+drift-measure: 552810649341144
+inter-arrival jitter (ns): 734927
+maximum-jitter (ns): 4.83716e+06
+reorder-ratio: 0
+drift-measure: 552813604234660
+inter-arrival jitter (ns): 435426
+maximum-jitter (ns): 4.86908e+06
+reorder-ratio: 0
+drift-measure: 552816461410397
+inter-arrival jitter (ns): 773856
+maximum-jitter (ns): 4.73037e+06
+reorder-ratio: 0
+drift-measure: 552819389354090
+inter-arrival jitter (ns): 458960
+maximum-jitter (ns): 4.89344e+06
+reorder-ratio: 0
+drift-measure: 552822339756135
+inter-arrival jitter (ns): 552657
+maximum-jitter (ns): 4.80733e+06
+reorder-ratio: 0
+drift-measure: 552825295934710
+inter-arrival jitter (ns): 937667
+maximum-jitter (ns): 4.82491e+06
+reorder-ratio: 0
+drift-measure: 552828165937113
+inter-arrival jitter (ns): 548142
+maximum-jitter (ns): 4.81512e+06
+reorder-ratio: 0
+drift-measure: 552831020911338
+inter-arrival jitter (ns): 712151
+maximum-jitter (ns): 4.72417e+06
+reorder-ratio: 0
+drift-measure: 552833870574528
+inter-arrival jitter (ns): 476266
+maximum-jitter (ns): 4.86182e+06
+reorder-ratio: 0
+drift-measure: 552836763615312
+inter-arrival jitter (ns): 413988
+maximum-jitter (ns): 4.15921e+06
+reorder-ratio: 0
+drift-measure: 552839701877789
+inter-arrival jitter (ns): 724651
+maximum-jitter (ns): 4.71228e+06
+reorder-ratio: 0
+drift-measure: 552842555763590
+inter-arrival jitter (ns): 417236
+maximum-jitter (ns): 4.85258e+06
+reorder-ratio: 0
+drift-measure: 552845400544934
+inter-arrival jitter (ns): 235485
+maximum-jitter (ns): 4.7582e+06
+reorder-ratio: 0
+drift-measure: 552848298621921
+inter-arrival jitter (ns): 711572
+maximum-jitter (ns): 4.73591e+06
+reorder-ratio: 0
+drift-measure: 552851168209143
+inter-arrival jitter (ns): 744762
+maximum-jitter (ns): 4.8118e+06
+reorder-ratio: 0
+drift-measure: 552854014610199
+inter-arrival jitter (ns): 502404
+maximum-jitter (ns): 4.82736e+06
+reorder-ratio: 0
+drift-measure: 552856882675280
+inter-arrival jitter (ns): 603580
+maximum-jitter (ns): 4.81297e+06
+reorder-ratio: 0
+drift-measure: 552859771312608
+inter-arrival jitter (ns): 745072
+maximum-jitter (ns): 4.78302e+06
+reorder-ratio: 0
+drift-measure: 552862611666231
+inter-arrival jitter (ns): 471240
+maximum-jitter (ns): 4.83836e+06
+reorder-ratio: 0
+drift-measure: 552865502439930
+inter-arrival jitter (ns): 932338
+maximum-jitter (ns): 4.84169e+06
+reorder-ratio: 0
+drift-measure: 552868305425993
+inter-arrival jitter (ns): 755355
+maximum-jitter (ns): 4.80856e+06
+reorder-ratio: 0
+drift-measure: 552871201091437
+inter-arrival jitter (ns): 706152
+maximum-jitter (ns): 4.79597e+06
+reorder-ratio: 0
+drift-measure: 552874076281685
+inter-arrival jitter (ns): 611929
+maximum-jitter (ns): 4.78882e+06
+reorder-ratio: 0
+drift-measure: 552876922422727
+inter-arrival jitter (ns): 271288
+maximum-jitter (ns): 4.69875e+06
+reorder-ratio: 0
+drift-measure: 552879863350739
+inter-arrival jitter (ns): 751911
+maximum-jitter (ns): 4.8288e+06
+reorder-ratio: 0
+drift-measure: 552882798114121
+inter-arrival jitter (ns): 707170
+maximum-jitter (ns): 4.80058e+06
+reorder-ratio: 0
+drift-measure: 552885664785802
+inter-arrival jitter (ns): 604592
+maximum-jitter (ns): 4.83304e+06
+reorder-ratio: 0
+drift-measure: 552888548274308
+inter-arrival jitter (ns): 837474
+maximum-jitter (ns): 4.81788e+06
+reorder-ratio: 0
+drift-measure: 552891469546888
+inter-arrival jitter (ns): 763233
+maximum-jitter (ns): 4.83438e+06
+reorder-ratio: 0
+drift-measure: 552894343777041
+inter-arrival jitter (ns): 896805
+maximum-jitter (ns): 4.77713e+06
+reorder-ratio: 0
+drift-measure: 552897198892839
+inter-arrival jitter (ns): 404390
+maximum-jitter (ns): 4.80373e+06
+reorder-ratio: 0
+drift-measure: 552900120071795
+inter-arrival jitter (ns): 497698
+maximum-jitter (ns): 4.78217e+06
+reorder-ratio: 0
+drift-measure: 552903056375500
+inter-arrival jitter (ns): 3.12956e+06
+maximum-jitter (ns): 3.79216e+07
+reorder-ratio: 0
+drift-measure: 552905858264874
+inter-arrival jitter (ns): 704022
+maximum-jitter (ns): 2.86131e+07
+reorder-ratio: 0
+drift-measure: 552908781414474
+inter-arrival jitter (ns): 434541
+maximum-jitter (ns): 4.87667e+06
+reorder-ratio: 0
+drift-measure: 552911796018077
+inter-arrival jitter (ns): 813192
+maximum-jitter (ns): 4.85738e+06
+reorder-ratio: 0
+drift-measure: 552914750682938
+inter-arrival jitter (ns): 692826
+maximum-jitter (ns): 4.82405e+06
+reorder-ratio: 0
+drift-measure: 552917591269884
+inter-arrival jitter (ns): 606320
+maximum-jitter (ns): 4.82972e+06
+reorder-ratio: 0
+drift-measure: 552920453765682
+inter-arrival jitter (ns): 565574
+maximum-jitter (ns): 4.76732e+06
+reorder-ratio: 0
+drift-measure: 552923289725336
+inter-arrival jitter (ns): 373581
+maximum-jitter (ns): 4.84767e+06
+reorder-ratio: 0
+drift-measure: 552926166034274
+inter-arrival jitter (ns): 1.59971e+06
+maximum-jitter (ns): 1.61645e+07
+reorder-ratio: 0
+drift-measure: 552929034602070
+inter-arrival jitter (ns): 809690
+maximum-jitter (ns): 1.75974e+07
+reorder-ratio: 0
+drift-measure: 552931854161545
+inter-arrival jitter (ns): 518706
+maximum-jitter (ns): 4.85103e+06
+reorder-ratio: 0
+drift-measure: 552934752687486
+inter-arrival jitter (ns): 395768
+maximum-jitter (ns): 4.83263e+06
+reorder-ratio: 0
+drift-measure: 552937595705192
+inter-arrival jitter (ns): 300560
+maximum-jitter (ns): 4.73635e+06
+reorder-ratio: 0
+drift-measure: 552940427240471
+inter-arrival jitter (ns): 436854
+maximum-jitter (ns): 4.69696e+06
+reorder-ratio: 0
+drift-measure: 552943318136788
+inter-arrival jitter (ns): 1.86322e+06
+maximum-jitter (ns): 2.33732e+07
+reorder-ratio: 0
+drift-measure: 552946162208083
+inter-arrival jitter (ns): 311054
+maximum-jitter (ns): 2.42266e+07
+reorder-ratio: 0
+drift-measure: 552948973744711
+inter-arrival jitter (ns): 460894
+maximum-jitter (ns): 4.79278e+06
+reorder-ratio: 0
+drift-measure: 552951807128496
+inter-arrival jitter (ns): 446349
+maximum-jitter (ns): 4.82135e+06
+reorder-ratio: 0
+drift-measure: 552954699249240
+inter-arrival jitter (ns): 817445
+maximum-jitter (ns): 4.83178e+06
+reorder-ratio: 0
+drift-measure: 552957592141168
+inter-arrival jitter (ns): 761046
+maximum-jitter (ns): 4.73174e+06
+reorder-ratio: 0
+drift-measure: 552960500360371
+inter-arrival jitter (ns): 548618
+maximum-jitter (ns): 4.73135e+06
+reorder-ratio: 0
+drift-measure: 552963392954274
+inter-arrival jitter (ns): 542441
+maximum-jitter (ns): 4.76429e+06
+reorder-ratio: 0
+drift-measure: 552966283944006
+inter-arrival jitter (ns): 500728
+maximum-jitter (ns): 4.85111e+06
+reorder-ratio: 0
+drift-measure: 552969150160941
+inter-arrival jitter (ns): 772869
+maximum-jitter (ns): 4.7312e+06
+reorder-ratio: 0
+drift-measure: 552972136099152
+inter-arrival jitter (ns): 897074
+maximum-jitter (ns): 4.8965e+06
+reorder-ratio: 0
+drift-measure: 552975044394207
+inter-arrival jitter (ns): 415881
+maximum-jitter (ns): 4.90528e+06
+reorder-ratio: 0
+drift-measure: 552977942758287
+inter-arrival jitter (ns): 638649
+maximum-jitter (ns): 4.69481e+06
+reorder-ratio: 0
+drift-measure: 552980784608292
+inter-arrival jitter (ns): 1.01452e+06
+maximum-jitter (ns): 5.68879e+06
+reorder-ratio: 0
+drift-measure: 552983681141379
+inter-arrival jitter (ns): 443920
+maximum-jitter (ns): 4.88057e+06
+reorder-ratio: 0
+drift-measure: 552986567005651
+inter-arrival jitter (ns): 345385
+maximum-jitter (ns): 4.76211e+06
+reorder-ratio: 0
+drift-measure: 552989411195186
+inter-arrival jitter (ns): 552185
+maximum-jitter (ns): 4.85825e+06
+reorder-ratio: 0
+drift-measure: 552992353328318
+inter-arrival jitter (ns): 472642
+maximum-jitter (ns): 4.80214e+06
+reorder-ratio: 0
+drift-measure: 552995191965310
+inter-arrival jitter (ns): 638503
+maximum-jitter (ns): 4.75987e+06
+reorder-ratio: 0
+drift-measure: 552998018454397
+inter-arrival jitter (ns): 699304
+maximum-jitter (ns): 4.83995e+06
+reorder-ratio: 0
+drift-measure: 553000847072903
+inter-arrival jitter (ns): 847591
+maximum-jitter (ns): 4.87158e+06
+reorder-ratio: 0
+drift-measure: 553003631003609
+inter-arrival jitter (ns): 483681
+maximum-jitter (ns): 4.78665e+06
+reorder-ratio: 0
+drift-measure: 553006461752917
+inter-arrival jitter (ns): 719223
+maximum-jitter (ns): 4.89387e+06
+reorder-ratio: 0
+drift-measure: 553009312997457
+inter-arrival jitter (ns): 507341
+maximum-jitter (ns): 4.86316e+06
+reorder-ratio: 0
+drift-measure: 553012200210797
+inter-arrival jitter (ns): 1.11451e+06
+maximum-jitter (ns): 4.84427e+06
+reorder-ratio: 0
+drift-measure: 553015038994482
+inter-arrival jitter (ns): 777614
+maximum-jitter (ns): 5.12234e+06
+reorder-ratio: 0
+drift-measure: 553017974448547
+inter-arrival jitter (ns): 683426
+maximum-jitter (ns): 4.76499e+06
+reorder-ratio: 0
+drift-measure: 553020955733628
+inter-arrival jitter (ns): 412640
+maximum-jitter (ns): 1.01421e+07
+reorder-ratio: 0
+drift-measure: 553023934939092
+inter-arrival jitter (ns): 435411
+maximum-jitter (ns): 4.75043e+06
+reorder-ratio: 0
+drift-measure: 553026769327885
+inter-arrival jitter (ns): 280815
+maximum-jitter (ns): 4.87094e+06
+reorder-ratio: 0
+drift-measure: 553029679268569
+inter-arrival jitter (ns): 544494
+maximum-jitter (ns): 4.75731e+06
+reorder-ratio: 0
+drift-measure: 553032726340234
+inter-arrival jitter (ns): 367335
+maximum-jitter (ns): 4.75326e+06
+reorder-ratio: 0
+drift-measure: 553035660495515
+inter-arrival jitter (ns): 753869
+maximum-jitter (ns): 4.7841e+06
+reorder-ratio: 0
+drift-measure: 553038708380813
+inter-arrival jitter (ns): 829855
+maximum-jitter (ns): 4.74874e+06
+reorder-ratio: 0
+drift-measure: 553041666110161
+inter-arrival jitter (ns): 599137
+maximum-jitter (ns): 4.73778e+06
+reorder-ratio: 0
+drift-measure: 553044694150515
+inter-arrival jitter (ns): 540978
+maximum-jitter (ns): 4.80559e+06
+reorder-ratio: 0
+drift-measure: 553047703890837
+inter-arrival jitter (ns): 691402
+maximum-jitter (ns): 4.85713e+06
+reorder-ratio: 0
+drift-measure: 553050648209903
+inter-arrival jitter (ns): 453230
+maximum-jitter (ns): 4.81406e+06
+reorder-ratio: 0
+drift-measure: 553053636742869
+inter-arrival jitter (ns): 654688
+maximum-jitter (ns): 4.71759e+06
+reorder-ratio: 0
+drift-measure: 553056600894877
+inter-arrival jitter (ns): 391593
+maximum-jitter (ns): 4.79199e+06
+reorder-ratio: 0
+drift-measure: 553059577933353
+inter-arrival jitter (ns): 557085
+maximum-jitter (ns): 4.79683e+06
+reorder-ratio: 0
+drift-measure: 553062569394802
+inter-arrival jitter (ns): 591346
+maximum-jitter (ns): 4.7816e+06
+reorder-ratio: 0
+drift-measure: 553065531928823
+inter-arrival jitter (ns): 484238
+maximum-jitter (ns): 4.78562e+06
+reorder-ratio: 0
+drift-measure: 553068530620714
+inter-arrival jitter (ns): 366398
+maximum-jitter (ns): 4.7683e+06
+reorder-ratio: 0
+drift-measure: 553071489402559
+inter-arrival jitter (ns): 474060
+maximum-jitter (ns): 4.92379e+06
+reorder-ratio: 0
+drift-measure: 553074551674403
+inter-arrival jitter (ns): 351499
+maximum-jitter (ns): 4.81703e+06
+reorder-ratio: 0
+drift-measure: 553077620396600
+inter-arrival jitter (ns): 569412
+maximum-jitter (ns): 4.75892e+06
+reorder-ratio: 0
+drift-measure: 553080615769301
+inter-arrival jitter (ns): 754102
+maximum-jitter (ns): 4.79368e+06
+reorder-ratio: 0
+drift-measure: 553083588686043
+inter-arrival jitter (ns): 623735
+maximum-jitter (ns): 4.88224e+06
+reorder-ratio: 0
+drift-measure: 553086543188512
+inter-arrival jitter (ns): 381279
+maximum-jitter (ns): 4.73097e+06
+reorder-ratio: 0
+drift-measure: 553089490093847
+inter-arrival jitter (ns): 989999
+maximum-jitter (ns): 4.75415e+06
+reorder-ratio: 0
+drift-measure: 553092451343990
+inter-arrival jitter (ns): 688611
+maximum-jitter (ns): 4.80435e+06
+reorder-ratio: 0
+drift-measure: 553095355799556
+inter-arrival jitter (ns): 399673
+maximum-jitter (ns): 4.68753e+06
+reorder-ratio: 0
+drift-measure: 553098239449592
+inter-arrival jitter (ns): 497434
+maximum-jitter (ns): 4.74493e+06
+reorder-ratio: 0
+drift-measure: 553101156989182
+inter-arrival jitter (ns): 689925
+maximum-jitter (ns): 4.85779e+06
+reorder-ratio: 0
+drift-measure: 553104123658010
+inter-arrival jitter (ns): 514944
+maximum-jitter (ns): 4.78925e+06
+reorder-ratio: 0
+drift-measure: 553106995591583
+inter-arrival jitter (ns): 769376
+maximum-jitter (ns): 4.84872e+06
+reorder-ratio: 0
+drift-measure: 553109985573893
+inter-arrival jitter (ns): 692975
+maximum-jitter (ns): 4.83046e+06
+reorder-ratio: 0
+drift-measure: 553112875193697
+inter-arrival jitter (ns): 395702
+maximum-jitter (ns): 4.73364e+06
+reorder-ratio: 0
+drift-measure: 553115801885783
+inter-arrival jitter (ns): 617267
+maximum-jitter (ns): 4.78933e+06
+reorder-ratio: 0
+drift-measure: 553118683911830
+inter-arrival jitter (ns): 785650
+maximum-jitter (ns): 4.71144e+06
+reorder-ratio: 0
+drift-measure: 553121618967745
+inter-arrival jitter (ns): 581164
+maximum-jitter (ns): 4.7906e+06
+reorder-ratio: 0
+drift-measure: 553124529754051
+inter-arrival jitter (ns): 454109
+maximum-jitter (ns): 4.7907e+06
+reorder-ratio: 0
+drift-measure: 553127406148457
+inter-arrival jitter (ns): 632482
+maximum-jitter (ns): 4.76515e+06
+reorder-ratio: 0
+drift-measure: 553130294062350
+inter-arrival jitter (ns): 300170
+maximum-jitter (ns): 4.75805e+06
+reorder-ratio: 0
+drift-measure: 553133120113233
+inter-arrival jitter (ns): 475148
+maximum-jitter (ns): 4.77588e+06
+reorder-ratio: 0
+drift-measure: 553135907784944
+inter-arrival jitter (ns): 709206
+maximum-jitter (ns): 4.81518e+06
+reorder-ratio: 0
+drift-measure: 553138736651000
+inter-arrival jitter (ns): 251543
+maximum-jitter (ns): 4.78727e+06
+reorder-ratio: 0
+drift-measure: 553141513023014
+inter-arrival jitter (ns): 397645
+maximum-jitter (ns): 4.77277e+06
+reorder-ratio: 0
+drift-measure: 553144452256526
+inter-arrival jitter (ns): 277056
+maximum-jitter (ns): 4.87884e+06
+reorder-ratio: 0
+drift-measure: 553147539805182
+inter-arrival jitter (ns): 430945
+maximum-jitter (ns): 4.75204e+06
+reorder-ratio: 0
+drift-measure: 553150619576570
+inter-arrival jitter (ns): 517741
+maximum-jitter (ns): 4.77884e+06
+reorder-ratio: 0
+drift-measure: 553153630663296
+inter-arrival jitter (ns): 555139
+maximum-jitter (ns): 4.8833e+06
+reorder-ratio: 0
+drift-measure: 553156572916942
+inter-arrival jitter (ns): 604585
+maximum-jitter (ns): 4.70986e+06
+reorder-ratio: 0
+drift-measure: 553159407487344
+inter-arrival jitter (ns): 495564
+maximum-jitter (ns): 4.82118e+06
+reorder-ratio: 0
+drift-measure: 553162284387200
+inter-arrival jitter (ns): 615104
+maximum-jitter (ns): 4.8223e+06
+reorder-ratio: 0
+drift-measure: 553165156819371
+inter-arrival jitter (ns): 355202
+maximum-jitter (ns): 4.78417e+06
+reorder-ratio: 0
+drift-measure: 553168182766323
+inter-arrival jitter (ns): 703873
+maximum-jitter (ns): 1.03384e+07
+reorder-ratio: 0
+drift-measure: 553171189774706
+inter-arrival jitter (ns): 1.0306e+06
+maximum-jitter (ns): 4.81352e+06
+reorder-ratio: 0
+drift-measure: 553174167746597
+inter-arrival jitter (ns): 988367
+maximum-jitter (ns): 4.77999e+06
+reorder-ratio: 0
+drift-measure: 553177122374088
+inter-arrival jitter (ns): 493628
+maximum-jitter (ns): 4.81668e+06
+reorder-ratio: 0
+drift-measure: 553180062786291
+inter-arrival jitter (ns): 683135
+maximum-jitter (ns): 4.82625e+06
+reorder-ratio: 0
+drift-measure: 553182968741956
+inter-arrival jitter (ns): 594277
+maximum-jitter (ns): 4.86129e+06
+reorder-ratio: 0
+drift-measure: 553185810258591
+inter-arrival jitter (ns): 615329
+maximum-jitter (ns): 4.81851e+06
+reorder-ratio: 0
+drift-measure: 553188657013515
+inter-arrival jitter (ns): 610409
+maximum-jitter (ns): 4.7517e+06
+reorder-ratio: 0
+drift-measure: 553191556696127
+inter-arrival jitter (ns): 314612
+maximum-jitter (ns): 4.80353e+06
+reorder-ratio: 0
+drift-measure: 553194421324108
+inter-arrival jitter (ns): 665088
+maximum-jitter (ns): 4.74476e+06
+reorder-ratio: 0
+drift-measure: 553197286494028
+inter-arrival jitter (ns): 354757
+maximum-jitter (ns): 4.81725e+06
+reorder-ratio: 0
+drift-measure: 553200247267274
+inter-arrival jitter (ns): 1.21598e+06
+maximum-jitter (ns): 4.71064e+06
+reorder-ratio: 0
+drift-measure: 553203355531003
+inter-arrival jitter (ns): 572230
+maximum-jitter (ns): 4.71579e+06
+reorder-ratio: 0
+drift-measure: 553206328524729
+inter-arrival jitter (ns): 667049
+maximum-jitter (ns): 4.81063e+06
+reorder-ratio: 0
+drift-measure: 553209399664770
+inter-arrival jitter (ns): 522034
+maximum-jitter (ns): 4.75275e+06
+reorder-ratio: 0
+drift-measure: 553212452964775
+inter-arrival jitter (ns): 944341
+maximum-jitter (ns): 4.77469e+06
+reorder-ratio: 0
+drift-measure: 553215473834157
+inter-arrival jitter (ns): 493526
+maximum-jitter (ns): 4.774e+06
+reorder-ratio: 0
+drift-measure: 553218510284677
+inter-arrival jitter (ns): 481859
+maximum-jitter (ns): 4.79404e+06
+reorder-ratio: 0
+drift-measure: 553221535909079
+inter-arrival jitter (ns): 729767
+maximum-jitter (ns): 4.7254e+06
+reorder-ratio: 0
+drift-measure: 553224538972308
+inter-arrival jitter (ns): 968371
+maximum-jitter (ns): 4.75926e+06
+reorder-ratio: 0
+drift-measure: 553227400788362
+inter-arrival jitter (ns): 825194
+maximum-jitter (ns): 4.76919e+06
+reorder-ratio: 0
+drift-measure: 553230360847030
+inter-arrival jitter (ns): 747412
+maximum-jitter (ns): 4.81848e+06
+reorder-ratio: 0
+drift-measure: 553233292553508
+inter-arrival jitter (ns): 561041
+maximum-jitter (ns): 4.83483e+06
+reorder-ratio: 0
+drift-measure: 553236211271720
+inter-arrival jitter (ns): 310655
+maximum-jitter (ns): 4.72278e+06
+reorder-ratio: 0
+drift-measure: 553239123603569
+inter-arrival jitter (ns): 316307
+maximum-jitter (ns): 4.86255e+06
+reorder-ratio: 0
+drift-measure: 553242020725280
+inter-arrival jitter (ns): 758656
+maximum-jitter (ns): 4.78128e+06
+reorder-ratio: 0
+drift-measure: 553244978251560
+inter-arrival jitter (ns): 722049
+maximum-jitter (ns): 4.8555e+06
+reorder-ratio: 0
+drift-measure: 553247940202466
+inter-arrival jitter (ns): 451893
+maximum-jitter (ns): 4.78083e+06
+reorder-ratio: 0
+drift-measure: 553250838909875
+inter-arrival jitter (ns): 881962
+maximum-jitter (ns): 4.81493e+06
+reorder-ratio: 0
+drift-measure: 553253672573070
+inter-arrival jitter (ns): 592702
+maximum-jitter (ns): 4.71744e+06
+reorder-ratio: 0
+drift-measure: 553256545726882
+inter-arrival jitter (ns): 858153
+maximum-jitter (ns): 4.77605e+06
+reorder-ratio: 0
+drift-measure: 553259468475176
+inter-arrival jitter (ns): 581201
+maximum-jitter (ns): 4.79337e+06
+reorder-ratio: 0
+drift-measure: 553262339153777
+inter-arrival jitter (ns): 411311
+maximum-jitter (ns): 4.84426e+06
+reorder-ratio: 0
+drift-measure: 553265180489045
+inter-arrival jitter (ns): 763824
+maximum-jitter (ns): 4.81488e+06
+reorder-ratio: 0
+drift-measure: 553268008167212
+inter-arrival jitter (ns): 836973
+maximum-jitter (ns): 4.7852e+06
+reorder-ratio: 0
+drift-measure: 553270823168242
+inter-arrival jitter (ns): 391780
+maximum-jitter (ns): 4.92813e+06
+reorder-ratio: 0
+drift-measure: 553273924795272
+inter-arrival jitter (ns): 452446
+maximum-jitter (ns): 4.74024e+06
+reorder-ratio: 0
+drift-measure: 553276851559773
+inter-arrival jitter (ns): 548497
+maximum-jitter (ns): 4.80701e+06
+reorder-ratio: 0
+drift-measure: 553279857437053
+inter-arrival jitter (ns): 525965
+maximum-jitter (ns): 4.84422e+06
+reorder-ratio: 0
+drift-measure: 553282842966534
+inter-arrival jitter (ns): 612708
+maximum-jitter (ns): 4.81261e+06
+reorder-ratio: 0
+drift-measure: 553285926906723
+inter-arrival jitter (ns): 801986
+maximum-jitter (ns): 4.77402e+06
+reorder-ratio: 0
+drift-measure: 553288904497265
+inter-arrival jitter (ns): 444948
+maximum-jitter (ns): 4.71796e+06
+reorder-ratio: 0
+drift-measure: 553291884779050
+inter-arrival jitter (ns): 800328
+maximum-jitter (ns): 4.89237e+06
+reorder-ratio: 0
+drift-measure: 553294833325976
+inter-arrival jitter (ns): 813857
+maximum-jitter (ns): 4.71093e+06
+reorder-ratio: 0
+drift-measure: 553297747311860
+inter-arrival jitter (ns): 404322
+maximum-jitter (ns): 4.73776e+06
+reorder-ratio: 0
+drift-measure: 553300702998871
+inter-arrival jitter (ns): 586541
+maximum-jitter (ns): 4.7973e+06
+reorder-ratio: 0
+drift-measure: 553303595449538
+inter-arrival jitter (ns): 566725
+maximum-jitter (ns): 1.00595e+07
+reorder-ratio: 0
+drift-measure: 553306421340213
+inter-arrival jitter (ns): 442212
+maximum-jitter (ns): 4.75923e+06
+reorder-ratio: 0
+drift-measure: 553309346781824
+inter-arrival jitter (ns): 822519
+maximum-jitter (ns): 4.81416e+06
+reorder-ratio: 0
+drift-measure: 553312253397626
+inter-arrival jitter (ns): 677368
+maximum-jitter (ns): 4.81319e+06
+reorder-ratio: 0
+drift-measure: 553315302530674
+inter-arrival jitter (ns): 769710
+maximum-jitter (ns): 4.82034e+06
+reorder-ratio: 0
+drift-measure: 553318267749065
+inter-arrival jitter (ns): 584684
+maximum-jitter (ns): 4.73506e+06
+reorder-ratio: 0
+drift-measure: 553321230912275
+inter-arrival jitter (ns): 636602
+maximum-jitter (ns): 4.77537e+06
+reorder-ratio: 0
+drift-measure: 553324103100772
+inter-arrival jitter (ns): 473456
+maximum-jitter (ns): 4.59497e+06
+reorder-ratio: 0
+drift-measure: 553326930272618
+inter-arrival jitter (ns): 813005
+maximum-jitter (ns): 4.75636e+06
+reorder-ratio: 0
+drift-measure: 553329867092393
+inter-arrival jitter (ns): 575625
+maximum-jitter (ns): 4.82288e+06
+reorder-ratio: 0
+drift-measure: 553332767657266
+inter-arrival jitter (ns): 372182
+maximum-jitter (ns): 4.73966e+06
+reorder-ratio: 0
+drift-measure: 553335688116284
+inter-arrival jitter (ns): 458236
+maximum-jitter (ns): 4.83894e+06
+reorder-ratio: 0
+drift-measure: 553338636674571
+inter-arrival jitter (ns): 311888
+maximum-jitter (ns): 4.78416e+06
+reorder-ratio: 0
+drift-measure: 553341556146103
+inter-arrival jitter (ns): 447412
+maximum-jitter (ns): 4.75605e+06
+reorder-ratio: 0
+drift-measure: 553344443779505
+inter-arrival jitter (ns): 495886
+maximum-jitter (ns): 4.76016e+06
+reorder-ratio: 0
+drift-measure: 553347391965651
+inter-arrival jitter (ns): 515750
+maximum-jitter (ns): 4.84855e+06
+reorder-ratio: 0
+drift-measure: 553350300224377
+inter-arrival jitter (ns): 766498
+maximum-jitter (ns): 4.79288e+06
+reorder-ratio: 0
+drift-measure: 553353243207470
+inter-arrival jitter (ns): 586758
+maximum-jitter (ns): 4.81281e+06
+reorder-ratio: 0
+drift-measure: 553356190769435
+inter-arrival jitter (ns): 382148
+maximum-jitter (ns): 9.00866e+06
+reorder-ratio: 0
+drift-measure: 553359054826485
+inter-arrival jitter (ns): 759855
+maximum-jitter (ns): 4.89199e+06
+reorder-ratio: 0
+drift-measure: 553361906943067
+inter-arrival jitter (ns): 774050
+maximum-jitter (ns): 4.78092e+06
+reorder-ratio: 0
+drift-measure: 553364777773370
+inter-arrival jitter (ns): 454718
+maximum-jitter (ns): 4.74924e+06
+reorder-ratio: 0
+drift-measure: 553367679876021
+inter-arrival jitter (ns): 947201
+maximum-jitter (ns): 4.79688e+06
+reorder-ratio: 0
+drift-measure: 553370648191680
+inter-arrival jitter (ns): 950810
+maximum-jitter (ns): 4.9999e+06
+reorder-ratio: 0
+drift-measure: 553373585501125
+inter-arrival jitter (ns): 587144
+maximum-jitter (ns): 4.79564e+06
+reorder-ratio: 0
+drift-measure: 553376522663496
+inter-arrival jitter (ns): 598248
+maximum-jitter (ns): 4.84189e+06
+reorder-ratio: 0
+drift-measure: 553379410802438
+inter-arrival jitter (ns): 1.19463e+06
+maximum-jitter (ns): 4.74836e+06
+reorder-ratio: 0
+drift-measure: 553382395312183
+inter-arrival jitter (ns): 728259
+maximum-jitter (ns): 4.76148e+06
+reorder-ratio: 0
+drift-measure: 553385551800206
+inter-arrival jitter (ns): 645078
+maximum-jitter (ns): 4.76154e+06
+reorder-ratio: 0
+drift-measure: 553388419397408
+inter-arrival jitter (ns): 330756
+maximum-jitter (ns): 4.7623e+06
+reorder-ratio: 0
+drift-measure: 553391291391704
+inter-arrival jitter (ns): 358216
+maximum-jitter (ns): 4.79628e+06
+reorder-ratio: 0
+drift-measure: 553394154193471
+inter-arrival jitter (ns): 774980
+maximum-jitter (ns): 4.83832e+06
+reorder-ratio: 0
+drift-measure: 553397056530077
+inter-arrival jitter (ns): 702988
+maximum-jitter (ns): 4.9144e+06
+reorder-ratio: 0
+drift-measure: 553399922452535
+inter-arrival jitter (ns): 911985
+maximum-jitter (ns): 4.96235e+06
+reorder-ratio: 0
+drift-measure: 553402734691821
+inter-arrival jitter (ns): 423465
+maximum-jitter (ns): 4.8436e+06
+reorder-ratio: 0
+drift-measure: 553405597190804
+inter-arrival jitter (ns): 465464
+maximum-jitter (ns): 4.72943e+06
+reorder-ratio: 0
+drift-measure: 553408413982453
+inter-arrival jitter (ns): 483347
+maximum-jitter (ns): 4.83624e+06
+reorder-ratio: 0
+drift-measure: 553411282643222
+inter-arrival jitter (ns): 479775
+maximum-jitter (ns): 4.85898e+06
+reorder-ratio: 0
+drift-measure: 553414176430454
+inter-arrival jitter (ns): 1.01529e+06
+maximum-jitter (ns): 4.88971e+06
+reorder-ratio: 0
+drift-measure: 553416992171800
+inter-arrival jitter (ns): 594322
+maximum-jitter (ns): 4.95764e+06
+reorder-ratio: 0
+drift-measure: 553419983752050
+inter-arrival jitter (ns): 537557
+maximum-jitter (ns): 5.0538e+06
+reorder-ratio: 0
+drift-measure: 553423063064215
+inter-arrival jitter (ns): 544383
+maximum-jitter (ns): 4.79501e+06
+reorder-ratio: 0
+drift-measure: 553426082004120
+inter-arrival jitter (ns): 612115
+maximum-jitter (ns): 4.95035e+06
+reorder-ratio: 0
+drift-measure: 553428934352242
+inter-arrival jitter (ns): 537507
+maximum-jitter (ns): 1.06687e+07
+reorder-ratio: 0
+drift-measure: 553431813356380
+inter-arrival jitter (ns): 557308
+maximum-jitter (ns): 4.91326e+06
+reorder-ratio: 0
+drift-measure: 553434620400207
+inter-arrival jitter (ns): 610997
+maximum-jitter (ns): 4.98111e+06
+reorder-ratio: 0
+drift-measure: 553437448191244
+inter-arrival jitter (ns): 520870
+maximum-jitter (ns): 4.97113e+06
+reorder-ratio: 0
+drift-measure: 553440308064857
+inter-arrival jitter (ns): 820334
+maximum-jitter (ns): 4.94014e+06
+reorder-ratio: 0
+drift-measure: 553443091460027
+inter-arrival jitter (ns): 640264
+maximum-jitter (ns): 4.95952e+06
+reorder-ratio: 0
+drift-measure: 553445928017613
+inter-arrival jitter (ns): 519959
+maximum-jitter (ns): 4.94919e+06
+reorder-ratio: 0
+drift-measure: 553448788528931
+inter-arrival jitter (ns): 696794
+maximum-jitter (ns): 4.85264e+06
+reorder-ratio: 0
+drift-measure: 553451576910963
+inter-arrival jitter (ns): 845465
+maximum-jitter (ns): 4.91426e+06
+reorder-ratio: 0
+drift-measure: 553454412523732
+inter-arrival jitter (ns): 1.03143e+06
+maximum-jitter (ns): 4.86042e+06
+reorder-ratio: 0
+drift-measure: 553457268601979
+inter-arrival jitter (ns): 1.04667e+06
+maximum-jitter (ns): 4.89726e+06
+reorder-ratio: 0
+drift-measure: 553460040808889
+inter-arrival jitter (ns): 448111
+maximum-jitter (ns): 4.94366e+06
+reorder-ratio: 0
+drift-measure: 553462872313300
+inter-arrival jitter (ns): 917161
+maximum-jitter (ns): 4.98481e+06
+reorder-ratio: 0
+drift-measure: 553465701465539
+inter-arrival jitter (ns): 1.00245e+06
+maximum-jitter (ns): 4.92902e+06
+reorder-ratio: 0
+drift-measure: 553468524326300
+inter-arrival jitter (ns): 565976
+maximum-jitter (ns): 4.96291e+06
+reorder-ratio: 0
+drift-measure: 553471346064375
+inter-arrival jitter (ns): 961090
+maximum-jitter (ns): 4.91367e+06
+reorder-ratio: 0
+drift-measure: 553474299310217
+inter-arrival jitter (ns): 469771
+maximum-jitter (ns): 4.77321e+06
+reorder-ratio: 0
+drift-measure: 553477358343300
+inter-arrival jitter (ns): 723071
+maximum-jitter (ns): 4.88273e+06
+reorder-ratio: 0
+drift-measure: 553480352294449
+inter-arrival jitter (ns): 599842
+maximum-jitter (ns): 4.91801e+06
+reorder-ratio: 0
+drift-measure: 553483285607013
+inter-arrival jitter (ns): 897786
+maximum-jitter (ns): 4.84894e+06
+reorder-ratio: 0
+drift-measure: 553486139670955
+inter-arrival jitter (ns): 450678
+maximum-jitter (ns): 4.77747e+06
+reorder-ratio: 0
+drift-measure: 553489030125220
+inter-arrival jitter (ns): 723760
+maximum-jitter (ns): 9.20066e+06
+reorder-ratio: 0
+drift-measure: 553491901960131
+inter-arrival jitter (ns): 848858
+maximum-jitter (ns): 4.95367e+06
+reorder-ratio: 0
+drift-measure: 553494795655772
+inter-arrival jitter (ns): 612381
+maximum-jitter (ns): 9.2666e+06
+reorder-ratio: 0
+drift-measure: 553497579484790
+inter-arrival jitter (ns): 519579
+maximum-jitter (ns): 4.94283e+06
+reorder-ratio: 0
+drift-measure: 553500484980429
+inter-arrival jitter (ns): 935103
+maximum-jitter (ns): 4.86623e+06
+reorder-ratio: 0
+drift-measure: 553503480606140
+inter-arrival jitter (ns): 682039
+maximum-jitter (ns): 4.95803e+06
+reorder-ratio: 0
+drift-measure: 553506379439163
+inter-arrival jitter (ns): 750464
+maximum-jitter (ns): 4.75645e+06
+reorder-ratio: 0
+drift-measure: 553509253364710
+inter-arrival jitter (ns): 762237
+maximum-jitter (ns): 4.90581e+06
+reorder-ratio: 0
+drift-measure: 553512144587945
+inter-arrival jitter (ns): 619746
+maximum-jitter (ns): 4.92516e+06
+reorder-ratio: 0
+drift-measure: 553515011274053
+inter-arrival jitter (ns): 604039
+maximum-jitter (ns): 4.98371e+06
+reorder-ratio: 0
+drift-measure: 553517866941997
+inter-arrival jitter (ns): 817370
+maximum-jitter (ns): 4.97162e+06
+reorder-ratio: 0
+drift-measure: 553520734212662
+inter-arrival jitter (ns): 496670
+maximum-jitter (ns): 4.75672e+06
+reorder-ratio: 0
+drift-measure: 553523596521302
+inter-arrival jitter (ns): 912224
+maximum-jitter (ns): 4.81021e+06
+reorder-ratio: 0
+drift-measure: 553526468899732
+inter-arrival jitter (ns): 605644
+maximum-jitter (ns): 4.9077e+06
+reorder-ratio: 0
+drift-measure: 553529315200191
+inter-arrival jitter (ns): 759260
+maximum-jitter (ns): 4.86713e+06
+reorder-ratio: 0
+drift-measure: 553532149131404
+inter-arrival jitter (ns): 701028
+maximum-jitter (ns): 4.91063e+06
+reorder-ratio: 0
+drift-measure: 553534996953792
+inter-arrival jitter (ns): 436967
+maximum-jitter (ns): 4.98518e+06
+reorder-ratio: 0
+drift-measure: 553537823027527
+inter-arrival jitter (ns): 596688
+maximum-jitter (ns): 4.90258e+06
+reorder-ratio: 0
+drift-measure: 553540655381588
+inter-arrival jitter (ns): 293671
+maximum-jitter (ns): 4.93025e+06
+reorder-ratio: 0
+drift-measure: 553543461493802
+inter-arrival jitter (ns): 525985
+maximum-jitter (ns): 9.18443e+06
+reorder-ratio: 0
+drift-measure: 553546340327624
+inter-arrival jitter (ns): 767729
+maximum-jitter (ns): 4.83318e+06
+reorder-ratio: 0
+drift-measure: 553549126195532
+inter-arrival jitter (ns): 691537
+maximum-jitter (ns): 4.95481e+06
+reorder-ratio: 0
+drift-measure: 553551971669073
+inter-arrival jitter (ns): 731026
+maximum-jitter (ns): 4.93119e+06
+reorder-ratio: 0
+drift-measure: 553554795029824
+inter-arrival jitter (ns): 356406
+maximum-jitter (ns): 4.81474e+06
+reorder-ratio: 0
+drift-measure: 553557659114115
+inter-arrival jitter (ns): 583311
+maximum-jitter (ns): 4.91782e+06
+reorder-ratio: 0
+drift-measure: 553560511081399
+inter-arrival jitter (ns): 767266
+maximum-jitter (ns): 4.78284e+06
+reorder-ratio: 0
+drift-measure: 553563324786580
+inter-arrival jitter (ns): 434873
+maximum-jitter (ns): 9.80916e+06
+reorder-ratio: 0
+drift-measure: 553566159715677
+inter-arrival jitter (ns): 725020
+maximum-jitter (ns): 4.84683e+06
+reorder-ratio: 0
+drift-measure: 553568990949666
+inter-arrival jitter (ns): 449653
+maximum-jitter (ns): 4.92539e+06
+reorder-ratio: 0
+drift-measure: 553571965113688
+inter-arrival jitter (ns): 725662
+maximum-jitter (ns): 4.9609e+06
+reorder-ratio: 0
+drift-measure: 553574805804838
+inter-arrival jitter (ns): 387301
+maximum-jitter (ns): 4.91546e+06
+reorder-ratio: 0
+drift-measure: 553577649848852
+inter-arrival jitter (ns): 415730
+maximum-jitter (ns): 4.77203e+06
+reorder-ratio: 0
+drift-measure: 553580503342243
+inter-arrival jitter (ns): 469966
+maximum-jitter (ns): 4.88549e+06
+reorder-ratio: 0
+drift-measure: 553583395765389
+inter-arrival jitter (ns): 357507
+maximum-jitter (ns): 4.92434e+06
+reorder-ratio: 0
+drift-measure: 553586279115177
+inter-arrival jitter (ns): 785389
+maximum-jitter (ns): 4.84401e+06
+reorder-ratio: 0
+drift-measure: 553589089230173
+inter-arrival jitter (ns): 722822
+maximum-jitter (ns): 4.82205e+06
+reorder-ratio: 0
+drift-measure: 553592022365848
+inter-arrival jitter (ns): 2.75572e+06
+maximum-jitter (ns): 3.23942e+07
+reorder-ratio: 0
+drift-measure: 553594878963691
+inter-arrival jitter (ns): 479909
+maximum-jitter (ns): 2.54572e+07
+reorder-ratio: 0
+drift-measure: 553597733438146
+inter-arrival jitter (ns): 881054
+maximum-jitter (ns): 4.96764e+06
+reorder-ratio: 0
+drift-measure: 553600604719968
+inter-arrival jitter (ns): 607001
+maximum-jitter (ns): 4.87809e+06
+reorder-ratio: 0
+drift-measure: 553603369926584
+inter-arrival jitter (ns): 487038
+maximum-jitter (ns): 4.75756e+06
+reorder-ratio: 0
+drift-measure: 553606245438840
+inter-arrival jitter (ns): 623562
+maximum-jitter (ns): 4.91179e+06
+reorder-ratio: 0
+drift-measure: 553609125671763
+inter-arrival jitter (ns): 707538
+maximum-jitter (ns): 4.98257e+06
+reorder-ratio: 0
+drift-measure: 553611990930087
+inter-arrival jitter (ns): 863021
+maximum-jitter (ns): 4.82318e+06
+reorder-ratio: 0
+drift-measure: 553614838502681
+inter-arrival jitter (ns): 380606
+maximum-jitter (ns): 4.87369e+06
+reorder-ratio: 0
+drift-measure: 553617685576958
+inter-arrival jitter (ns): 387008
+maximum-jitter (ns): 4.88745e+06
+reorder-ratio: 0
+drift-measure: 553620528481864
+inter-arrival jitter (ns): 873085
+maximum-jitter (ns): 4.86066e+06
+reorder-ratio: 0
+drift-measure: 553623391249547
+inter-arrival jitter (ns): 724416
+maximum-jitter (ns): 4.78095e+06
+reorder-ratio: 0
+drift-measure: 553626262869368
+inter-arrival jitter (ns): 842301
+maximum-jitter (ns): 4.95278e+06
+reorder-ratio: 0
+drift-measure: 553629141046068
+inter-arrival jitter (ns): 527199
+maximum-jitter (ns): 4.89542e+06
+reorder-ratio: 0
+drift-measure: 553632009465459
+inter-arrival jitter (ns): 373733
+maximum-jitter (ns): 4.73028e+06
+reorder-ratio: 0
+drift-measure: 553634859803904
+inter-arrival jitter (ns): 446146
+maximum-jitter (ns): 4.79811e+06
+reorder-ratio: 0
+drift-measure: 553637749142165
+inter-arrival jitter (ns): 509333
+maximum-jitter (ns): 4.73053e+06
+reorder-ratio: 0
+drift-measure: 553640617242673
+inter-arrival jitter (ns): 988585
+maximum-jitter (ns): 4.87898e+06
+reorder-ratio: 0
+drift-measure: 553643478257868
+inter-arrival jitter (ns): 618821
+maximum-jitter (ns): 4.80128e+06
+reorder-ratio: 0
+drift-measure: 553646317661695
+inter-arrival jitter (ns): 451291
+maximum-jitter (ns): 4.93731e+06
+reorder-ratio: 0
+drift-measure: 553649221312194
+inter-arrival jitter (ns): 877316
+maximum-jitter (ns): 4.88295e+06
+reorder-ratio: 0
+drift-measure: 553652142118047
+inter-arrival jitter (ns): 377039
+maximum-jitter (ns): 4.83407e+06
+reorder-ratio: 0
+drift-measure: 553655143002825
+inter-arrival jitter (ns): 550839
+maximum-jitter (ns): 4.76103e+06
+reorder-ratio: 0
+Session stopped at: 2023-05-05 04:44:10
